@@ -1,6 +1,7 @@
 @use "header";
 @use "footer";
 @use "home";
+@import "variables";
 
 * {
   box-sizing: border-box;
@@ -14,8 +15,9 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #eee;
+  background-color: #0f1115;
+  background: $bodyBackgroundGradient;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,7 +36,6 @@ a:hover {
 
 body {
   margin: 0;
-  // display: flex;
   place-items: center;
   margin: 0 auto;
   min-width: 320px;
@@ -89,4 +90,11 @@ button:focus-visible {
 ul,
 ol {
   list-style-type: none;
+}
+
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

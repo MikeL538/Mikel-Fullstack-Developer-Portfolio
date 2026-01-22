@@ -1,8 +1,15 @@
+import HomeHero from "../components/HomeHero";
+import HomeSkills from "../components/HomeSkills";
+import HomeProjects from "../components/HomeProjects";
+
 export default function Home() {
   return (
-    <section className="home">
-      <h1>Mike – Fullstack Developer</h1>
-      <p>Portfolio in progress</p>
-    </section>
+    <>
+      <section className="home">
+        <HomeHero />
+        <HomeSkills />
+        <HomeProjects />
+      </section>
+    </>
   );
 }

@@ -10,10 +10,22 @@ $headerBackground: rgba(30, 34, 44, 1);
 $headerBackgroundGradient: linear-gradient(
   90deg,
   rgba(30, 34, 44, 1) 0%,
-  rgba(15, 17, 21, 1) 66%,
-  rgba(15, 17, 21, 1) 33%,
+  rgba(22, 25, 31, 1) 25%,
+
+  rgba(15, 17, 21, 1) 50%,
+  rgba(22, 25, 31, 1) 75%,
+
   rgba(30, 34, 44, 1) 100%
 );
+// BODY
+$bodyBackgroundGradient: linear-gradient(
+  180deg,
+  rgba(18, 21, 27, 1) 0%,
+  rgba(15, 17, 21, 1) 25%,
+  rgba(15, 17, 21, 1) 75%,
+  rgba(18, 21, 27, 1) 100%
+);
+
 // FOOTER
 $footerBackground: rgba(30, 34, 44, 1);
 $footerBackgroundGradient: linear-gradient(
