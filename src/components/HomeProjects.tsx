@@ -1,49 +1,54 @@
+import projects from "../assets/projects.json";
+import icons from "../assets/icons.svg";
+
 export default function HomeProjects() {
+  const projectsJson = projects.filter((p) => p.featured);
+
   return (
     <section className="home__projects">
       <div className="home__projects__container">
         <h2 className="home__projects__title">Projects</h2>
         <ul className="home__projects__list">
-          <li className="home__projects__item">
-            <img className="placeholder__projects__image" />
-            <div>
-              <h3 className="home__projects__name">Project Title</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Assumenda beatae deserunt minus ex accusantium itaque.
-              </p>
-            </div>
-          </li>
-          <li className="home__projects__item">
-            <img className="placeholder__projects__image" />
-            <div>
-              <h3 className="home__projects__name">Project Title</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Assumenda beatae deserunt minus ex accusantium itaque.
-              </p>
-            </div>
-          </li>
-          <li className="home__projects__item">
-            <img className="placeholder__projects__image" />
-            <div>
-              <h3 className="home__projects__name">Project Title</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Assumenda beatae deserunt minus ex accusantium itaque.
-              </p>
-            </div>
-          </li>
-          <li className="home__projects__item">
-            <img className="placeholder__projects__image" />
-            <div>
-              <h3 className="home__projects__name">Project Title</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Assumenda beatae deserunt minus ex accusantium itaque.
-              </p>
-            </div>
-          </li>
+          {projectsJson.map((project) => (
+            <li className="home__projects__item">
+              <img
+                key={project.id}
+                src={project.image}
+                className="home__projects__image"
+              />
+              <div className="home__projects__list-container">
+                <h3 className="home__projects__name">{project.title}</h3>
+                <p className="home__projects__description">
+                  {project.description}
+                </p>
+                <ul className="home__projects__list-tech">
+                  {project.tech.map((tech) => (
+                    <li key={tech}>{tech} </li>
+                  ))}
+                </ul>
+                <div className="home__projects__links-container">
+                  <a
+                    className="home__projects__links"
+                    target="_blank"
+                    href={project.live}
+                  >
+                    <svg className="home__projects__links-svg">
+                      <use href={`${icons}#icon-www`} />
+                    </svg>
+                  </a>
+                  <a
+                    className="home__projects__links"
+                    target="_blank"
+                    href={project.github}
+                  >
+                    <svg className="home__projects__links-svg">
+                      <use href={`${icons}#icon-github`} />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

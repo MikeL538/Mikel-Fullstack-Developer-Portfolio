@@ -1,0 +1,52 @@
+[
+  {
+    "id": "5",
+    "title": "Portfolio Website",
+    "description": "A personal portfolio website built with React, Vite and SCSS.",
+    "tech": ["React", "Vite", "SCSS"],
+    "image": "/images/projects/portfolio.png",
+    "github": "https://github.com/username/portfolio",
+    "live": "https://portfolio.example.com",
+    "featured": true
+  },
+  {
+    "id": "4",
+    "title": "E-commerce App",
+    "description": "Fullstack e-commerce app using Node.js, PostgreSQL and Supabase.",
+    "tech": ["Node.js", "PostgreSQL", "Supabase", "React"],
+    "image": "/images/projects/ecommerce.png",
+    "github": "https://github.com/username/ecommerce",
+    "live": "https://shop.example.com",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Chat App",
+    "description": "Real-time chat application with WebSocket and React.",
+    "tech": ["React", "Node.js", "WebSocket"],
+    "image": "/images/projects/chatapp.png",
+    "github": "https://github.com/username/chatapp",
+    "live": "https://chat.example.com",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Task Manager",
+    "description": "Task manager app with authentication and drag-and-drop features.",
+    "tech": ["React", "TypeScript", "Supabase"],
+    "image": "/images/projects/taskmanager.png",
+    "github": "https://github.com/username/taskmanager",
+    "live": "https://tasks.example.com",
+    "featured": true
+  },
+  {
+    "id": "1",
+    "title": "Blog Platform",
+    "description": "Blog platform with markdown support and user authentication.",
+    "tech": ["Next.js", "TailwindCSS", "PostgreSQL"],
+    "image": "/images/projects/blog.png",
+    "github": "https://github.com/username/blog",
+    "live": "https://blog.example.com",
+    "featured": false
+  }
+]
