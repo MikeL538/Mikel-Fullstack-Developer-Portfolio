@@ -1,7 +1,11 @@
 import projects from "../assets/projects.json";
 import icons from "../assets/icons.svg";
 
-export default function HomeProjects() {
+export default function HomeProjects({
+  onImageClick,
+}: {
+  onImageClick: (project: any) => void;
+}) {
   const projectsJson = projects.filter((p) => p.featured);
 
   return (
@@ -14,8 +18,10 @@ export default function HomeProjects() {
               <img
                 className="home__projects__image"
                 src={project.image}
+                key={project.id}
                 alt={project.title}
                 data-set={project.id}
+                onClick={() => onImageClick(project)}
               />
               <div className="home__projects__list-container">
                 <h3 className="home__projects__name">{project.title}</h3>

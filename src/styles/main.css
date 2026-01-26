@@ -258,22 +258,21 @@
 .imageModal {
   position: fixed;
   inset: 0;
-  z-index: 100;
-  background: rgba(33, 33, 33, 0.55);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .imageModal__container {
-  width: 1200px;
-  height: 600px;
+  max-width: 1200px;
+  max-height: 600px;
+  width: 100%;
 }
 .imageModal__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 12px;
+  cursor: zoom-out;
 }
 
 * {
@@ -372,8 +371,4 @@ button:focus-visible {
   background: radial-gradient(200px circle at var(--x) var(--y), rgba(120, 140, 255, 0.06), transparent 50%);
 }
 
-/* ===== TESTY ====== */
-.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+/* ===== TESTY ====== *//*# sourceMappingURL=main.css.map */
