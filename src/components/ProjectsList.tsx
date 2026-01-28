@@ -24,7 +24,9 @@ export default function ProjectsList({
                 />
                 <div className="projects__list-text">
                   <h3 className="projects__name">{project.title}</h3>
-                  <p className="projects__description">{project.description}</p>
+                  <p className="projects__description">
+                    {project.descriptionLong}
+                  </p>
 
                   <ul className="projects__list-tech">
                     {project.tech.map((tech) => (

@@ -2,10 +2,10 @@
    CORE PALETTE
    ========================================================= */
 
-$bg-900: rgb(15, 17, 21); // najciemniejszy (body core)
-$bg-850: rgb(18, 21, 27); // body / main sections
-$bg-800: rgb(22, 25, 31); // sections / transitions
-$bg-750: rgb(30, 34, 44); // header / footer base
+$bg-900: rgb(15, 17, 21);
+$bg-850: rgb(18, 21, 27);
+$bg-800: rgb(22, 25, 31);
+$bg-750: rgb(30, 34, 44);
 
 $text-primary: rgb(235, 237, 240);
 $text-secondary: rgb(180, 185, 195);
@@ -32,10 +32,10 @@ $headerBackgroundGradient: linear-gradient(
 $bodyBackground: $bg-900;
 $bodyBackgroundGradient: linear-gradient(
   180deg,
-  $bg-850 0%,
-  $bg-900 30%,
-  $bg-900 70%,
-  $bg-850 100%
+  $bg-800 0%,
+  $bg-850 33%,
+  $bg-850 66%,
+  $bg-800 100%
 );
 
 $card-bg: rgba(255, 255, 255, 0.02);
@@ -44,21 +44,8 @@ $card-bg: rgba(255, 255, 255, 0.02);
    HOME – SECTIONS
    ========================================================= */
 
-$homeHeroBackgroundGradient: linear-gradient(
-  180deg,
-  rgb(26, 30, 38) 0%,
-  rgb(15, 17, 21) 100%
-);
-
 /* Skills */
 $homeSkillsBackground: rgb(15, 17, 21);
-
-/* Projects */
-$homeProjectsBackgroundGradient: linear-gradient(
-  180deg,
-  rgb(15, 17, 21) 0%,
-  rgb(22, 25, 31) 100%
-);
 
 /* =========================================================
    FOOTER
