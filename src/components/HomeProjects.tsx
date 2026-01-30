@@ -42,8 +42,8 @@ export default function HomeProjects({
                     target="_blank"
                     href={project.live}
                   >
-                    <svg className="home__projects__links-svg">
-                      <use href={`${icons}#icon-www`} />
+                    <svg className="home__projects__links-svg git-links">
+                      <use href={`${icons}#icon-www`} className="git-links" />
                     </svg>
                   </a>
                   <a
@@ -51,7 +51,7 @@ export default function HomeProjects({
                     target="_blank"
                     href={project.github}
                   >
-                    <svg className="home__projects__links-svg">
+                    <svg className="home__projects__links-svg git-links">
                       <use href={`${icons}#icon-github`} />
                     </svg>
                   </a>

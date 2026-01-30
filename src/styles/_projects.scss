@@ -99,11 +99,11 @@
   &__links-container {
     display: flex;
     justify-content: end;
+    margin-top: 15px;
+    gap: 12px;
   }
 
   &__links {
-    margin: 5px;
-
     &-svg {
       height: 32px;
       width: 32px;
