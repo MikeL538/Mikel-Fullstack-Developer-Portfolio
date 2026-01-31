@@ -2,14 +2,12 @@
    CORE PALETTE
    ========================================================= */
 
-$bg-900: rgb(15, 17, 21);
-$bg-850: rgb(18, 21, 27);
-$bg-800: rgb(22, 25, 31);
-$bg-750: rgb(30, 34, 44);
+$bg-900: #0f1115;
+$bg-850: #12151b;
+$bg-800: #16191f;
+$bg-750: #1e222c;
 
-$text-primary: rgb(235, 237, 240);
-$text-secondary: rgb(180, 185, 195);
-$text-muted: rgb(140, 145, 155);
+$text-primary: #dff1ff;
 
 /* =========================================================
    HEADER
@@ -38,14 +36,13 @@ $bodyBackgroundGradient: linear-gradient(
   $bg-800 100%
 );
 
-$card-bg: rgba(255, 255, 255, 0.02);
+$card-bg: #ffffff06;
+$tech-bg: #2a272a;
+$tech-border: #4b4a54;
 
 /* =========================================================
    HOME – SECTIONS
    ========================================================= */
-
-/* Skills */
-$homeSkillsBackground: rgb(15, 17, 21);
 
 /* =========================================================
    FOOTER
@@ -65,9 +62,9 @@ $footerBackgroundGradient: linear-gradient(
    ACCENT / INTERACTIONS
    ========================================================= */
 
-$accent-primary: rgb(79, 140, 255); // links / active
-$accent-hover: rgb(120, 170, 255); // hover
-$accent-soft: rgb(160, 200, 255); // subtle highlights
+$accent-primary: #4f8cff;
+$accent-hover: #78aaff;
+$accent-soft: #a0c8ff;
 
 /* Buttons */
 $button: $accent-primary;

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import projects from "../assets/projects.json";
 import icons from "../assets/icons.svg";
 
@@ -13,14 +14,16 @@ export default function HomeProjects({
   return (
     <section className="home__projects">
       <div className="home__projects__container">
-        <h2 className="home__projects__title">Projects</h2>
+        <h2 id="projects" className="home__projects__title">
+          Projects
+        </h2>
         <ul className="home__projects__list">
           {projectsJson.map((project) => (
-            <li className="home__projects__item">
+            <li key={project.id} className="home__projects__item">
               <img
                 className="home__projects__image"
+                loading="lazy"
                 src={BASE_URL + project.image}
-                key={project.id}
                 alt={project.title}
                 data-set={project.id}
                 onClick={() => onImageClick(project)}
@@ -60,6 +63,19 @@ export default function HomeProjects({
             </li>
           ))}
         </ul>
+        <div className="home__projects__button-wrapper">
+          <NavLink
+            className="home__projects__button"
+            onClick={() => {
+              document.getElementById("header")?.scrollIntoView({
+                behavior: "instant",
+              });
+            }}
+            to="/projects"
+          >
+            More Projects
+          </NavLink>
+        </div>
       </div>
     </section>
   );

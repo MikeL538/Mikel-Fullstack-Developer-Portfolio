@@ -18,13 +18,12 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-    // height: 400px;
 
     background: vars.$card-bg;
     border-radius: 16px;
@@ -45,7 +44,7 @@
   &__list-container {
     display: flex;
     gap: 25px;
-    padding: 10px;
+    padding: 0 10px 10px 0;
     justify-content: center;
   }
 
@@ -53,8 +52,11 @@
     height: 300px;
     width: 550px;
     opacity: 0.9;
-    border-radius: 16px;
-    border: 2px solid vars.$accent-soft;
+
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom: 2px solid vars.$accent-soft;
+    border-right: 2px solid vars.$accent-soft;
 
     box-shadow:
       0 10px 30px rgba(0, 0, 0, 0.35),
@@ -87,12 +89,14 @@
     display: flex;
     gap: 15px;
     justify-content: end;
-    margin-right: 25px;
 
     > li {
-      border: 1px solid vars.$accent-soft;
       border-radius: 10%;
-      padding: 5px;
+      padding: 3px;
+      background: vars.$tech-bg;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 2px solid vars.$tech-border;
     }
   }
 

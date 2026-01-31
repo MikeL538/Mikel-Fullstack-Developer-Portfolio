@@ -7,14 +7,12 @@ export default function Projects() {
   const [activeProject, setActiveProject] = useState<any>(null);
 
   return (
-    <>
-      <div className="projects">
-        <ProjectsList onImageClick={setActiveProject} />
-        <ImageModal
-          project={activeProject}
-          onClose={() => setActiveProject(null)}
-        />
-      </div>
-    </>
+    <section className="projects">
+      <ProjectsList onImageClick={setActiveProject} />
+      <ImageModal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
+    </section>
   );
 }

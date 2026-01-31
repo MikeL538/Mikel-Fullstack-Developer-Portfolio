@@ -2,6 +2,7 @@
 @use "footer";
 @use "home";
 @use "projects";
+@use "about";
 @use "imageModal";
 @use "./variables" as vars;
 
@@ -17,10 +18,7 @@
   font-weight: 400;
   font-size: 16px;
 
-  // color-scheme: light dark;
   color: vars.$text-primary;
-
-  // background-color: vars.$bodyBackground;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -82,17 +80,18 @@ ol {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
   background-color: vars.$button;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.2s;
 }
 
 button:hover {
-  border-color: vars.$buttonHover;
+  background-color: vars.$buttonHover;
+  transform: scale(1.02);
 }
 
 button:focus,

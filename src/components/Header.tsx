@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     // Nagłówek strony
-    <header className="header">
+    <header id="header" className="header">
       <div className="header__container">
         {/* Lewa strona: Pic / nazwa */}
         <div className="header__logo">

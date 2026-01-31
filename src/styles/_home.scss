@@ -1,8 +1,9 @@
 @use "./variables" as vars;
 
 .home__hero {
+  padding: 60px 0 0 0;
   &__title {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
     font-size: clamp(2.6rem, 6vw, 4rem);
     text-align: center;
   }
@@ -15,6 +16,9 @@
 
   &-p {
     margin: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: justify;
   }
 
   &__image {
@@ -36,7 +40,19 @@
       );
     }
   }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    font-weight: 600;
+    color: vars.$text-primary;
+  }
 }
+
 .home__skills {
   &__title {
     margin-bottom: 25px;
@@ -141,7 +157,7 @@
     height: 217px;
     opacity: 0.8;
     width: 444px;
-    border-bottom: 4px solid vars.$accent-soft;
+    border-bottom: 3px solid vars.$accent-soft;
 
     &:hover {
       cursor: zoom-in;
@@ -169,13 +185,16 @@
   &__list-tech {
     display: flex;
     gap: 15px;
-    justify-content: center;
-    margin-top: 6px;
+    justify-content: end;
+    margin: 6px 6px 0 6px;
 
     > li {
-      border: 1px solid vars.$accent-soft;
       border-radius: 10%;
-      padding: 5px;
+      padding: 3px;
+      background: vars.$tech-bg;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 2px solid vars.$tech-border;
     }
   }
 
@@ -186,6 +205,30 @@
     &-svg {
       height: 26px;
       width: 26px;
+    }
+  }
+
+  &__button {
+    background-color: vars.$button;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: vars.$text-primary;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: vars.$buttonHover;
+      color: vars.$text-primary;
+      transform: scale(1.02);
+    }
+
+    &-wrapper {
+      margin-top: 44px;
+      display: flex;
     }
   }
 }
