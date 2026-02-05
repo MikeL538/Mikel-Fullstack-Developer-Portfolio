@@ -55,8 +55,8 @@
 
   &__list {
     display: flex;
-    min-width: 350px;
-    justify-content: space-evenly;
+
+    gap: 20px;
   }
 
   &__item {

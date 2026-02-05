@@ -13,6 +13,18 @@
   },
   {
     "id": 3,
+    "title": "Filmoteka",
+    "description": "Strona webowa z wyszukiwarką filmów, która umożliwia przeglądanie popularnych i wysoko ocenianych produkcji oraz szybkie znalezienie konkretnego filmu. Użytkownik może sprawdzić szczegóły, takie jak opis, oceny i ranking filmów.",
+    "descriptionLong": "Projekt webowy prezentujący wyszukiwarkę filmów z rankingiem popularności i ocen. Aplikacja pozwala użytkownikowi przeglądać najnowsze i najchętniej oglądane filmy oraz wyszukiwać konkretne produkcje po tytule. Dla każdego filmu wyświetlane są szczegółowe informacje, w tym opis, oceny, gatunek i inne istotne dane. Projekt pokazuje umiejętność integracji z zewnętrznymi źródłami danych (API filmowe), tworzenia interaktywnego UI oraz budowania responsywnych stron umożliwiających użytkownikowi szybki dostęp do informacji. Filmoteka łączy estetykę interfejsu z funkcjonalnością wyszukiwarki i filtrowania danych, co czyni ją projektem praktycznym i atrakcyjnym dla użytkownika.",
+    "tech": ["HTML", "SCSS", "TypeScript", "Parcel"],
+    "image": "./images/projects/Filmoteka.webp",
+    "imageLarge": "./images/projects/FilmotekaLarge.webp",
+    "github": "https://github.com/MikeL538/Filmoteka",
+    "live": "https://mikel538.github.io/Filmoteka/",
+    "featured": true
+  },
+  {
+    "id": 2,
     "title": "Formularz Zjazd SLO",
     "description": "Strona-formularz umożliwiająca zapis na zjazd absolwentów Społecznego Liceum w Żarach. Publiczna część pozwala dokonywać zapisów, a dane są przechowywane w Supabase, co umożliwia ich łatwe zarządzanie i weryfikację.",
     "descriptionLong": "Projekt webowy w formie strony-formularza, stworzony w celu usprawnienia rejestracji uczestników zjazdu absolwentów Społecznego Liceum w Żarach. Aplikacja składa się z dwóch głównych sekcji: publicznej strony umożliwiającej zapis uczestników oraz panelu do odczytu i przeglądania zgromadzonych danych. Dane są bezpiecznie przechowywane w Supabase, co zapewnia prosty dostęp i możliwość dalszego przetwarzania. Projekt pokazuje umiejętność tworzenia responsywnych formularzy, integracji z bazą danych w chmurze oraz organizacji struktury strony pod potrzeby użytkowników i administratorów.",
@@ -21,18 +33,6 @@
     "imageLarge": "./images/projects/ZjazdSloLarge.webp",
     "github": "https://github.com/MikeL538/Zaproszenie-Zjazd-SLO",
     "live": "https://mikel538.github.io/Zaproszenie-Zjazd-SLO/",
-    "featured": true
-  },
-  {
-    "id": 2,
-    "title": "Filmoteka",
-    "description": "Strona webowa z wyszukiwarką filmów, która umożliwia przeglądanie popularnych i wysoko ocenianych produkcji oraz szybkie znalezienie konkretnego filmu. Użytkownik może sprawdzić szczegóły, takie jak opis, oceny i ranking filmów.",
-    "descriptionLong": "Projekt webowy prezentujący wyszukiwarkę filmów z rankingiem popularności i ocen. Aplikacja pozwala użytkownikowi przeglądać najnowsze i najchętniej oglądane filmy oraz wyszukiwać konkretne produkcje po tytule. Dla każdego filmu wyświetlane są szczegółowe informacje, w tym opis, oceny, gatunek i inne istotne dane. Projekt pokazuje umiejętność integracji z zewnętrznymi źródłami danych (API filmowe), tworzenia interaktywnego UI oraz budowania responsywnych stron umożliwiających użytkownikowi szybki dostęp do informacji. Filmoteka łączy estetykę interfejsu z funkcjonalnością wyszukiwarki i filtrowania danych, co czyni ją projektem praktycznym i atrakcyjnym dla użytkownika.",
-    "tech": ["HTML", "SCSS", "JavaScript", "Parcel"],
-    "image": "./images/projects/Filmoteka.webp",
-    "imageLarge": "./images/projects/FilmotekaLarge.webp",
-    "github": "https://github.com/MikeL538/Filmoteka",
-    "live": "https://mikel538.github.io/Filmoteka/",
     "featured": true
   },
   {

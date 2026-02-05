@@ -22,7 +22,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Home
+                Strona główna
               </NavLink>
             </li>
             <li className="header__item">
@@ -34,7 +34,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Projects
+                Projekty
               </NavLink>
             </li>
             <li className="header__item">
@@ -46,7 +46,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                About
+                O mnie
               </NavLink>
             </li>
             <li className="header__item">
@@ -58,7 +58,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Contact
+                Kontakt
               </NavLink>
             </li>
             <li className="header__item">

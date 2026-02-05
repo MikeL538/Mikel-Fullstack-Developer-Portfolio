@@ -7,7 +7,7 @@ import App from "./App";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Micha-Lipiak-Fullstack-Developer-Portfolio/">
+    <BrowserRouter basename="/Mikel-Fullstack-Developer-Portfolio/">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
