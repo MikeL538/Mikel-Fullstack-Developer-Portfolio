@@ -4,8 +4,7 @@ This repository contains my personal **developer portfolio**, showcasing selecte
 The goal of this portfolio is to present **real applications**, clean UI, and a structured approach to building modern web apps.
 
 🔗 **Live version:**  
-👉 https://mikel538.github.io/Micha-Lipiak-Fullstack-Developer-Portfolio/
-
+👉 https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/
 ---
 
 ## ✨ What you’ll find here
