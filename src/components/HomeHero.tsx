@@ -1,17 +1,16 @@
 const BASE_URL = import.meta.env.BASE_URL;
+import { useTranslation } from "react-i18next";
 
 export default function HomeHero() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="home__hero">
-        <h1 className="home__hero__title">Fullstack Developer</h1>
+        <h1 className="home__hero__title">{t("home.heroTitle")}</h1>
         <div className="home__hero__container">
           <div className="home__hero__info">
-            <p className="home__hero-p">
-              Buduję nowoczesne aplikacje webowe w oparciu o technologie
-              Frontendowe jak i Backendowe. Skupiam się na czystym kodzie,
-              wydajności i tworzeniu rozwiązań, które realnie działają.
-            </p>
+            <p className="home__hero-p">{t("home.heroP")} </p>
             <button
               className="home__hero__button"
               onClick={() => {
@@ -20,7 +19,7 @@ export default function HomeHero() {
                 });
               }}
             >
-              Top projects
+              {t("home.heroButton")}
             </button>
           </div>
           <div className="home__hero__image-wrapper">

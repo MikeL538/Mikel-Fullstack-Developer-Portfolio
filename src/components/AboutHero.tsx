@@ -1,75 +1,64 @@
+import { useTranslation } from "react-i18next";
+
 export default function AboutHero() {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="about__container">
-        <h2 className="about__title">O mnie</h2>
-        <p className="about__p">
-          Jestem fullstack developerem, tworzącym aplikacje, które działają
-          sprawnie i są łatwe w utrzymaniu. Lubię budować nowe projekty i z
-          każdą kolejną próbą udoskonalać swój kod.
-        </p>
+        <h2 className="about__title">{t("about.title")}</h2>
+        <p className="about__p">{t("about.p1")}</p>
+        <p className="about__p">{t("about.p2")}</p>
+        <p className="about__p">{t("about.p3")}</p>
 
-        <p className="about__p">
-          Posiadam ugruntowaną wiedzę w JavaScript, TypeScript, SCSS, React i
-          C++, a także w wielu innych technologiach i metodach. Skupiam się na
-          tworzeniu intuicyjnych interfejsów i optymalizacji wydajności.
-        </p>
-
-        <p className="about__p">
-          Dbam o czystą architekturę i nie boję się wracać do starszych
-          projektów, aby je refaktoryzować i udoskonalać. Dzięki temu stale
-          rozwijam swoje umiejętności i zdobywam doświadczenie w praktyce.
-        </p>
-
-        <h3 className="about__title--strenghts">Moje silne strony</h3>
+        <h3 className="about__title--strenghts">{t("about.strengths")}</h3>
         <ul className="about__list">
           <li className="about__list--item">
             <div className="about__list--item__container">
-              <h4 className="about__list--item__title">Automatyzacja pracy</h4>
+              <h4 className="about__list--item__title">
+                {t("about.items.automation.title")}
+              </h4>
             </div>
             <p className="about__list--item__p">
-              potrafię tworzyć narzędzia i skrypty, które oszczędzają czas i
-              minimalizują powtarzalne zadania.
+              {t("about.items.automation.description")}
             </p>
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
               <h4 className="about__list--item__title">
-                Wytrwałość i cierpliwość
+                {t("about.items.automation.title")}
               </h4>
             </div>
             <p className="about__list--item__p">
-              konsekwentnie doprowadzam projekty do końca, nawet przy trudnych
-              wyzwaniach.
+              {t("about.items.automation.description")}
             </p>
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
               <h4 className="about__list--item__title">
-                Kreatywność i pomysłowość
+                {t("about.items.creativity.title")}
               </h4>
             </div>
             <p className="about__list--item__p">
-              znajduję nietypowe rozwiązania dla złożonych problemów.
+              {t("about.items.creativity.description")}
             </p>
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
               <h4 className="about__list--item__title">
-                Skupienie na efektach
+                {t("about.items.focus.title")}
               </h4>
             </div>
             <p className="about__list--item__p">
-              realizuję pomysły w działających projektach, nie tylko na
-              papierze.
+              {t("about.items.focus.description")}
             </p>
           </li>
         </ul>
       </div>
       <div className="about__img--container">
-        <img className="about__img" src="" alt="photo" />
+        <img className="about__img" src="./" alt="photo" />
         <h3 className="about__img--name">Michał</h3>
-        <h4 className="about__img--occ">Fullstack Developer</h4>
+        <h4 className="about__img--occ">{t("about.occ")}</h4>
       </div>
     </>
   );

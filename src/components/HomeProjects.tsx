@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import projects from "../assets/projects.json";
 import icons from "../assets/icons.svg";
+import { techIcons } from "../hooks/techIcons";
+import { useTranslation } from "react-i18next";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -11,11 +13,13 @@ export default function HomeProjects({
 }) {
   const projectsJson = projects.filter((p) => p.featured);
 
+  const { t } = useTranslation();
+
   return (
     <section className="home__projects">
       <div className="home__projects__container">
         <h2 id="projects" className="home__projects__title">
-          Projects
+          {t("home.projectsTitle")}
         </h2>
         <ul className="home__projects__list">
           {projectsJson.map((project) => (
@@ -31,12 +35,17 @@ export default function HomeProjects({
               <div className="home__projects__list-container">
                 <h3 className="home__projects__name">{project.title}</h3>
                 <p className="home__projects__description">
-                  {project.description}
+                  {t(project.descriptionKey)}
                 </p>
 
                 <ul className="home__projects__list-tech">
                   {project.tech.map((tech) => (
-                    <li key={tech}>{tech}</li>
+                    // <li key={tech}>{tech}</li>
+                    <li key={tech}>
+                      <svg className="home__skills-image">
+                        <use href={techIcons[tech]} />
+                      </svg>
+                    </li>
                   ))}
                 </ul>
                 <div className="home__projects__links-container">
@@ -73,7 +82,7 @@ export default function HomeProjects({
             }}
             to="/projects"
           >
-            More Projects
+            {t("home.projectsMore")}
           </NavLink>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
+
   return (
     // Nagłówek strony
     <header id="header" className="header">
@@ -22,7 +25,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Strona główna
+                {t("header.home")}
               </NavLink>
             </li>
             <li className="header__item">
@@ -34,7 +37,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Projekty
+                {t("header.projects")}
               </NavLink>
             </li>
             <li className="header__item">
@@ -46,7 +49,7 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                O mnie
+                {t("header.about")}
               </NavLink>
             </li>
             <li className="header__item">
@@ -58,20 +61,12 @@ export default function Header() {
                     : "header__item"
                 }
               >
-                Kontakt
+                {t("header.contact")}
               </NavLink>
             </li>
             <li className="header__item">
-              <NavLink
-                to="/lang"
-                className={({ isActive }) =>
-                  isActive
-                    ? "header__item header__item--active"
-                    : "header__item"
-                }
-              >
-                Lang
-              </NavLink>
+              <button onClick={() => i18n.changeLanguage("pl")}>PL</button>
+              <button onClick={() => i18n.changeLanguage("en")}>EN</button>
             </li>
           </ul>
         </nav>

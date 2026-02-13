@@ -1,5 +1,6 @@
 import projects from "../assets/projects.json";
 import icons from "../assets/icons.svg";
+import { useTranslation } from "react-i18next";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -8,11 +9,11 @@ export default function ProjectsList({
 }: {
   onImageClick: (project: any) => void;
 }) {
-  //   const projectsJson = projects.filter((p) => p.featured);
+  const { t } = useTranslation();
 
   return (
     <div className="projects__container">
-      <h2 className="projects__title">Projects</h2>
+      <h2 className="projects__title">{t("projects.title")}</h2>
       <ul className="projects__list">
         {projects.map((project) => (
           <li key={project.id} className="projects__item">
@@ -27,7 +28,7 @@ export default function ProjectsList({
               <div className="projects__list-text">
                 <h3 className="projects__name">{project.title}</h3>
                 <p className="projects__description">
-                  {project.descriptionLong}
+                  {t(project.descriptionLongKey)}
                 </p>
 
                 <ul className="projects__list-tech">

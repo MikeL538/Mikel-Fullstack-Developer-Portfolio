@@ -82,7 +82,7 @@ button {
   font-family: inherit;
   background-color: vars.$button;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: vars.$transition-basic;
 }
 
 button:hover {
@@ -103,7 +103,7 @@ button:focus-visible {
 
   background: radial-gradient(
     200px circle at var(--x) var(--y),
-    rgba(120, 140, 255, 0.06),
+    rgba(120, 140, 255, 0.08),
     transparent 50%
   );
 }

@@ -24,6 +24,11 @@
   &__image {
     max-width: 544px;
     position: relative;
+    transition: vars.$transition-basic;
+
+    &:hover {
+      opacity: 0.1;
+    }
 
     &-wrapper {
       height: 400px;
@@ -87,7 +92,7 @@
         0 10px 30px rgba(0, 0, 0, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.02);
 
-      transition: all 0.25s ease;
+      transition: vars.$transition-basic;
       cursor: pointer;
 
       &:hover {
@@ -128,7 +133,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 444px;
+    height: 474px;
     width: 444px;
     text-align: justify;
 
@@ -141,7 +146,7 @@
       0 10px 30px rgba(0, 0, 0, 0.35),
       inset 0 1px 0 rgba(255, 255, 255, 0.02);
 
-    transition: all 0.25s ease;
+    transition: vars.$transition-basic;
 
     &:hover {
       transform: translateY(-4px);
@@ -172,6 +177,10 @@
     margin: 5px;
   }
 
+  &__name {
+    padding: 0 5px;
+  }
+
   &__links-container {
     display: flex;
     justify-content: end;
@@ -180,6 +189,8 @@
   &__description {
     margin-bottom: 5px;
     font-size: 0.9rem;
+    padding: 0 5px;
+    text-align: justify;
   }
 
   &__list-tech {
@@ -189,12 +200,17 @@
     margin: 6px 6px 0 6px;
 
     > li {
-      border-radius: 10%;
-      padding: 3px;
-      background: vars.$tech-bg;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 2px solid vars.$tech-border;
+      border: none;
+      // padding: 3px;
+      background: none;
+      // font-size: 0.85rem;
+      // font-weight: 600;
+      // border: 2px solid vars.$tech-border;
+
+      > svg {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 
@@ -205,6 +221,8 @@
     &-svg {
       height: 26px;
       width: 26px;
+      // fill: rgb(118, 118, 118);
+      fill: vars.$color-git;
     }
   }
 
@@ -218,7 +236,7 @@
     font-weight: 600;
     margin: 0 auto;
     padding: 0.6rem 1.2rem;
-    transition: all 0.2s;
+    transition: vars.$transition-basic;
 
     &:hover {
       background-color: vars.$buttonHover;

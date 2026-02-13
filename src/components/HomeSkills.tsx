@@ -1,9 +1,12 @@
 import icons from "../assets/icons.svg";
+import { useTranslation } from "react-i18next";
 
 export default function HomeSkills() {
+  const { t } = useTranslation();
+
   return (
     <section className="home__skills__container">
-      <h2 className="home__skills__title">Skills</h2>
+      <h2 className="home__skills__title">{t("home.skills")}</h2>
       <ul className="home__skills__list">
         {/* Front-end podstawy */}
         <li>

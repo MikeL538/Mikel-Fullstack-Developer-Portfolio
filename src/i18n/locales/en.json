@@ -1,0 +1,65 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Fullstack Developer",
+    "heroP": "I build modern web applications using both frontend and backend technologies. I focus on clean code, performance and delivering solutions that truly work.",
+    "heroButton": "Featured projects",
+    "skills": "Technologies",
+    "projectsTitle": "Projects",
+    "projectsMore": "More projects"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I am a fullstack developer creating applications that run smoothly and are easy to maintain. I enjoy building new projects and continuously improving my code with each new challenge.",
+    "p2": "I have solid knowledge of JavaScript, TypeScript, SCSS, React, and C++, as well as many other technologies and methodologies. I focus on creating intuitive interfaces and optimizing performance.",
+    "p3": "I care about clean architecture and am not afraid to revisit older projects to refactor and enhance them. This allows me to continuously develop my skills and gain practical experience.",
+    "strengths": "My strengths",
+    "items": {
+      "automation": {
+        "title": "Work automation",
+        "description": "I can create tools and scripts that save time and minimize repetitive tasks."
+      },
+      "perseverance": {
+        "title": "Perseverance and patience",
+        "description": "I consistently see projects through to completion, even when facing difficult challenges."
+      },
+      "creativity": {
+        "title": "Creativity and resourcefulness",
+        "description": "I find unconventional solutions to complex problems."
+      },
+      "focus": {
+        "title": "Focus on results",
+        "description": "I turn ideas into working projects, not just concepts on paper."
+      }
+    },
+    "occ": "Deweloper Fullstack"
+  },
+  "projects": {
+    "title": "Projects",
+    "raportGeneratorV2": {
+      "description": "A web application designed for quickly generating clear and structured reports from mock high school graduation exams. The project focuses on simplifying the report creation process, improving data readability, and delivering a modern user interface.",
+      "descriptionLong": "This web application supports the process of generating reports from mock high school graduation exams and was created as a redevelopment and refactoring of an earlier version of the tool. The main objective was to reorganize the application logic, improve the code architecture, and design a clearer and more intuitive user interface. The application enables fast processing of exam data and generates structured, easy-to-read reports, significantly reducing documentation time. Version V2 emphasizes improved user experience, code modularity, and a solid architectural foundation for future feature expansion. The project demonstrates the ability to work with existing codebases, perform refactoring, and apply a structured approach to frontend architecture."
+    },
+    "filmoteka": {
+      "description": "A web application with a movie search engine that allows users to browse popular and top-rated films and quickly find specific titles. Users can check detailed information such as descriptions, ratings, and rankings.",
+      "descriptionLong": "A web project featuring a movie search engine with popularity and rating rankings. The application allows users to browse the latest and most-watched movies as well as search for specific titles. Each movie includes detailed information such as description, ratings, genre, and other relevant data. The project demonstrates integration with external data sources (movie APIs), development of interactive user interfaces, and building responsive layouts that provide quick access to information. Filmoteka combines visual aesthetics with search and filtering functionality, making it both practical and user-friendly."
+    },
+    "formularzZjazdSLO": {
+      "description": "A web-based registration form enabling alumni to sign up for a reunion of the Social High School in Żary. The public section allows submissions, and data is stored in Supabase for easy management and verification.",
+      "descriptionLong": "A web project created to streamline the registration process for alumni attending the Social High School reunion in Żary. The application consists of two main sections: a public registration form for participants and an administrative view for accessing and reviewing collected data. All data is securely stored in Supabase, providing easy access and further processing capabilities. The project demonstrates skills in building responsive forms, integrating with a cloud-based database, and structuring applications to meet both user and administrative requirements."
+    },
+    "anemone": {
+      "description": "Anemone is a website created for a flower shop, showcasing plants and floral arrangements while allowing users to browse available products in a visually appealing way.",
+      "descriptionLong": "Anemone is a web project developed for a flower shop, enabling users to browse plants, floral arrangements, and products available in the store. The website combines aesthetic design with a clear content structure and a responsive interface, allowing customers to quickly explore the offer. The project demonstrates the ability to build presentation websites for businesses, organize product sections, integrate visuals effectively, and ensure a positive user experience."
+    },
+    "goit": {
+      "description": "A website presenting the services of a web studio, including project portfolio and client offerings. The page combines an aesthetic interface with a clear content structure, allowing visitors to quickly understand the studio’s offer.",
+      "descriptionLong": "A web project presenting a comprehensive website for a web studio, showcasing its services and portfolio. The application allows users to explore the studio’s offer, review sample projects, and easily find contact information. The project emphasizes visual aesthetics, clear content organization, and responsive design. It demonstrates the ability to build structured one-page websites, integrate graphics and animations, and create a user-friendly experience for potential clients and visitors."
+    }
+  }
+}
