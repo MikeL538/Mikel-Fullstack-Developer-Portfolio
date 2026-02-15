@@ -43,7 +43,7 @@ export default function ProjectsList({
                     href={project.live}
                   >
                     <svg className="projects__links-svg git-links">
-                      <use href={`${icons}#icon-www`} />
+                      <use href={`${icons}#www`} />
                     </svg>
                   </a>
                   <a
@@ -52,7 +52,7 @@ export default function ProjectsList({
                     href={project.github}
                   >
                     <svg className="projects__links-svg git-links">
-                      <use href={`${icons}#icon-github`} />
+                      <use href={`${icons}#github`} />
                     </svg>
                   </a>
                 </div>

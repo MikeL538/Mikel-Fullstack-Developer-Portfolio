@@ -62,7 +62,7 @@ body {
 }
 
 section {
-  padding: 60px 0;
+  padding: 140px 0 60px 0;
 }
 
 h1 {
@@ -101,7 +101,7 @@ button:focus-visible {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 100;
 
   background: radial-gradient(
     200px circle at var(--x) var(--y),

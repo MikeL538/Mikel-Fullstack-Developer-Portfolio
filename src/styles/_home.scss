@@ -1,7 +1,6 @@
 @use "./variables" as vars;
 
 .home__hero {
-  padding: 60px 0 0 0;
   &__title {
     margin-bottom: 45px;
     font-size: clamp(2.6rem, 6vw, 4rem);
@@ -112,7 +111,7 @@
 .home__projects {
   &__container {
     max-width: calc(1280px + 2rem);
-    margin: 0 auto 75px auto;
+    margin: 0 auto 0 auto;
   }
 
   &__title {
@@ -162,7 +161,7 @@
     height: 217px;
     opacity: 0.8;
     width: 444px;
-    border-bottom: 3px solid vars.$accent-soft;
+    border-bottom: 4px solid vars.$accent-soft;
 
     &:hover {
       cursor: zoom-in;

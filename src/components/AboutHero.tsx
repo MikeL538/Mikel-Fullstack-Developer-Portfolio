@@ -57,8 +57,10 @@ export default function AboutHero() {
       </div>
       <div className="about__img--container">
         <img className="about__img" src="./" alt="photo" />
-        <h3 className="about__img--name">Michał</h3>
-        <h4 className="about__img--occ">{t("about.occ")}</h4>
+        <div className="about__img--text">
+          <h3 className="about__img--name">Michał Lipiak</h3>
+          <h4 className="about__img--occ">{t("about.occ")}</h4>
+        </div>
       </div>
     </>
   );

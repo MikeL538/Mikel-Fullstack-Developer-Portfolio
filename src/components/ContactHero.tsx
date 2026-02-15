@@ -16,7 +16,7 @@ export default function ContactHero() {
               target="_blank"
             >
               <svg className="contact__icon contact__icon--github">
-                <use href={`${icons}#icon-github`}></use>
+                <use href={`${icons}#github`}></use>
               </svg>
               Github: https://github.com/MikeL538
             </a>
@@ -28,7 +28,7 @@ export default function ContactHero() {
               target="_blank"
             >
               <svg className="contact__icon contact__icon--linkedin">
-                <use href={`${icons}#icon-linkedin`}></use>
+                <use href={`${icons}#linkedin`}></use>
               </svg>
               Linkedin: https://www.linkedin.com/in/michal-lipiak/
             </a>
@@ -40,7 +40,7 @@ export default function ContactHero() {
               target="_blank"
             >
               <svg className="contact__icon contact__icon--email">
-                <use href={`${icons}#icon-envelope`}></use>
+                <use href={`${icons}#envelope`}></use>
               </svg>
               E-mail: mikel538.work@gmail.com
             </a>
@@ -52,7 +52,7 @@ export default function ContactHero() {
               target="_blank"
             >
               <svg className="contact__icon">
-                <use href={`${icons}#icon-smartphone`}></use>
+                <use href={`${icons}#smartphone`}></use>
               </svg>
               Tel: (+48) 601 598 455
             </a>

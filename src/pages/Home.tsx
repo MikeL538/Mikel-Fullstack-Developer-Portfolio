@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="home">
+      <section className="home">
         <HomeHero />
         <HomeSkills />
         <HomeProjects onImageClick={setActiveProject} />
@@ -18,7 +18,7 @@ export default function Home() {
           project={activeProject}
           onClose={() => setActiveProject(null)}
         />
-      </div>
+      </section>
     </>
   );
 }

@@ -8,89 +8,92 @@ export default function Header() {
 
   return (
     // Nagłówek strony
-    <header id="header" className="header">
-      <div className="header__container">
-        {/* Lewa strona: Pic / nazwa */}
-        <div className="header__logo">
-          <img className="header__image" src="./" />
-          <h3 className="header__name">Michał Lipiak</h3>
+    <>
+      <header id="header" className="header">
+        <div className="header__container">
+          {/* Lewa strona: Pic / nazwa */}
+          <div className="header__logo">
+            <img className="header__image" src="./" />
+            <h3 className="header__name">Michał Lipiak</h3>
+          </div>
+          {/* Prawa strona: nawigacja */}
+          <nav className="header__nav">
+            <ul className="header__list">
+              <li className="header__item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "header__item header__item--active"
+                      : "header__item"
+                  }
+                >
+                  {t("header.home")}
+                </NavLink>
+              </li>
+              <li className="header__item">
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "header__item header__item--active"
+                      : "header__item"
+                  }
+                >
+                  {t("header.projects")}
+                </NavLink>
+              </li>
+              <li className="header__item">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "header__item header__item--active"
+                      : "header__item"
+                  }
+                >
+                  {t("header.about")}
+                </NavLink>
+              </li>
+              <li className="header__item">
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "header__item header__item--active"
+                      : "header__item"
+                  }
+                >
+                  {t("header.contact")}
+                </NavLink>
+              </li>
+              <li className="header__item">
+                {currentLang !== "pl" && (
+                  <button
+                    className="header__button"
+                    onClick={() => i18n.changeLanguage("pl")}
+                  >
+                    <svg width={32} height={32}>
+                      <use href={`${icons}#flag-pl`}></use>
+                    </svg>
+                  </button>
+                )}
+                {currentLang !== "en" && (
+                  <button
+                    className="header__button"
+                    onClick={() => i18n.changeLanguage("en")}
+                  >
+                    <svg width={32} height={32}>
+                      <use href={`${icons}#flag-uk`}></use>
+                    </svg>
+                  </button>
+                )}
+              </li>
+            </ul>
+          </nav>
         </div>
-        {/* Prawa strona: nawigacja */}
-        <nav className="header__nav">
-          <ul className="header__list">
-            <li className="header__item">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? "header__item header__item--active"
-                    : "header__item"
-                }
-              >
-                {t("header.home")}
-              </NavLink>
-            </li>
-            <li className="header__item">
-              <NavLink
-                to="/projects"
-                className={({ isActive }) =>
-                  isActive
-                    ? "header__item header__item--active"
-                    : "header__item"
-                }
-              >
-                {t("header.projects")}
-              </NavLink>
-            </li>
-            <li className="header__item">
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  isActive
-                    ? "header__item header__item--active"
-                    : "header__item"
-                }
-              >
-                {t("header.about")}
-              </NavLink>
-            </li>
-            <li className="header__item">
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  isActive
-                    ? "header__item header__item--active"
-                    : "header__item"
-                }
-              >
-                {t("header.contact")}
-              </NavLink>
-            </li>
-            <li className="header__item">
-              {currentLang !== "pl" && (
-                <button
-                  className="header__button"
-                  onClick={() => i18n.changeLanguage("pl")}
-                >
-                  <svg width={32} height={32}>
-                    <use href={`${icons}#flag-pl`}></use>
-                  </svg>
-                </button>
-              )}
-              {currentLang !== "en" && (
-                <button
-                  className="header__button"
-                  onClick={() => i18n.changeLanguage("en")}
-                >
-                  <svg width={32} height={32}>
-                    <use href={`${icons}#flag-uk`}></use>
-                  </svg>
-                </button>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </div>
+      </header>
+
       {/* Rainbow effect */}
       <svg
         className="header__curve"
@@ -113,6 +116,6 @@ export default function Header() {
           fill="url(#headerGradient)"
         />
       </svg>
-    </header>
+    </>
   );
 }
