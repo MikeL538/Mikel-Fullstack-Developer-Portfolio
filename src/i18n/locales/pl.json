@@ -60,6 +60,10 @@
     "goit": {
       "description": "To strona internetowa prezentująca usługi studia webowego, w tym portfolio projektów i ofertę dla klientów. Strona łączy estetyczny interfejs z przejrzystym układem treści, umożliwiając szybkie zapoznanie się z ofertą studia.",
       "descriptionLong": "Projekt webowy, który przedstawia kompleksową stronę prezentującą usługi i portfolio studia webowego. Aplikacja pozwala użytkownikowi zapoznać się z ofertą studia, obejrzeć przykładowe realizacje oraz łatwo znaleźć informacje kontaktowe. Projekt kładzie nacisk na estetykę interfejsu, czytelny układ treści oraz responsywność strony. Pokazuje umiejętność budowania stron typu \"one-page\" z wyraźnym podziałem sekcji, integracji grafiki i animacji oraz tworzenia przyjaznego UX dla potencjalnych klientów lub użytkowników odwiedzających stronę."
+    },
+    "flippingCard": {
+      "description": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika.",
+      "descriptionLong": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika."
     }
   },
   "contact": {

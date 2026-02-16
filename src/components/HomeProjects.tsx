@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import projects from "../assets/projects.json";
 import icons from "../assets/icons.svg";
-import { techIcons } from "../hooks/techIcons";
+import { techIcons } from "../constants/techIcons";
 import { useTranslation } from "react-i18next";
 
 const BASE_URL = import.meta.env.BASE_URL;

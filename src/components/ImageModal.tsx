@@ -10,6 +10,9 @@ export default function ImageModal({
   onClose: () => void;
 }) {
   useEffect(() => {
+    const body = document.querySelector<HTMLBodyElement>("body");
+    if (body) body.style.overflow = "auto";
+
     if (!project) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -19,7 +22,7 @@ export default function ImageModal({
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
+    if (body) body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };

@@ -60,6 +60,10 @@
     "goit": {
       "description": "A website presenting the services of a web studio, including project portfolio and client offerings. The page combines an aesthetic interface with a clear content structure, allowing visitors to quickly understand the studio’s offer.",
       "descriptionLong": "A web project presenting a comprehensive website for a web studio, showcasing its services and portfolio. The application allows users to explore the studio’s offer, review sample projects, and easily find contact information. The project emphasizes visual aesthetics, clear content organization, and responsive design. It demonstrates the ability to build structured one-page websites, integrate graphics and animations, and create a user-friendly experience for potential clients and visitors."
+    },
+    "flippingCard": {
+      "description": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions.",
+      "descriptionLong": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions."
     }
   },
   "contact": {

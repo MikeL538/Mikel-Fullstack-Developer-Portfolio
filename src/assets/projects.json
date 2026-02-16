@@ -1,16 +1,16 @@
 [
   {
-    "id": 4,
+    "id": 5,
     "title": "Raport Generator V2",
     "descriptionKey": "projects.raportGeneratorV2.description",
     "descriptionLongKey": "projects.raportGeneratorV2.descriptionLong",
     "tech": [
+      "HTML",
+      "SCSS",
       "JavaScript",
+      "Responsive design",
       "Supabase",
       "PostgreSQL",
-      "SCSS",
-      "HTML",
-      "Responsive design",
       "Form validation",
       "Data processing",
       "PDF generation"
@@ -22,20 +22,20 @@
     "featured": true
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Filmoteka",
     "descriptionKey": "projects.filmoteka.description",
     "descriptionLongKey": "projects.filmoteka.descriptionLong",
     "tech": [
-      "TypeScript",
-      "REST API",
-      "Asynchronous JavaScript",
-      "Parcel",
-      "SCSS",
       "HTML",
-      "Responsive design",
+      "SCSS",
+      "TypeScript",
+      "Parcel",
+      "REST API",
+      "Async JavaScript",
+      "API integration",
       "Search functionality",
-      "API integration"
+      "Responsive design"
     ],
     "image": "./images/projects/Filmoteka.webp",
     "imageLarge": "./images/projects/FilmotekaLarge.webp",
@@ -44,20 +44,20 @@
     "featured": true
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Formularz Zjazd SLO",
     "descriptionKey": "projects.formularzZjazdSLO.description",
     "descriptionLongKey": "projects.formularzZjazdSLO.descriptionLong",
     "tech": [
+      "HTML",
+      "SCSS",
       "JavaScript",
+      "Responsive design",
       "Supabase",
       "PostgreSQL",
-      "Form validation",
       "Authentication",
       "CRUD",
-      "SCSS",
-      "HTML",
-      "Responsive design"
+      "Form validation"
     ],
     "image": "./images/projects/ZjazdSlo.webp",
     "imageLarge": "./images/projects/ZjazdSloLarge.webp",
@@ -66,27 +66,55 @@
     "featured": true
   },
   {
-    "id": 1,
-    "title": "Anemone",
-    "descriptionKey": "projects.anemone.description",
-    "descriptionLongKey": "projects.anemone.descriptionLong",
-    "tech": ["HTML", "SCSS", "JavaScript", "Github"],
-    "image": "./images/projects/Anemone.webp",
-    "imageLarge": "./images/projects/AnemoneLarge.webp",
-    "github": "https://github.com/MikeL538/Anemone-Florist",
-    "live": "https://mikel538.github.io/Anemone-Florist/",
-    "featured": true
-  },
-  {
-    "id": 0,
+    "id": 2,
     "title": "GOIT Webstudio",
     "descriptionKey": "projects.goit.description",
     "descriptionLongKey": "projects.goit.descriptionLong",
-    "tech": ["HTML", "SCSS", "JavaScript"],
+    "tech": [
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "Responsive design",
+      "BEM",
+      "Figma",
+      "Github"
+    ],
     "image": "./images/projects/GOITWebstudio.webp",
     "imageLarge": "./images/projects/GOITWebstudioLarge.webp",
     "github": "https://github.com/MikeL538/GOIT-WebStudio",
     "live": "https://mikel538.github.io/GOIT-WebStudio/",
+    "featured": true
+  },
+  {
+    "id": 1,
+    "title": "Anemone",
+    "descriptionKey": "projects.anemone.description",
+    "descriptionLongKey": "projects.anemone.descriptionLong",
+    "tech": [
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "Responsive design",
+      "BEM",
+      "Figma",
+      "Github"
+    ],
+    "image": "./images/projects/Anemone.webp",
+    "imageLarge": "./images/projects/AnemoneLarge.webp",
+    "github": "https://github.com/MikeL538/Anemone-Florist",
+    "live": "https://mikel538.github.io/Anemone-Florist/",
+    "featured": false
+  },
+  {
+    "id": 0,
+    "title": "Flipping Card",
+    "descriptionKey": "projects.flippingCard.description",
+    "descriptionLongKey": "projects.flippingCard.descriptionLong",
+    "tech": ["HTML", "CSS", "JavaScript", "CSS Animations"],
+    "image": "./images/projects/.webp",
+    "imageLarge": "./images/projects/Large.webp",
+    "github": "https://github.com/MikeL538/Flipping-card?tab=readme-ov-file",
+    "live": "https://mikel538.github.io/Flipping-card/",
     "featured": false
   }
 ]

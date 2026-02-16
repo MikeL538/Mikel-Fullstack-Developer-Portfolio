@@ -17,8 +17,10 @@ export const techIcons: Record<string, string> = {
   "PDF generation": `${icons}#html2pdf`,
   "REST API": `${icons}#rest-api`,
   "Search functionality": `${icons}#loupe`,
-  "Asynchronous JavaScript": `${icons}#async-js`,
+  "Async JavaScript": `${icons}#async-js`,
   "API integration": `${icons}#api-integration`,
   Authentication: `${icons}#auth`,
   CRUD: `${icons}#crud`,
+  Figma: `${icons}#figma`,
+  BEM: `${icons}#bem`,
 };

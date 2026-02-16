@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import ImageModal from "../components/ImageModal";
 import ProjectsList from "../components/ProjectsList";
 
