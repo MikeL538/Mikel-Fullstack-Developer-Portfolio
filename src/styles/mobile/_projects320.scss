@@ -2,6 +2,13 @@
 
 @media screen and (max-width: 767px) {
   .projects {
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__container {
+      margin: 0 7px 75px 7px;
+    }
     &__list-container {
       display: flex;
       flex-direction: column;
