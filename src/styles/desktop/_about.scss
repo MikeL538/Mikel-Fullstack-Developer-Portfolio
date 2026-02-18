@@ -93,7 +93,7 @@
     background-color: rgb(0, 0, 0);
     background:
       linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-      url("images/Background.png") center / cover no-repeat;
+      url(%PUBLIC_URL%/images/Background.png) center / cover no-repeat;
 
     filter: brightness(0.75) contrast(1.1);
     max-width: 100%;
