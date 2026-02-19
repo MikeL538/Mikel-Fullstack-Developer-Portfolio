@@ -1,16 +1,15 @@
 @use "../variables" as vars;
 
 .about {
-  margin: 30px 0;
   display: flex;
   justify-content: center;
-  // align-items: center;
+  margin: 30px 0;
 
   &__container {
+    border-radius: 50px;
+    border: 4px solid vars.$accent-primary;
     margin-left: 22px;
     max-width: 500px;
-    border: 4px solid vars.$accent-primary;
-    border-radius: 50px;
   }
 
   &__title {
@@ -22,45 +21,43 @@
   &__p {
     font-size: 1rem;
     margin-bottom: 15px;
+    padding: 0 14px;
     text-align: justify;
     text-indent: 10%;
-    padding: 0 14px;
   }
 
   &__title--strenghts {
-    color: vars.$accent-soft;
-    margin-bottom: 10px;
-    text-align: center;
-    padding-top: 10px;
     border-top: 4px solid vars.$accent-primary;
+    color: vars.$accent-soft;
     font-size: 1.6rem;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
   }
 
   &__list {
+    align-items: baseline;
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
     gap: 25px;
+    justify-content: center;
     margin-bottom: 25px;
 
     &--item {
       align-items: center;
       background: vars.$card-bg;
       border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
       display: flex;
       flex-direction: column;
       padding-bottom: 5px;
       text-align: center;
+      transition: vars.$transition-basic;
       width: 210px;
-
-      border: 1px solid rgba(255, 255, 255, 0.04);
 
       box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.02);
-
-      transition: all 0.25s ease;
 
       &:hover {
         transform: translateY(-4px);
@@ -90,49 +87,56 @@
   }
 
   &__img {
-    background-color: rgb(0, 0, 0);
+    // background-color: rgb(0, 0, 0);
     background:
       linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-      url(%PUBLIC_URL%/images/Background.png) center / cover no-repeat;
-
-    filter: brightness(0.75) contrast(1.1);
+      url(images/Background.png) center / cover no-repeat;
+    filter: brightness(0.8) contrast(1.1) saturate(1.1);
     max-width: 100%;
-    padding: 15px 0 0 0;
-
     overflow: hidden;
-
+    padding: 15px 0 0 0;
     transform-origin: center;
+    // z-index: 2;
 
     &--container {
       background: vars.$card-bg;
-
       border-radius: 50px;
-
+      border: 4px solid vars.$accent-primary;
       display: flex;
       flex-direction: column;
       height: 100%;
-
+      margin-top: 10px;
       max-width: 500px;
       overflow: hidden;
-      margin-top: 10px;
+      position: relative;
       text-indent: 5%;
-
-      border: 4px solid vars.$accent-primary;
+      transition: vars.$transition-basic;
+      // z-index: 2;
       // border-left: none;
       box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.02);
-
-      transition: vars.$transition-basic;
     }
+
+    // &--background {
+    //   z-index: 1;
+    //   height: 100%;
+    //   position: absolute;
+    //   width: 100%;
+    //   top: 30%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
+
     &--name {
-      font-size: 1.5rem;
       color: vars.$accent-soft;
+      font-size: 1.5rem;
     }
 
     &--text {
-      text-align: center;
       padding: 10px 0;
+      text-align: center;
+      // z-index: 1;
     }
   }
 }

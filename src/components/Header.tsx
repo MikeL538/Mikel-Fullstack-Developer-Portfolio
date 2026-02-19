@@ -1,22 +1,51 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 import icons from "../assets/icons.svg";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const max =
+        document.documentElement.scrollHeight - window.innerHeight - 120;
+
+      const isBottom = y >= max;
+      console.log("SCROLL TRIGGER", y);
+      setIsScrolled(y > 80 && !isBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    // Nagłówek strony
     <>
-      <header id="header" className="header">
+      <header
+        id="header"
+        className={`header ${isScrolled ? "scroll__header" : ""}`}
+      >
         <div className="header__container">
-          {/* Lewa strona: Pic / nazwa */}
+          {/* Left side - pic + name */}
           <div className="header__logo">
-            <img className="header__image" src="images/MLHeader.png" />
-            <h3 className="header__name">Michał Lipiak</h3>
+            <a
+              className="header__link"
+              href="https://github.com/MikeL538"
+              target="_blank"
+            >
+              <img className="header__image" src="images/MLHeader.png" />
+              <h3 className="header__name">Michał Lipiak</h3>
+            </a>
           </div>
-          {/* Prawa strona: nawigacja */}
+          {/* Right side NAV */}
           <nav className="header__nav">
             <ul className="header__list">
               <li className="header__item">
@@ -95,7 +124,7 @@ export default function Header() {
 
         {/* Rainbow effect */}
         <svg
-          className="header__curve"
+          className={`header__curve ${isScrolled ? "scroll__curve" : ""}`}
           viewBox="0 0 1440 79"
           preserveAspectRatio="none"
           aria-hidden="true"

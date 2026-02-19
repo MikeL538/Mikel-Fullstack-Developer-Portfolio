@@ -9,6 +9,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transition: vars.$transition-header;
 
   &__container {
     align-items: center;
@@ -22,6 +23,11 @@
     margin: 0 auto;
   }
 
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
   &__curve {
     height: clamp(60px, 8vw, 100px);
     left: 0;
@@ -29,6 +35,11 @@
     position: absolute;
     top: 100%;
     width: 100%;
+
+    transition: 1s ease-in-out;
+    z-index: -1;
+
+    // background: red;
   }
 
   &__image {
@@ -88,6 +99,13 @@
 }
 
 .scroll {
-  background-color: vars.$headerBackground;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // &__header {
+  // background: green;
+  // }
+
+  &__curve {
+    top: -200%;
+    z-index: -1;
+    // background: green;
+  }
 }
