@@ -616,6 +616,19 @@
             <rect x="44" y="96" width="40" height="14" rx="4" fill="#B8E986"/>
 
         </symbol>
+
+        <symbol id="pagination" viewBox="0 0 32 32">
+
+            <!-- Left arrow -->
+            <path fill="#4B5563" d="M12 6l-8 10 8 10 2-2-6-8 6-8z" />
+
+            <!-- Current page circle -->
+            <circle cx="16" cy="16" r="4" fill="#3B82F6" />
+
+            <!-- Right arrow -->
+            <path fill="#4B5563" d="M20 6l8 10-8 10-2-2 6-8-6-8z" />
+
+        </symbol>
     </defs>
 </svg>
 

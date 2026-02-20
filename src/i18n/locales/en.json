@@ -41,6 +41,10 @@
   },
   "projects": {
     "title": "Projects",
+    "ImageInary": {
+      "description": "A web application for searching images that allows users to quickly browse photos based on a query. Users can view results, open selected images in a modal, and load more pages.",
+      "descriptionLong": "A web project that enables image searching using an external API. Users can enter search queries, browse results in a gallery, and preview selected images in a modal view. The application supports pagination and dynamic data loading, providing a smooth user experience. The project demonstrates asynchronous JavaScript, API integration, React state management, and the creation of an interactive and responsive user interface."
+    },
     "raportGeneratorV2": {
       "description": "A web application designed for quickly generating clear and structured reports from mock high school graduation exams. The project focuses on simplifying the report creation process, improving data readability, and delivering a modern user interface.",
       "descriptionLong": "This web application generates reports from mock high school graduation exams and is a refactored version of an earlier tool. The goal was to reorganize logic, improve architecture, and design a clearer interface. It enables fast exam data processing and structured reports, reducing documentation time. Version V2 focuses on UX, modular code, and a solid base for future development. The project demonstrates refactoring and structured frontend architecture."

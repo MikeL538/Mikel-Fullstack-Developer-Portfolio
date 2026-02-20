@@ -1,5 +1,26 @@
 [
   {
+    "id": 6,
+    "title": "ImageInary",
+    "descriptionKey": "projects.ImageInary.description",
+    "descriptionLongKey": "projects.ImageInary.descriptionLong",
+    "tech": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "SCSS",
+      "REST API",
+      "Async JavaScript",
+      "API integration",
+      "Pagination"
+    ],
+    "image": "./images/projects/ImageInary.webp",
+    "imageLarge": "./images/projects/ImageInaryLarge.webp",
+    "github": "https://github.com/MikeL538/ImageInary",
+    "live": "https://mikel538.github.io/ImageInary/",
+    "featured": true
+  },
+  {
     "id": 5,
     "title": "Raport Generator V2",
     "descriptionKey": "projects.raportGeneratorV2.description",
@@ -83,7 +104,7 @@
     "imageLarge": "./images/projects/GOITWebstudioLarge.webp",
     "github": "https://github.com/MikeL538/GOIT-WebStudio",
     "live": "https://mikel538.github.io/GOIT-WebStudio/",
-    "featured": true
+    "featured": false
   },
   {
     "id": 1,

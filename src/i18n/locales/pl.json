@@ -41,6 +41,10 @@
   },
   "projects": {
     "title": "Projekty",
+    "ImageInary": {
+      "description": "Aplikacja webowa do wyszukiwania obrazów, która umożliwia szybkie przeglądanie zdjęć na podstawie wpisanego zapytania. Użytkownik może wyświetlać wyniki, powiększać wybrane obrazy oraz ładować kolejne strony.",
+      "descriptionLong": "Projekt webowy umożliwiający wyszukiwanie obrazów z wykorzystaniem zewnętrznego API. Użytkownik może wpisywać zapytania, przeglądać wyniki w formie galerii oraz wyświetlać wybrane zdjęcia w trybie podglądu. Aplikacja obsługuje paginację i dynamiczne ładowanie danych, zapewniając płynne doświadczenie użytkownika. Projekt prezentuje pracę z asynchronicznym JavaScript, integrację z API, zarządzanie stanem w React oraz tworzenie interaktywnego i responsywnego interfejsu."
+    },
     "raportGeneratorV2": {
       "description": "Jest to aplikacja webowa służąca do szybkiego tworzenia czytelnych raportów z próbnych egzaminów maturalnych. Projekt skupia się na uproszczeniu procesu generowania zestawień, poprawie czytelności danych oraz nowoczesnym interfejsie użytkownika.",
       "descriptionLong": "Jest to webowa aplikacja do tworzenia raportów z próbnych egzaminów maturalnych, będąca rozwinięciem i refaktoryzacją wcześniejszej wersji. Celem było uporządkowanie logiki, poprawa architektury i stworzenie bardziej intuicyjnego interfejsu. Umożliwia szybkie przetwarzanie danych oraz generowanie czytelnych zestawień, skracając czas pracy. Wersja V2 skupia się na lepszym UX, modularności i solidnej bazie pod dalszy rozwój. Projekt pokazuje pracę z istniejącym kodem i świadome podejście do struktury aplikacji frontendowej."

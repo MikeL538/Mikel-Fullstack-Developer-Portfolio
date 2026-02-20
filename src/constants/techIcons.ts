@@ -23,4 +23,5 @@ export const techIcons: Record<string, string> = {
   CRUD: `${icons}#crud`,
   Figma: `${icons}#figma`,
   BEM: `${icons}#bem`,
+  Pagination: `${icons}#pagination`,
 };
