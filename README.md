@@ -1,59 +1,78 @@
-# 🚀 Portfolio – Fullstack Developer
+# Mikel – Fullstack Developer Portfolio
 
-This repository contains my personal **developer portfolio**, showcasing selected projects and practical frontend skills.  
-The goal of this portfolio is to present **real applications**, clean UI, and a structured approach to building modern web apps.
+Modern, responsive portfolio website built with React and TypeScript.
 
-🔗 **Live version:**  
-👉 https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/
-
----
-
-## ✨ What you’ll find here
-
-- Featured projects with descriptions, technologies, and live demos
-- Clean and responsive user interface
-- Modern React-based architecture
-- Focus on readability, UX, and maintainable code
-- Deployed and maintained via GitHub Pages
+🔗 **Live:** https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/  
+📂 **Repository:** https://github.com/MikeL538/Mikel-Fullstack-Developer-Portfolio
 
 ---
 
-## 🛠 Tech Stack
+## Preview
+
+### Desktop
+
+![Portfolio Desktop Preview](./public/ReadmeHome.webp)
+
+### Mobile
+
+![Portfolio Mobile Preview](./public/ReadmeHomeMobile.webp)
+
+---
+
+## About the Project
+
+This portfolio presents selected fullstack and frontend projects.  
+The goal was to create a clean, modern, and performance-oriented personal website that reflects real-world development standards.
+
+Key focus areas:
+
+- Clean architecture
+- Component reusability
+- Responsive design (mobile-first)
+- Internationalization (i18next)
+- Production-ready deployment (GitHub Pages)
+
+---
+
+## Tech Stack
 
 - React
 - TypeScript
 - Vite
-- Hash Router
-- SCSS (BEM, mobile-first)
-- i18next (internationalization)
-- SVG sprites
-- JSON-driven content
-- Responsive design
-- Git & GitHub
-- GitHub Pages (deployment)
+- React Router
+- SCSS
+- i18next
+- ESLint
+- GitHub Pages (CI/CD)
 
 ---
 
-## 🧠 Key Highlights
+## Features
 
-- Projects based on real use cases, not tutorials
-- Strong attention to details and user experience
-- Proper handling of GitHub Pages deployment (subpath support)
-- Consistent project structure and naming conventions
-- Continuous improvements and refactoring
-
----
-
-## 📌 Purpose
-
-This portfolio was built to:
-
-- present my technical skills in a clear and honest way,
-- demonstrate how I structure frontend projects,
-- serve as a starting point for technical conversations during recruitment.
+- 🌍 Multi-language support (EN / PL)
+- 📱 Fully responsive layout
+- 🧩 Modular component structure
+- ⚡ Optimized build with Vite
+- 🚀 Deployed via GitHub Pages
 
 ---
 
-## 📬 Contact
+## Run Locally
 
-If you’d like to discuss any project or collaboration — feel free to reach out.
+```bash
+git clone https://github.com/MikeL538/Mikel-Fullstack-Developer-Portfolio.git
+cd Mikel-Fullstack-Developer-Portfolio
+npm install
+npm run dev
+
+---
+
+## Author
+
+**Michał Lipiak**
+Fullstack Developer
+
+- GitHub: https://github.com/MikeL538
+- LinkedIn: [add-link-here]
+- Portfolio: https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/
+```

@@ -24,7 +24,7 @@ export default function ContactHero() {
           <li className="contact__list--item">
             <a
               className="contact__link"
-              href="https://github.com/MikeL538"
+              href="https://www.linkedin.com/in/michal-lipiak/"
               target="_blank"
             >
               <svg className="contact__icon contact__icon--linkedin">
