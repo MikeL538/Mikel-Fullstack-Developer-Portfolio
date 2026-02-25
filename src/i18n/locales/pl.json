@@ -49,9 +49,9 @@
       "description": "Jest to aplikacja webowa służąca do szybkiego tworzenia czytelnych raportów z próbnych egzaminów maturalnych. Projekt skupia się na uproszczeniu procesu generowania zestawień, poprawie czytelności danych oraz nowoczesnym interfejsie użytkownika.",
       "descriptionLong": "Jest to webowa aplikacja do tworzenia raportów z próbnych egzaminów maturalnych, będąca rozwinięciem i refaktoryzacją wcześniejszej wersji. Celem było uporządkowanie logiki, poprawa architektury i stworzenie bardziej intuicyjnego interfejsu. Umożliwia szybkie przetwarzanie danych oraz generowanie czytelnych zestawień, skracając czas pracy. Wersja V2 skupia się na lepszym UX, modularności i solidnej bazie pod dalszy rozwój. Projekt pokazuje pracę z istniejącym kodem i świadome podejście do struktury aplikacji frontendowej."
     },
-    "filmoteka": {
+    "Filmovie": {
       "description": "Strona webowa z wyszukiwarką filmów, która umożliwia przeglądanie popularnych i wysoko ocenianych produkcji oraz szybkie znalezienie konkretnego filmu. Użytkownik może sprawdzić szczegóły, takie jak opis, oceny i ranking filmów.",
-      "descriptionLong": "Projekt webowy z wyszukiwarką filmów i rankingiem popularności oraz ocen. Użytkownik może przeglądać najnowsze i popularne produkcje oraz wyszukiwać konkretne tytuły. Każdy film zawiera szczegółowe informacje, takie jak opis, oceny, gatunek i inne dane. Projekt pokazuje integrację z zewnętrznym API, tworzenie interaktywnego UI oraz responsywnych widoków. Filmoteka łączy estetykę z funkcjonalnym wyszukiwaniem i filtrowaniem."
+      "descriptionLong": "Projekt webowy z wyszukiwarką filmów i rankingiem popularności oraz ocen. Użytkownik może przeglądać najnowsze i popularne produkcje oraz wyszukiwać konkretne tytuły. Każdy film zawiera szczegółowe informacje, takie jak opis, oceny, gatunek i inne dane. Projekt pokazuje integrację z zewnętrznym API, tworzenie interaktywnego UI oraz responsywnych widoków. Filmovie łączy estetykę z funkcjonalnym wyszukiwaniem i filtrowaniem."
     },
     "formularzZjazdSLO": {
       "description": "Strona-formularz umożliwiająca zapis na zjazd absolwentów Społecznego Liceum w Żarach. Publiczna część pozwala dokonywać zapisów, a dane są przechowywane w Supabase, co umożliwia ich łatwe zarządzanie i weryfikację.",

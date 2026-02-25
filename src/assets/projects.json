@@ -44,9 +44,9 @@
   },
   {
     "id": 4,
-    "title": "Filmoteka",
-    "descriptionKey": "projects.filmoteka.description",
-    "descriptionLongKey": "projects.filmoteka.descriptionLong",
+    "title": "Filmovie",
+    "descriptionKey": "projects.Filmovie.description",
+    "descriptionLongKey": "projects.Filmovie.descriptionLong",
     "tech": [
       "HTML",
       "SCSS",
@@ -58,10 +58,10 @@
       "Search functionality",
       "Responsive design"
     ],
-    "image": "./images/projects/Filmoteka.webp",
-    "imageLarge": "./images/projects/FilmotekaLarge.webp",
-    "github": "https://github.com/MikeL538/Filmoteka",
-    "live": "https://mikel538.github.io/Filmoteka/",
+    "image": "./images/projects/Filmovie.webp",
+    "imageLarge": "./images/projects/Filmovie.webp",
+    "github": "https://github.com/MikeL538/Filmovie",
+    "live": "https://mikel538.github.io/Filmovie/",
     "featured": true
   },
   {
