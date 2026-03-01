@@ -1,0 +1,23 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #0b0b0b;
+  z-index: 99999;
+  color: red;
+}
+
+.intro__word {
+  font:
+    700 clamp(40px, 8vw, 120px) / 1 system-ui,
+    sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.intro__letter {
+  display: inline-block;
+
+  opacity: 0;
+  will-change: transform, opacity;
+}

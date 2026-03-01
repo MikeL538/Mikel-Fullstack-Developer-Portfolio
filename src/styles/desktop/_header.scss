@@ -5,7 +5,7 @@
   background-color: vars.$headerBackground;
   background: vars.$headerBackgroundGradient;
   // position: relative;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
     justify-content: space-between;
     padding: 7px 40px;
     // position: relative;
-    z-index: 2;
+    z-index: 10;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -36,8 +36,8 @@
     top: 100%;
     width: 100%;
 
-    transition: vars.$transition-header;
-    z-index: -1;
+    transition: vars.$transition-basic;
+    z-index: 9;
 
     // background: red;
   }
@@ -99,9 +99,9 @@
 }
 
 .scroll {
-  // &__header {
-  // background: green;
-  // }
+  &__header {
+    // transform: translateY(57%);
+  }
 
   &__curve {
     top: -200%;

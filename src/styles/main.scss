@@ -1,5 +1,6 @@
 @use "./variables" as vars;
 // DESKTOP 1080
+@use "./desktop/intro";
 @use "./desktop/header";
 @use "./desktop/footer";
 @use "./desktop/home";

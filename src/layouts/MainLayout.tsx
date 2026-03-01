@@ -6,18 +6,19 @@ import { useCursorLight } from "../hooks/useCursorLight";
 
 type MainLayoutProps = {
   children: ReactNode;
+  introDone: boolean;
 };
 
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout({ children, introDone }: MainLayoutProps) {
   useCursorLight();
 
   return (
     <>
-      {/* <div id="cursor-light" /> */}
+      <div id="cursor-light" />
 
       <div className="layout">
-        <Header />
-        {/* Główna treść strony */}
+        <Header introDone={introDone} />
+        {/* Main page */}
         <main className="layout__main">{children}</main>
         <Footer />
       </div>

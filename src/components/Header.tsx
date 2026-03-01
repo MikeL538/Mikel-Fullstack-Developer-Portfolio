@@ -3,28 +3,42 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import icons from "../assets/icons.svg";
 
-export default function Header() {
+type HeaderProps = {
+  introDone: boolean;
+};
+
+export default function Header({ introDone }: HeaderProps) {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    if (!introDone) {
+      setIsScrolled(false);
+      return;
+    }
     const handleScroll = () => {
-      const y = window.scrollY;
-      const max =
-        document.documentElement.scrollHeight - window.innerHeight - 120;
-
-      const isBottom = y >= max;
+      const y =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      const max = Math.max(
+        document.documentElement.scrollHeight - window.innerHeight - 120,
+        0,
+      );
+      const isBottom = max > 0 && y >= max;
       setIsScrolled(y > 80 && !isBottom);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    requestAnimationFrame(handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [introDone]);
 
   return (
     <>
