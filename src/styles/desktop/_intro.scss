@@ -1,11 +1,15 @@
+@use "../variables" as vars;
+
 .intro {
   position: fixed;
   inset: 0;
   display: grid;
   place-items: center;
-  background: #0b0b0b;
+  background: vars.$bodyBackground;
+  background: vars.$bodyBackgroundGradient;
+  height: 100%;
   z-index: 99999;
-  color: red;
+  color: vars.$accent-primary;
 }
 
 .intro__word {

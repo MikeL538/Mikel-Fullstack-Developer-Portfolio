@@ -10,6 +10,25 @@ $bg-750: #1e222c;
 $text-primary: #dff1ff;
 
 /* =========================================================
+   ACCENT / INTERACTIONS
+   ========================================================= */
+
+// $accent-primary: #4f8cff;
+// $accent-hover: #78aaff;
+// $accent-soft: #a0c8ff;
+
+$accent-primary: #78aaff;
+$accent-hover: #4f8cff;
+$accent-soft: #a0c8ff;
+
+/* Buttons */
+$button: $accent-primary;
+$buttonHover: $accent-hover;
+
+// WEB LINK GITHUB AND LIVE
+$color-git: rgb(240, 246, 252);
+
+/* =========================================================
    HEADER
    ========================================================= */
 
@@ -41,10 +60,6 @@ $tech-bg: #2a272a;
 $tech-border: #4b4a54;
 
 /* =========================================================
-   HOME – SECTIONS
-   ========================================================= */
-
-/* =========================================================
    FOOTER
    ========================================================= */
 
@@ -57,21 +72,6 @@ $footerBackgroundGradient: linear-gradient(
   $bg-800 70%,
   $bg-900 100%
 );
-
-/* =========================================================
-   ACCENT / INTERACTIONS
-   ========================================================= */
-
-$accent-primary: #4f8cff;
-$accent-hover: #78aaff;
-$accent-soft: #a0c8ff;
-
-/* Buttons */
-$button: $accent-primary;
-$buttonHover: $accent-hover;
-
-// WEB LINK GITHUB AND LIVE
-$color-git: rgb(202, 202, 202);
 
 /* =========================================================
    TRANSISIOTN

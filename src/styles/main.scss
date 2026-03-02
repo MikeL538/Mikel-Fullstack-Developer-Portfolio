@@ -8,6 +8,7 @@
 @use "./desktop/about";
 @use "./desktop/imageModal";
 @use "./desktop/contact";
+@use "./desktop/bubble";
 // TABLET 768
 @use "./tablet/header768";
 @use "./tablet/home768";
@@ -68,15 +69,23 @@ body {
 }
 
 .layout {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.layout__main {
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  overflow-x: clip;
+}
+
 section {
   padding: 120px 0 60px 0;
-
+  position: relative;
+  z-index: 1;
   @media screen and (max-width: 767px) {
     padding: 90px 0 45px 0;
   }
@@ -120,10 +129,12 @@ button:focus-visible {
   pointer-events: none;
   z-index: 100;
   width: 100vw !important;
+  transform: translateY(-0.7%);
 
   background: radial-gradient(
-    200px circle at var(--x) var(--y),
-    rgba(120, 140, 255, 0.08),
+    75px circle at var(--x) var(--y),
+    rgba(120, 140, 255, 0.17),
+    16%,
     transparent 50%
   );
 }
@@ -135,17 +146,3 @@ button:focus-visible {
     fill: vars.$accent-hover;
   }
 }
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color: #213547;
-//     background-color: #ffffff;
-//   }
-//   a:hover {
-//     color: #747bff;
-//   }
-//   button {
-//     background-color: #f9f9f9;
-//   }
-// }
-
-/* ===== TESTY ====== */

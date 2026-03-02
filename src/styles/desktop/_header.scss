@@ -4,7 +4,6 @@
   position: fixed;
   background-color: vars.$headerBackground;
   background: vars.$headerBackgroundGradient;
-  // position: relative;
   z-index: 10;
   width: 100%;
   display: flex;
@@ -16,7 +15,6 @@
     display: flex;
     justify-content: space-between;
     padding: 7px 40px;
-    // position: relative;
     z-index: 10;
     max-width: 1280px;
     width: 100%;
@@ -33,23 +31,18 @@
     left: 0;
     pointer-events: none;
     position: absolute;
-    top: 100%;
+    top: 99%;
     width: 100%;
-
     transition: vars.$transition-basic;
     z-index: 9;
-
-    // background: red;
   }
 
   &__image {
     height: 50px;
     margin-right: 5px;
-    // margin-top: 5px;
     background-color: none;
     width: 50px;
     border-radius: 100%;
-    // border: 3px solid red;
   }
 
   &__name {
@@ -73,12 +66,11 @@
     gap: 20px;
   }
 
-  &__item {
-    border-bottom: 1px solid transparent; // default
-    transition: border-color 1s;
-
-    &--active {
-      border-bottom: 1px solid vars.$button;
+  &__item--active {
+    border-bottom: 1px solid vars.$button;
+    &:hover,
+    &:focus {
+      border-bottom-color: vars.$buttonHover;
     }
   }
 
@@ -92,20 +84,14 @@
     &:hover,
     &:focus {
       background: none;
-      color: vars.$accent-hover;
       transform: scale(1.1);
     }
   }
 }
 
 .scroll {
-  &__header {
-    // transform: translateY(57%);
-  }
-
   &__curve {
     top: -200%;
     z-index: -1;
-    // background: green;
   }
 }

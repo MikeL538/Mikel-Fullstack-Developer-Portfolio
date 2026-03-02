@@ -49,6 +49,10 @@
     margin-right: 7px;
     transition: vars.$transition-basic;
 
+    &--github {
+      fill: vars.$color-git;
+    }
+
     &--linkedin {
       fill: #0a66c2;
     }

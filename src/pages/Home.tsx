@@ -4,6 +4,7 @@ import HomeHero from "../components/HomeHero";
 import HomeSkills from "../components/HomeSkills";
 import HomeProjects from "../components/HomeProjects";
 import ImageModal from "../components/ImageModal";
+import LightBubbles from "../components/LightBubbles";
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState<any>(null);
@@ -19,6 +20,7 @@ export default function Home() {
           onClose={() => setActiveProject(null)}
         />
       </section>
+      <LightBubbles />
     </>
   );
 }

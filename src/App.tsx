@@ -18,18 +18,23 @@ export default function App() {
   }, []);
 
   return (
-    <MainLayout introDone={introDone}>
+    <>
       {!introDone && (
-        <IntroOverlay onDone={handleIntroDone} word="WELCOME" />
+        <IntroOverlay
+          onDone={handleIntroDone}
+          word={"Hello,\u00A0\u00A0World!\u00A0\u00A0:)"}
+        />
       )}
+      <MainLayout introDone={introDone}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <ScrollToTop />
-    </MainLayout>
+        <ScrollToTop />
+      </MainLayout>
+    </>
   );
 }
