@@ -4,7 +4,7 @@ A modern, responsive portfolio built with React and TypeScript, showcasing selec
 
 ## Live
 
-- Live: https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/
+- Live: portfolio.mikeldev.online
 
 ## Preview
 
@@ -102,4 +102,4 @@ Main places to update content:
 - GitHub: https://github.com/MikeL538
 - LinkedIn: https://www.linkedin.com/in/michal-lipiak/
 - E-mail: mikel538.work@gmail.com
-- Portfolio: https://mikel538.github.io/Mikel-Fullstack-Developer-Portfolio/
+- Portfolio: portfolio.mikeldev.online
