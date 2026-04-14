@@ -4,7 +4,7 @@ A modern, responsive portfolio built with React and TypeScript, showcasing selec
 
 ## Live
 
-- Live: portfolio.mikeldev.online
+- Live: mikeldev.online
 
 ## Preview
 
@@ -84,7 +84,7 @@ The project includes automatic deployment in `.github/workflows/deploy.yml`:
 
 GitHub Pages-specific configuration is also present in:
 
-- `vite.config.ts` (`base: "/Mikel-Fullstack-Developer-Portfolio/"`)
+- `vite.config.ts` (`base: "/"`)
 - `src/main.tsx` (`HashRouter`)
 
 ## Content Editing
@@ -102,4 +102,4 @@ Main places to update content:
 - GitHub: https://github.com/MikeL538
 - LinkedIn: https://www.linkedin.com/in/michal-lipiak/
 - E-mail: mikel538.work@gmail.com
-- Portfolio: portfolio.mikeldev.online
+- Portfolio: mikeldev.online

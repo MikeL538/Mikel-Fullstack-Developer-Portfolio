@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 // import { BrowserRouter } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import "./i18n/i18n";
-import "./styles/main.min.css";
+import "./styles/main.scss";
 
 import App from "./App";
 
