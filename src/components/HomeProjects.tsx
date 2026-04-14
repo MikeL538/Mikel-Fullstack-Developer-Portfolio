@@ -56,6 +56,7 @@ export default function HomeProjects({
                   <a
                     className="home__projects__links"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.live}
                   >
                     <svg className="home__projects__links-svg git-links">
@@ -65,6 +66,7 @@ export default function HomeProjects({
                   <a
                     className="home__projects__links"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.github}
                   >
                     <svg className="home__projects__links-svg git-links">

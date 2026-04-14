@@ -40,6 +40,7 @@ export default function ProjectsList({
                   <a
                     className="projects__links"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.live}
                   >
                     <svg className="projects__links-svg git-links">
@@ -49,6 +50,7 @@ export default function ProjectsList({
                   <a
                     className="projects__links"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.github}
                   >
                     <svg className="projects__links-svg git-links">

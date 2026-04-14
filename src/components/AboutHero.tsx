@@ -33,11 +33,21 @@ export default function AboutHero() {
           <li className="about__list--item">
             <div className="about__list--item__container">
               <h4 className="about__list--item__title">
-                {t("about.items.automation.title")}
+                {t("about.items.focus.title")}
               </h4>
             </div>
             <p className="about__list--item__p">
-              {t("about.items.automation.description")}
+              {t("about.items.focus.description")}
+            </p>
+          </li>
+          <li className="about__list--item">
+            <div className="about__list--item__container">
+              <h4 className="about__list--item__title">
+                {t("about.items.perseverance.title")}
+              </h4>
+            </div>
+            <p className="about__list--item__p">
+              {t("about.items.perseverance.description")}
             </p>
           </li>
           <li className="about__list--item">
@@ -48,16 +58,6 @@ export default function AboutHero() {
             </div>
             <p className="about__list--item__p">
               {t("about.items.creativity.description")}
-            </p>
-          </li>
-          <li className="about__list--item">
-            <div className="about__list--item__container">
-              <h4 className="about__list--item__title">
-                {t("about.items.focus.title")}
-              </h4>
-            </div>
-            <p className="about__list--item__p">
-              {t("about.items.focus.description")}
             </p>
           </li>
         </ul>

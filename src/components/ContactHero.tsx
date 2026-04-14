@@ -14,6 +14,7 @@ export default function ContactHero() {
               className="contact__link"
               href="https://github.com/MikeL538"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg className="contact__icon contact__icon--github">
                 <use href={`${icons}#github`}></use>
@@ -26,6 +27,7 @@ export default function ContactHero() {
               className="contact__link"
               href="https://www.linkedin.com/in/michal-lipiak/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg className="contact__icon contact__icon--linkedin">
                 <use href={`${icons}#linkedin`}></use>
@@ -36,8 +38,9 @@ export default function ContactHero() {
           <li className="contact__list--item">
             <a
               className="contact__link"
-              href="mailto: mikel538.work@gmail.com"
+              href="mailto:mikel538.work@gmail.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg className="contact__icon contact__icon--email">
                 <use href={`${icons}#envelope`}></use>
@@ -48,8 +51,9 @@ export default function ContactHero() {
           <li className="contact__list--item">
             <a
               className="contact__link contact__icon--smartphone"
-              href="tel: +48601598455"
+              href="tel:+48601598455"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <svg className="contact__icon">
                 <use href={`${icons}#smartphone`}></use>

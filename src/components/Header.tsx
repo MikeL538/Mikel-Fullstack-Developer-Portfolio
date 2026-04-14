@@ -11,12 +11,13 @@ export default function Header({ introDone }: HeaderProps) {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const [isScrolled, setIsScrolled] = useState(false);
+  const shouldShowScrolled = introDone && isScrolled;
 
   useEffect(() => {
     if (!introDone) {
-      setIsScrolled(false);
       return;
     }
+
     const handleScroll = () => {
       const y =
         window.scrollY ||
@@ -44,7 +45,7 @@ export default function Header({ introDone }: HeaderProps) {
     <>
       <header
         id="header"
-        className={`header ${isScrolled ? "scroll__header" : ""}`}
+        className={`header ${shouldShowScrolled ? "scroll__header" : ""}`}
       >
         <div className="header__container">
           {/* Left side - pic + name */}
@@ -53,6 +54,7 @@ export default function Header({ introDone }: HeaderProps) {
               className="header__link"
               href="https://github.com/MikeL538"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img className="header__image" src="images/MLHeader.png" />
               <h3 className="header__name">Michał Lipiak</h3>
@@ -137,7 +139,7 @@ export default function Header({ introDone }: HeaderProps) {
 
         {/* Rainbow effect */}
         <svg
-          className={`header__curve ${isScrolled ? "scroll__curve" : ""}`}
+          className={`header__curve ${shouldShowScrolled ? "scroll__curve" : ""}`}
           viewBox="0 0 1440 79"
           preserveAspectRatio="none"
           aria-hidden="true"
