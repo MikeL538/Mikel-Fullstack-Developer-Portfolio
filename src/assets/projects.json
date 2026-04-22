@@ -39,7 +39,7 @@
     "image": "./images/projects/RaportGeneratorV2.webp",
     "imageLarge": "./images/projects/RaportGeneratorV2Large.webp",
     "github": "https://github.com/MikeL538/raportGeneratorV2",
-    "live": "https://mikel538.github.io/raportGeneratorV2/",
+    "live": "https://rapgen2.mikeldev.online/",
     "featured": true
   },
   {
@@ -83,7 +83,7 @@
     "image": "./images/projects/ZjazdSlo.webp",
     "imageLarge": "./images/projects/ZjazdSloLarge.webp",
     "github": "https://github.com/MikeL538/Zaproszenie-Zjazd-SLO",
-    "live": "https://mikel538.github.io/Zaproszenie-Zjazd-SLO/",
+    "live": "https://zjazd-slo.mikeldev.online/",
     "featured": true
   },
   {

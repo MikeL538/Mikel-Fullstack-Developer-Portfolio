@@ -3,6 +3,7 @@
 .projects {
   margin: 0 auto;
   display: flex;
+  width: 100%;
   max-width: calc(1080px + 2rem);
 
   &__container {
@@ -102,12 +103,31 @@
 
   &__links-container {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-top: 15px;
     gap: 12px;
   }
 
   &__links {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-width: 0;
+    transition: vars.$transition-basic;
+
+    span {
+      overflow-wrap: anywhere;
+    }
+
+    &:hover,
+    &:focus,
+    &:hover svg,
+    &:focus svg {
+      fill: vars.$accent-hover;
+      color: vars.$accent-hover;
+    }
+
     &-svg {
       height: 32px;
       width: 32px;

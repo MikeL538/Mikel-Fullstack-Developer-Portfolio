@@ -48,6 +48,11 @@
   width: 100%;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 a {
   font-weight: 500;
   color: vars.$button;
@@ -66,6 +71,7 @@ body {
   min-width: 320px;
   position: relative;
   background: vars.$bodyBackgroundGradient;
+  overflow-x: hidden;
 }
 
 .layout {

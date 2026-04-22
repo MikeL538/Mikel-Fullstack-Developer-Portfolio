@@ -2,6 +2,8 @@
 
 @media screen and (max-width: 767px) {
   .projects {
+    width: 100%;
+
     &__title {
       font-size: 2.5rem;
     }
@@ -15,6 +17,7 @@
       flex-direction: column;
       padding: 0;
       gap: 0;
+      min-width: 0;
     }
 
     &__list-text {
@@ -23,7 +26,7 @@
 
     &__image {
       max-height: 310px;
-      height: 40%;
+      height: auto;
       width: 100%;
       padding: 0;
       border-bottom-right-radius: 0;
@@ -49,7 +52,14 @@
     }
 
     &__links {
+      justify-content: flex-start;
+
+      span {
+        overflow-wrap: anywhere;
+      }
+
       &-svg {
+        flex: 0 0 auto;
         height: 24px;
         width: 24px;
       }

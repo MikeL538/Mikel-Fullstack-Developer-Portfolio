@@ -5,6 +5,17 @@
     // margin: 45px 0 45px 0;
     &__container {
       margin: 60px 10px;
+      min-width: 0;
+      max-width: calc(100vw - 20px);
+    }
+
+    &__link {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    &__icon {
+      flex: 0 0 auto;
     }
   }
 }

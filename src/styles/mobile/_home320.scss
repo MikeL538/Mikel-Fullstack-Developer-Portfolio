@@ -71,12 +71,14 @@
       }
 
       &__item {
-        max-width: 100%;
+        width: 100%;
+        max-width: 444px;
         height: auto;
       }
 
       &__image {
         width: 100%;
+        height: auto;
       }
 
       &__name {

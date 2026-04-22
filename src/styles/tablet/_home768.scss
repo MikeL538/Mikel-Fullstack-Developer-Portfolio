@@ -1,6 +1,6 @@
 @use "../variables" as vars;
 
-@media screen and (((min-width: 768px) and (max-width: 1079px))) {
+@media screen and (min-width: 768px) and (max-width: 1079px) {
   .home {
     overflow: hidden;
     max-width: 768px;
