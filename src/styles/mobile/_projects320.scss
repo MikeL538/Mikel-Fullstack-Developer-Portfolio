@@ -52,9 +52,8 @@
     }
 
     &__links {
-      justify-content: flex-start;
-
       span {
+        text-align: end;
         overflow-wrap: anywhere;
       }
 

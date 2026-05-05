@@ -43,7 +43,6 @@ export default function ProjectsList({
                     rel="noopener noreferrer"
                     href={project.live}
                   >
-                    {" "}
                     <span>{`${project.live}`}</span>
                     <svg className="projects__links-svg git-links">
                       <use href={`${icons}#www`} />

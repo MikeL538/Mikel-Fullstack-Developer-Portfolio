@@ -135,10 +135,10 @@ button:focus-visible {
   pointer-events: none;
   z-index: 100;
   width: 100vw !important;
-  transform: translateY(-0.7%);
+  transform: translateY(0);
 
   background: radial-gradient(
-    75px circle at var(--x) var(--y),
+    50px circle at var(--x) var(--y),
     rgba(120, 140, 255, 0.17),
     16%,
     transparent 50%

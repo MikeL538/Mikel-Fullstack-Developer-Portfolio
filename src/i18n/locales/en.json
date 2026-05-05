@@ -41,6 +41,10 @@
   },
   "projects": {
     "title": "Projects",
+    "WioryLeca": {
+      "description": "A responsive business website for a custom furniture brand. The project presents the offer, selected realizations, contact information, and key advantages of the service in a clean, modern landing page format.",
+      "descriptionLong": "A responsive website created for a custom furniture business offering made-to-measure solutions such as kitchens, wardrobes, bathroom furniture, and other built-in furniture. The project focuses on presenting the brand in a clear and professional way, guiding users through the offer, realizations, contact section, and information about the company. It demonstrates semantic HTML structure, SCSS-based styling, responsive design, visual layout composition, and attention to user-friendly navigation for a small local business website."
+    },
     "ImageInary": {
       "description": "A web application for searching images that allows users to quickly browse photos based on a query. Users can view results, open selected images in a modal, and load more pages.",
       "descriptionLong": "A web project that enables image searching using an external API. Users can enter search queries, browse results in a gallery, and preview selected images in a modal view. The application supports pagination and dynamic data loading, providing a smooth user experience. The project demonstrates asynchronous JavaScript, API integration, React state management, and the creation of an interactive and responsive user interface."

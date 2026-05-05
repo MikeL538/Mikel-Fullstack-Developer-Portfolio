@@ -41,6 +41,10 @@
   },
   "projects": {
     "title": "Projekty",
+    "WioryLeca": {
+      "description": "Responsywna strona wizytówka dla firmy zajmującej się meblami na wymiar. Projekt prezentuje ofertę, realizacje oraz dane kontaktowe w nowoczesnej i przejrzystej formie.",
+      "descriptionLong": "Responsywna strona internetowa stworzona dla firmy wykonującej meble na wymiar, takie jak kuchnie, szafy, zabudowy oraz meble łazienkowe. Projekt skupia się na czytelnym przedstawieniu oferty, realizacji oraz informacji kontaktowych, prowadząc użytkownika przez stronę w intuicyjny sposób. Zastosowano semantyczny HTML, SCSS do organizacji stylów, podejście responsive design oraz przejrzysty układ sekcji dopasowany do potrzeb małej lokalnej firmy. Projekt pokazuje umiejętność tworzenia estetycznych i funkcjonalnych stron wizytówek."
+    },
     "ImageInary": {
       "description": "Aplikacja webowa do wyszukiwania obrazów, która umożliwia szybkie przeglądanie zdjęć na podstawie wpisanego zapytania. Użytkownik może wyświetlać wyniki, powiększać wybrane obrazy oraz ładować kolejne strony.",
       "descriptionLong": "Projekt webowy umożliwiający wyszukiwanie obrazów z wykorzystaniem zewnętrznego API. Użytkownik może wpisywać zapytania, przeglądać wyniki w formie galerii oraz wyświetlać wybrane zdjęcia w trybie podglądu. Aplikacja obsługuje paginację i dynamiczne ładowanie danych, zapewniając płynne doświadczenie użytkownika. Projekt prezentuje pracę z asynchronicznym JavaScript, integrację z API, zarządzanie stanem w React oraz tworzenie interaktywnego i responsywnego interfejsu."

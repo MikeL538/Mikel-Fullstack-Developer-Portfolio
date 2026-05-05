@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -11,7 +12,7 @@ export default function ImageModal({
 }) {
   useEffect(() => {
     const body = document.querySelector<HTMLBodyElement>("body");
-    if (body) body.style.overflow = "auto";
+    const html = document.documentElement;
 
     if (!project) return;
 
@@ -23,14 +24,18 @@ export default function ImageModal({
 
     window.addEventListener("keydown", handleKeyDown);
     if (body) body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      if (body) body.style.overflow = "";
+      html.style.overflow = "";
     };
   }, [project, onClose]);
 
   if (!project) return null;
 
-  return (
+  return createPortal(
     <div className="imageModal" onClick={onClose}>
       <div
         className="imageModal__container"
@@ -43,6 +48,7 @@ export default function ImageModal({
           onClick={onClose}
         />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

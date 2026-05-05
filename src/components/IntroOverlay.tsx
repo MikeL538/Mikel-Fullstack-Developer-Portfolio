@@ -43,18 +43,18 @@ export default function IntroOverlay({
       tl.to(letters, {
         yPercent: 0,
         opacity: 1,
-        duration: 0.4,
+        duration: 0.3,
         stagger: 0.05,
       })
-        .to({}, { duration: 0.2 })
+        .to({}, { duration: 0.1 })
         .to(letters, {
           y: -450,
           opacity: 0,
-          duration: 0.25,
-          stagger: 0.03,
+          duration: 0.2,
+          stagger: 0.025,
           ease: "power2.in",
         })
-        .to(root, { opacity: 0, duration: 1.5 }, "<");
+        .to(root, { opacity: 0, duration: 1 }, "<");
     }, root);
 
     return () => {

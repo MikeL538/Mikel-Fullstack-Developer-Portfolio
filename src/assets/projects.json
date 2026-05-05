@@ -1,5 +1,24 @@
 [
   {
+    "id": 7,
+    "title": "Wióry Lecą!",
+    "descriptionKey": "projects.WioryLeca.description",
+    "descriptionLongKey": "projects.WioryLeca.descriptionLong",
+    "tech": [
+      "TypeScript",
+      "HTML",
+      "SCSS",
+      "Github",
+      "Responsive design",
+      "BEM"
+    ],
+    "image": "./images/projects/WioryLeca.webp",
+    "imageLarge": "./images/projects/WioryLecaLarge.webp",
+    "github": "https://github.com/MikeL538/wioryleca-meblenawymiar",
+    "live": "https://wioryleca-meblenawymiar.pl/",
+    "featured": true
+  },
+  {
     "id": 6,
     "title": "ImageInary",
     "descriptionKey": "projects.ImageInary.description",
@@ -40,7 +59,7 @@
     "imageLarge": "./images/projects/RaportGeneratorV2Large.webp",
     "github": "https://github.com/MikeL538/raportGeneratorV2",
     "live": "https://rapgen2.mikeldev.online/",
-    "featured": true
+    "featured": false
   },
   {
     "id": 4,
