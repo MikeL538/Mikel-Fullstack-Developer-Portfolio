@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.BASE_URL;
+import { profile } from "../config/profile";
+import { assetUrl } from "../utils/assetUrl";
 import { useTranslation } from "react-i18next";
 
 export default function HomeHero() {
@@ -14,8 +15,9 @@ export default function HomeHero() {
             className="home__hero__button"
             onClick={() => {
               document.getElementById("projects")?.scrollIntoView({
-                behavior: "smooth",
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
               });
+              document.getElementById("projects")?.focus({ preventScroll: true });
             }}
           >
             {t("home.heroButton")}
@@ -24,8 +26,8 @@ export default function HomeHero() {
         <div className="home__hero__image-wrapper">
           <img
             className="home__hero__image"
-            src={BASE_URL + "images/HomeHeroImage.png"}
-            alt="Hero image"
+            src={assetUrl(profile.images.hero)}
+            alt=""
           />
         </div>
       </div>

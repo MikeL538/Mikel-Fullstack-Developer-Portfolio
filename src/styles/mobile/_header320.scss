@@ -27,9 +27,9 @@
       gap: 10px;
     }
   }
+
   .scroll__header {
-    transition: vars.$transition-header;
-    // background: red;
-    transform: translateY(-57%);
+    // Hide the logo row while keeping all navigation rows available.
+    transform: translateY(calc(-1 * var(--header-logo-height, 48px)));
   }
 }

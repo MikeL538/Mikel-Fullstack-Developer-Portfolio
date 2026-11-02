@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import icons from "../assets/icons.svg";
+import { profile } from "../config/profile";
 
 export default function ContactHero() {
   const { t } = useTranslation();
@@ -7,58 +8,58 @@ export default function ContactHero() {
   return (
     <>
       <div className="contact__container">
-        <h2 className="contact__title">{t("contact.title")}</h2>
+        <h1 className="contact__title">{t("contact.title")}</h1>
         <ul className="contact__list">
           <li className="contact__list--item">
             <a
               className="contact__link"
-              href="https://github.com/MikeL538"
+              href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="contact__icon contact__icon--github">
+              <svg aria-hidden="true" className="contact__icon contact__icon--github">
                 <use href={`${icons}#github`}></use>
               </svg>
-              Github: https://github.com/MikeL538
+              GitHub: {profile.github}
             </a>
           </li>
           <li className="contact__list--item">
             <a
               className="contact__link"
-              href="https://www.linkedin.com/in/michal-lipiak/"
+              href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="contact__icon contact__icon--linkedin">
+              <svg aria-hidden="true" className="contact__icon contact__icon--linkedin">
                 <use href={`${icons}#linkedin`}></use>
               </svg>
-              Linkedin: https://www.linkedin.com/in/michal-lipiak/
+              LinkedIn: {profile.linkedin}
             </a>
           </li>
           <li className="contact__list--item">
             <a
               className="contact__link"
-              href="mailto:mikel538.work@gmail.com"
+              href={profile.emailHref}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="contact__icon contact__icon--email">
+              <svg aria-hidden="true" className="contact__icon contact__icon--email">
                 <use href={`${icons}#envelope`}></use>
               </svg>
-              E-mail: mikel538.work@gmail.com
+              E-mail: {profile.email}
             </a>
           </li>
           <li className="contact__list--item">
             <a
               className="contact__link contact__icon--smartphone"
-              href="tel:+48601598455"
+              href={profile.phoneHref}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="contact__icon">
+              <svg aria-hidden="true" className="contact__icon">
                 <use href={`${icons}#smartphone`}></use>
               </svg>
-              Tel: (+48) 601 598 455
+              Tel: {profile.phoneDisplay}
             </a>
           </li>
         </ul>

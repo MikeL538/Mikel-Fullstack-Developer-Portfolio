@@ -1,16 +1,15 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import { useId, useLayoutEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
 
-type IntroOverlayProps = {
+export default function IntroOverlay({ onDone, word }: {
   onDone: () => void;
-  word?: string;
-};
-
-export default function IntroOverlay({
-  onDone,
-  word = "WELCOME",
-}: IntroOverlayProps) {
-  const rootRef = useRef<HTMLDivElement | null>(null);
+  word: string;
+}) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const skipRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+  const { t } = useTranslation();
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -19,60 +18,54 @@ export default function IntroOverlay({
     const body = document.body;
     const previousHtmlOverflow = html.style.overflow;
     const previousBodyOverflow = body.style.overflow;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+      onDone();
+    };
+    const handleMotionChange = () => { if (reducedMotion.matches) finish(); };
+    reducedMotion.addEventListener("change", handleMotionChange);
 
-    const letters = Array.from(
-      root.querySelectorAll<HTMLSpanElement>("[data-letter]"),
-    );
-
-    // scroll lock and hide scrollbar
     html.style.overflow = "hidden";
     body.style.overflow = "hidden";
+    skipRef.current?.focus({ preventScroll: true });
 
-    // GSAP context = auto cleanup on unmount
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.out" },
-        onComplete: () => {
-          // scroll unlock
-          html.style.overflow = previousHtmlOverflow;
-          body.style.overflow = previousBodyOverflow;
-          onDone();
-        },
-      });
-
-      tl.to(letters, {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.3,
-        stagger: 0.05,
-      })
+      const letters = root.querySelectorAll<HTMLSpanElement>("[data-letter]");
+      gsap.timeline({ defaults: { ease: "power3.out" }, onComplete: finish })
+        .to(letters, { yPercent: 0, opacity: 1, duration: 0.3, stagger: 0.05 })
         .to({}, { duration: 0.1 })
-        .to(letters, {
-          y: -450,
-          opacity: 0,
-          duration: 0.2,
-          stagger: 0.025,
-          ease: "power2.in",
-        })
+        .to(letters, { y: -450, opacity: 0, duration: 0.2, stagger: 0.025, ease: "power2.in" })
         .to(root, { opacity: 0, duration: 1 }, "<");
     }, root);
+    handleMotionChange();
 
     return () => {
       ctx.revert();
+      reducedMotion.removeEventListener("change", handleMotionChange);
       html.style.overflow = previousHtmlOverflow;
       body.style.overflow = previousBodyOverflow;
     };
   }, [onDone]);
 
   return (
-    <div ref={rootRef} className="intro" aria-hidden="false">
-      <div className="intro__word" aria-label={word}>
-        {word.split("").map((ch, i) => (
-          <span key={`${ch}-${i}`} data-letter className="intro__letter">
-            {ch}
-          </span>
+    <div ref={rootRef} className="intro" role="dialog" aria-modal="true" aria-labelledby={titleId}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") { event.preventDefault(); onDone(); }
+        if (event.key === "Tab") { event.preventDefault(); skipRef.current?.focus(); }
+      }}>
+      <div id={titleId} className="intro__word" aria-label={word}>
+        {Array.from(word).map((character, index) => (
+          <span key={index} data-letter className="intro__letter" aria-hidden="true">{character}</span>
         ))}
       </div>
+      <button ref={skipRef} type="button" className="intro__skip" onClick={onDone}>
+        {t("accessibility.skipIntro")}
+      </button>
     </div>
   );
 }

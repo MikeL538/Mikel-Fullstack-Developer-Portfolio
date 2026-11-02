@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { profile } from "../config/profile";
+import { assetUrl } from "../utils/assetUrl";
 
 export default function AboutHero() {
   const { t } = useTranslation();
@@ -6,25 +8,25 @@ export default function AboutHero() {
   return (
     <>
       <div className="about__img--container">
-        <img className="about__img" src="images/ML.png" alt="Photo of me" />
+        <img className="about__img" src={assetUrl(profile.images.portrait)} alt={t("accessibility.portrait", { name: profile.name })} />
         <div className="about__img--text">
-          <h3 className="about__img--name">Michał Lipiak</h3>
-          <h4 className="about__img--occ">{t("about.occ")}</h4>
+          <p className="about__img--name">{profile.name}</p>
+          <p className="about__img--occ">{t("about.occ")}</p>
         </div>
       </div>
       <div className="about__container">
-        <h2 className="about__title">{t("about.title")}</h2>
+        <h1 className="about__title">{t("about.title")}</h1>
         <p className="about__p">{t("about.p1")}</p>
         <p className="about__p">{t("about.p2")}</p>
         <p className="about__p">{t("about.p3")}</p>
 
-        <h3 className="about__title--strenghts">{t("about.strengths")}</h3>
+        <h2 className="about__title--strenghts">{t("about.strengths")}</h2>
         <ul className="about__list">
           <li className="about__list--item">
             <div className="about__list--item__container">
-              <h4 className="about__list--item__title">
+              <h3 className="about__list--item__title">
                 {t("about.items.automation.title")}
-              </h4>
+              </h3>
             </div>
             <p className="about__list--item__p">
               {t("about.items.automation.description")}
@@ -32,9 +34,9 @@ export default function AboutHero() {
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
-              <h4 className="about__list--item__title">
+              <h3 className="about__list--item__title">
                 {t("about.items.focus.title")}
-              </h4>
+              </h3>
             </div>
             <p className="about__list--item__p">
               {t("about.items.focus.description")}
@@ -42,9 +44,9 @@ export default function AboutHero() {
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
-              <h4 className="about__list--item__title">
+              <h3 className="about__list--item__title">
                 {t("about.items.perseverance.title")}
-              </h4>
+              </h3>
             </div>
             <p className="about__list--item__p">
               {t("about.items.perseverance.description")}
@@ -52,9 +54,9 @@ export default function AboutHero() {
           </li>
           <li className="about__list--item">
             <div className="about__list--item__container">
-              <h4 className="about__list--item__title">
+              <h3 className="about__list--item__title">
                 {t("about.items.creativity.title")}
-              </h4>
+              </h3>
             </div>
             <p className="about__list--item__p">
               {t("about.items.creativity.description")}

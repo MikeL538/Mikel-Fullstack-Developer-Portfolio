@@ -5,23 +5,29 @@
   inset: 0;
   display: grid;
   place-items: center;
-  background: vars.$bodyBackground;
   background: vars.$bodyBackgroundGradient;
-  height: 100%;
+  height: 100dvh;
   z-index: 99999;
   color: vars.$accent-primary;
-}
 
-.intro__word {
-  font:
-    700 clamp(40px, 8vw, 120px) / 1 system-ui,
-    sans-serif;
-  letter-spacing: 0.08em;
-}
+  &__word {
+    font: 700 clamp(40px, 8vw, 120px) / 1 system-ui, sans-serif;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    @media (max-width: 767px) {
+      font-size: clamp(18px, 6vw, 46px);
+    }
+  }
 
-.intro__letter {
-  display: inline-block;
+  &__letter {
+    display: inline-block;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
 
-  opacity: 0;
-  will-change: transform, opacity;
+  &__skip {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
 }

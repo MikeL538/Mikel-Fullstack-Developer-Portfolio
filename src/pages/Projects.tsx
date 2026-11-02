@@ -1,10 +1,11 @@
 import { useState } from "react";
+import type { Project } from "../types/project";
 import ImageModal from "../components/ImageModal";
 import ProjectsList from "../components/ProjectsList";
 import LightBubbles from "../components/LightBubbles";
 
 export default function Projects() {
-  const [activeProject, setActiveProject] = useState<any>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <>

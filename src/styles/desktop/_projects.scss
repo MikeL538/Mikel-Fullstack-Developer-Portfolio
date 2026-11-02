@@ -1,5 +1,18 @@
 @use "../variables" as vars;
 
+.project-status {
+  align-self: flex-start;
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 3px 10px;
+  border: 1px solid vars.$tech-border;
+  border-radius: 999px;
+  background: vars.$tech-bg;
+  color: vars.$text-primary;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .projects {
   margin: 0 auto;
   display: flex;

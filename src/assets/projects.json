@@ -1,5 +1,30 @@
 [
   {
+    "id": 8,
+    "title": "Moje Atelier",
+    "descriptionKey": "projects.MojeAtelier.description",
+    "descriptionLongKey": "projects.MojeAtelier.descriptionLong",
+    "tech": [
+      "React",
+      "TypeScript",
+      "HTML",
+      "SCSS",
+      "Responsive design",
+      "Form validation",
+      "REST API",
+      "API integration"
+    ],
+    "image": "images/projects/MojeAtelier.png",
+    "imageLarge": "images/projects/MojeAtelier.png",
+    "github": "https://github.com/MikeL538/Psycho",
+    "githubPrivate": true,
+    "live": "https://psychoweb-pink.vercel.app/",
+    "featured": true,
+    "featuredOrder": 1,
+    "slug": "moje-atelier",
+    "status": "inProgress"
+  },
+  {
     "id": 7,
     "title": "Wióry Lecą!",
     "descriptionKey": "projects.WioryLeca.description",
@@ -12,11 +37,15 @@
       "Responsive design",
       "BEM"
     ],
-    "image": "./images/projects/WioryLeca.webp",
-    "imageLarge": "./images/projects/WioryLecaLarge.webp",
+    "image": "images/projects/WioryLeca.webp",
+    "imageLarge": "images/projects/WioryLecaLarge.webp",
     "github": "https://github.com/MikeL538/wioryleca-meblenawymiar",
     "live": "https://wioryleca-meblenawymiar.pl/",
-    "featured": true
+    "featured": true,
+    "featuredOrder": 2,
+    "slug": "wiory-leca",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 6,
@@ -33,11 +62,15 @@
       "API integration",
       "Pagination"
     ],
-    "image": "./images/projects/ImageInary.webp",
-    "imageLarge": "./images/projects/ImageInaryLarge.webp",
+    "image": "images/projects/ImageInary.webp",
+    "imageLarge": "images/projects/ImageInaryLarge.webp",
     "github": "https://github.com/MikeL538/ImageInary",
     "live": "https://mikel538.github.io/ImageInary/",
-    "featured": true
+    "featured": true,
+    "featuredOrder": 4,
+    "slug": "imageinary",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 5,
@@ -55,11 +88,14 @@
       "Data processing",
       "PDF generation"
     ],
-    "image": "./images/projects/RaportGeneratorV2.webp",
-    "imageLarge": "./images/projects/RaportGeneratorV2Large.webp",
+    "image": "images/projects/RaportGeneratorV2.webp",
+    "imageLarge": "images/projects/RaportGeneratorV2Large.webp",
     "github": "https://github.com/MikeL538/raportGeneratorV2",
     "live": "https://rapgen2.mikeldev.online/",
-    "featured": false
+    "featured": false,
+    "slug": "raport-generator-v2",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 4,
@@ -77,11 +113,14 @@
       "Search functionality",
       "Responsive design"
     ],
-    "image": "./images/projects/Filmovie.webp",
-    "imageLarge": "./images/projects/Filmovie.webp",
+    "image": "images/projects/Filmovie.webp",
+    "imageLarge": "images/projects/FilmovieLarge.webp",
     "github": "https://github.com/MikeL538/Filmovie",
     "live": "https://mikel538.github.io/Filmovie/",
-    "featured": true
+    "featured": false,
+    "slug": "filmovie",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 3,
@@ -99,11 +138,15 @@
       "CRUD",
       "Form validation"
     ],
-    "image": "./images/projects/ZjazdSlo.webp",
-    "imageLarge": "./images/projects/ZjazdSloLarge.webp",
+    "image": "images/projects/ZjazdSlo.webp",
+    "imageLarge": "images/projects/ZjazdSloLarge.webp",
     "github": "https://github.com/MikeL538/Zaproszenie-Zjazd-SLO",
     "live": "https://zjazd-slo.mikeldev.online/",
-    "featured": true
+    "featured": true,
+    "featuredOrder": 3,
+    "slug": "zjazd-slo",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 2,
@@ -119,11 +162,14 @@
       "Figma",
       "Github"
     ],
-    "image": "./images/projects/GOITWebstudio.webp",
-    "imageLarge": "./images/projects/GOITWebstudioLarge.webp",
+    "image": "images/projects/GOITWebstudio.webp",
+    "imageLarge": "images/projects/GOITWebstudioLarge.webp",
     "github": "https://github.com/MikeL538/GOIT-WebStudio",
     "live": "https://mikel538.github.io/GOIT-WebStudio/",
-    "featured": false
+    "featured": false,
+    "slug": "goit-webstudio",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 1,
@@ -139,22 +185,33 @@
       "Figma",
       "Github"
     ],
-    "image": "./images/projects/Anemone.webp",
-    "imageLarge": "./images/projects/AnemoneLarge.webp",
+    "image": "images/projects/Anemone.webp",
+    "imageLarge": "images/projects/AnemoneLarge.webp",
     "github": "https://github.com/MikeL538/Anemone-Florist",
     "live": "https://mikel538.github.io/Anemone-Florist/",
-    "featured": false
+    "featured": false,
+    "slug": "anemone",
+    "status": "completed",
+    "githubPrivate": false
   },
   {
     "id": 0,
     "title": "Flipping Card",
     "descriptionKey": "projects.flippingCard.description",
     "descriptionLongKey": "projects.flippingCard.descriptionLong",
-    "tech": ["HTML", "CSS", "JavaScript", "CSS Animations"],
-    "image": "./images/projects/FlippingCard.webp",
-    "imageLarge": "./images/projects/FlippingCardLarge.webp",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CSS Animations"
+    ],
+    "image": "images/projects/FlippingCard.webp",
+    "imageLarge": "images/projects/FlippingCardLarge.webp",
     "github": "https://github.com/MikeL538/Flipping-card?tab=readme-ov-file",
     "live": "https://mikel538.github.io/Flipping-card/",
-    "featured": false
+    "featured": false,
+    "slug": "flipping-card",
+    "status": "completed",
+    "githubPrivate": false
   }
 ]

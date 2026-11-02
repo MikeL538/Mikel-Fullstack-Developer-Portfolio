@@ -24,4 +24,12 @@ i18n
     },
   });
 
+const updateDocumentLanguage = () => {
+  if (typeof document !== "undefined") {
+    document.documentElement.lang = i18n.resolvedLanguage ?? "en";
+  }
+};
+i18n.on("languageChanged", updateDocumentLanguage);
+void i18n.loadNamespaces("translation").then(updateDocumentLanguage);
+
 export default i18n;

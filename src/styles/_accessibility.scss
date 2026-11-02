@@ -1,0 +1,98 @@
+@use "./variables" as vars;
+
+html {
+  scroll-padding-top: calc(var(--header-height, 160px) + 24px);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid vars.$accent-soft;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: vars.$bg-900;
+  color: vars.$text-primary;
+  transform: translateY(-200%);
+
+  &:focus { transform: none; }
+}
+
+button.project-preview {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  line-height: 0;
+  cursor: zoom-in;
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  &:hover { background: transparent; transform: none; }
+
+  &--home { width: 100%; }
+  &--list { width: 450px; max-width: 100%; }
+
+  img { width: 100%; object-fit: cover; }
+}
+
+.home__projects__links,
+.projects__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.projects__links { justify-content: flex-end; }
+
+.header__nav a,
+.footer__link,
+.contact__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.header__container { flex-wrap: wrap; }
+.header__nav { max-width: 100%; }
+.header__list { flex-wrap: wrap; justify-content: center; }
+.header__nav a { padding: 4px; }
+.header__button { display: inline-flex; align-items: center; justify-content: center; }
+
+.home__projects__list-container { min-width: 0; width: calc(100% - 10px); }
+.home__projects__links-container { flex-wrap: wrap; }
+.home__projects__icon-wrapper { max-width: 100%; }
+
+@media (max-width: 1079px) {
+  button.project-preview--list { width: 100%; }
+}
+
+@media (max-width: 767px) {
+  .home__projects__list { margin-inline: 12px; }
+  .header__logo { margin: 0 8px; }
+  .header__nav { margin: 0 4px; }
+  .header__list { gap: 2px 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #cursor-light { display: none; }
+  .bubbles__bubble { will-change: auto; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  #cursor-light { display: none; }
+}

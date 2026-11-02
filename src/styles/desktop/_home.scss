@@ -47,7 +47,7 @@
 
     &__button {
       font-weight: 600;
-      color: vars.$text-primary;
+      color: vars.$bg-900;
     }
   }
 }
@@ -127,7 +127,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 474px;
+    min-height: 474px;
     width: 444px;
     text-align: justify;
 
@@ -196,41 +196,25 @@
   }
 
   &__icon-wrapper {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    border: 1px solid vars.$tech-border;
+    border-radius: 6px;
+    background: vars.$tech-bg;
   }
 
   &__icon-tech {
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    transition: vars.$transition-basic;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
 
-    &:hover {
-      transform: translateY(8px);
-    }
-
-    &:hover + &--name {
-      transition: vars.$transition-basic;
-      opacity: 1;
-    }
-
-    &--name {
-      position: absolute;
-      bottom: 90%;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: vars.$transition-basic;
-      font-size: 1.2rem;
-      background-color: vars.$accent-hover;
-      padding: 4px 8px;
-      white-space: nowrap;
-      font-weight: 700;
-      border-radius: 12px;
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-    }
+  &__tech-name {
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+    text-align: start;
   }
 
   &__links {
@@ -249,7 +233,7 @@
     background-color: vars.$button;
     border-radius: 8px;
     border: 1px solid transparent;
-    color: vars.$text-primary;
+    color: vars.$bg-900;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
@@ -259,7 +243,7 @@
 
     &:hover {
       background-color: vars.$buttonHover;
-      color: vars.$text-primary;
+      color: vars.$bg-900;
       transform: scale(1.02);
     }
 

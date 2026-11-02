@@ -9,20 +9,20 @@
 @use "./desktop/imageModal";
 @use "./desktop/contact";
 @use "./desktop/bubble";
+@use "./desktop/statusPage";
 // TABLET 768
 @use "./tablet/header768";
 @use "./tablet/home768";
 @use "./tablet/projects768";
 @use "./tablet/about768";
-@use "./tablet/imageModal768";
 // Mobile 320
 @use "./mobile/header320";
 @use "./mobile/footer320";
 @use "./mobile/home320";
 @use "./mobile/projects320";
 @use "./mobile/about320";
-@use "./mobile/imageModal320";
 @use "./mobile/contact320";
+@use "./accessibility";
 
 * {
   box-sizing: border-box;
@@ -108,6 +108,8 @@ ol {
 }
 
 button {
+  color: vars.$bg-900;
+  min-height: 44px;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
@@ -122,11 +124,6 @@ button {
 button:hover {
   background-color: vars.$buttonHover;
   transform: scale(1.02);
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 #cursor-light {

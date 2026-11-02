@@ -41,6 +41,14 @@
   },
   "projects": {
     "title": "Projekty",
+    "status": {
+      "inProgress": "W trakcie realizacji"
+    },
+    "privateRepository": "Repozytorium prywatne",
+    "MojeAtelier": {
+      "description": "Responsywna strona gabinetu psychologicznego z cennikiem i formularzem zgłoszenia wizyty. Gotowy interfejs i funkcjonalności; finalizacja projektu oczekuje na uzupełnienie treści przez klienta.",
+      "descriptionLong": "Strona internetowa gabinetu psychologicznego Moje Atelier w Żarach, stworzona w React i TypeScript z wykorzystaniem SCSS. Łączy spokojną, elegancką oprawę wizualną z prezentacją usług, cennikiem, odpowiedziami na częste pytania i formularzem zgłoszenia wizyty z wyborem preferowanych terminów. Projekt obejmuje walidację formularza, integrację z API do wysyłki zgłoszeń oraz prerenderowanie stron i metadane SEO. Interfejs i funkcjonalności są gotowe, a projekt pozostaje w trakcie realizacji ze względu na oczekiwanie na brakujące dane i materiały od klienta. Repozytorium jest obecnie prywatne."
+    },
     "WioryLeca": {
       "description": "Responsywna strona wizytówka dla firmy zajmującej się meblami na wymiar. Projekt prezentuje ofertę, realizacje oraz dane kontaktowe w nowoczesnej i przejrzystej formie.",
       "descriptionLong": "Responsywna strona internetowa stworzona dla firmy wykonującej meble na wymiar, takie jak kuchnie, szafy, zabudowy oraz meble łazienkowe. Projekt skupia się na czytelnym przedstawieniu oferty, realizacji oraz informacji kontaktowych, prowadząc użytkownika przez stronę w intuicyjny sposób. Zastosowano semantyczny HTML, SCSS do organizacji stylów, podejście responsive design oraz przejrzysty układ sekcji dopasowany do potrzeb małej lokalnej firmy. Projekt pokazuje umiejętność tworzenia estetycznych i funkcjonalnych stron wizytówek."
@@ -73,6 +81,32 @@
       "description": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika.",
       "descriptionLong": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika."
     }
+  },
+  "accessibility": {
+    "skipIntro": "Pomiń intro",
+    "skipToContent": "Przejdź do treści",
+    "mainNavigation": "Nawigacja główna",
+    "openPreview": "Powiększ podgląd projektu {{title}}",
+    "previewTitle": "Podgląd: {{title}}",
+    "closePreview": "Zamknij podgląd",
+    "projectImage": "Podgląd projektu {{title}}",
+    "portrait": "Portret: {{name}}",
+    "liveProject": "Otwórz projekt {{title}} online (nowa karta)",
+    "projectCode": "Kod projektu {{title}} w GitHub (nowa karta)",
+    "privateCode": "Prywatne repozytorium projektu {{title}} w GitHub (nowa karta)"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Nie znaleziono strony",
+      "description": "Ten adres nie prowadzi do żadnej strony w portfolio. Wróć na stronę główną, aby zobaczyć projekty."
+    },
+    "render": {
+      "title": "Nie udało się wyświetlić strony",
+      "description": "Spróbuj ponownie załadować stronę. Jeśli problem się powtarza, skontaktuj się ze mną przez email."
+    },
+    "backHome": "Wróć na stronę główną",
+    "reload": "Załaduj ponownie",
+    "contact": "Napisz email"
   },
   "contact": {
     "title": "Kontakt"

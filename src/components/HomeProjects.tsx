@@ -1,39 +1,47 @@
 import { NavLink } from "react-router-dom";
-import projects from "../assets/projects.json";
+import { featuredProjects } from "../data/projects";
+import type { Project } from "../types/project";
 import icons from "../assets/icons.svg";
-import { techIcons } from "../constants/techIcons";
+import { getTechnology } from "../constants/techIcons";
+import TechnologyIcon from "./TechnologyIcon";
+import { assetUrl } from "../utils/assetUrl";
 import { useTranslation } from "react-i18next";
-
-const BASE_URL = import.meta.env.BASE_URL;
 
 export default function HomeProjects({
   onImageClick,
 }: {
-  onImageClick: (project: any) => void;
+  onImageClick: (project: Project) => void;
 }) {
-  const projectsJson = projects.filter((p) => p.featured);
-
   const { t } = useTranslation();
 
   return (
     <section className="home__projects">
       <div className="home__projects__container">
-        <h2 id="projects" className="home__projects__title">
+        <h2 id="projects" tabIndex={-1} className="home__projects__title">
           {t("home.projectsTitle")}
         </h2>
         <ul className="home__projects__list">
-          {projectsJson.map((project) => (
+          {featuredProjects.map((project) => (
             <li key={project.id} className="home__projects__item">
+              <button type="button" className="project-preview project-preview--home"
+                aria-label={t("accessibility.openPreview", { title: project.title })}
+                aria-haspopup="dialog" onClick={(event) => {
+                  event.currentTarget.focus();
+                  onImageClick(project);
+                }}>
               <img
                 className="home__projects__image"
                 loading="lazy"
-                src={BASE_URL + project.image}
-                alt={project.title}
+                src={assetUrl(project.image)}
+                alt=""
                 data-set={project.id}
-                onClick={() => onImageClick(project)}
               />
+              </button>
               <div className="home__projects__list-container">
                 <h3 className="home__projects__name">{project.title}</h3>
+                {project.status === "inProgress" && (
+                  <p className="project-status">{t("projects.status.inProgress")}</p>
+                )}
                 <p className="home__projects__description">
                   {t(project.descriptionKey)}
                 </p>
@@ -42,12 +50,8 @@ export default function HomeProjects({
                   {project.tech.map((tech) => (
                     <li key={tech}>
                       <div className="home__projects__icon-wrapper">
-                        <svg className="home__projects__icon-tech">
-                          <use href={techIcons[tech]} />
-                        </svg>
-                        <div className="home__projects__icon-tech--name">
-                          <p>{tech}</p>
-                        </div>
+                        <TechnologyIcon name={tech} className="home__projects__icon-tech" />
+                        <span className="home__projects__tech-name">{getTechnology(tech).label}</span>
                       </div>
                     </li>
                   ))}
@@ -58,8 +62,9 @@ export default function HomeProjects({
                     target="_blank"
                     rel="noopener noreferrer"
                     href={project.live}
+                    aria-label={t("accessibility.liveProject", { title: project.title })}
                   >
-                    <svg className="home__projects__links-svg git-links">
+                    <svg className="home__projects__links-svg git-links" aria-hidden="true">
                       <use href={`${icons}#www`} className="git-links" />
                     </svg>
                   </a>
@@ -68,8 +73,10 @@ export default function HomeProjects({
                     target="_blank"
                     rel="noopener noreferrer"
                     href={project.github}
+                    title={project.githubPrivate ? t("projects.privateRepository") : undefined}
+                    aria-label={t(project.githubPrivate ? "accessibility.privateCode" : "accessibility.projectCode", { title: project.title })}
                   >
-                    <svg className="home__projects__links-svg git-links">
+                    <svg className="home__projects__links-svg git-links" aria-hidden="true">
                       <use href={`${icons}#github`} />
                     </svg>
                   </a>
@@ -81,11 +88,6 @@ export default function HomeProjects({
         <div className="home__projects__button-wrapper">
           <NavLink
             className="home__projects__button"
-            onClick={() => {
-              document.getElementById("header")?.scrollIntoView({
-                behavior: "instant",
-              });
-            }}
             to="/projects"
           >
             {t("home.projectsMore")}

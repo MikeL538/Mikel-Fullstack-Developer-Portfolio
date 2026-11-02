@@ -2,6 +2,8 @@
 
 .header {
   position: fixed;
+  top: 0;
+  flex-shrink: 0;
   background-color: vars.$headerBackground;
   background: vars.$headerBackgroundGradient;
   z-index: 10;
@@ -40,13 +42,13 @@
   &__image {
     height: 50px;
     margin-right: 5px;
-    background-color: none;
     width: 50px;
     border-radius: 100%;
   }
 
   &__name {
     font-size: 1.6rem;
+    font-weight: 700;
   }
 
   &__logo {
@@ -76,8 +78,8 @@
 
   &__button {
     background: none;
-    width: auto;
-    height: auto;
+    min-width: 44px;
+    min-height: 44px;
     color: vars.$button;
     padding: 0;
 
@@ -89,9 +91,18 @@
   }
 }
 
-.scroll {
-  &__curve {
-    top: -200%;
-    z-index: -1;
+.scroll__curve {
+  top: -200%;
+  z-index: -1;
+}
+
+.header:focus-within {
+  transform: none;
+  transition: none;
+
+  .header__curve {
+    top: 99%;
+    z-index: 9;
+    transition: none;
   }
 }

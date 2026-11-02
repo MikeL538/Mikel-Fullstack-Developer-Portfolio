@@ -41,6 +41,14 @@
   },
   "projects": {
     "title": "Projects",
+    "status": {
+      "inProgress": "In progress"
+    },
+    "privateRepository": "Private repository",
+    "MojeAtelier": {
+      "description": "A responsive psychology practice website with service pricing and an appointment request form. The interface and features are complete; final delivery is awaiting content from the client.",
+      "descriptionLong": "A website for the Moje Atelier psychology practice in Żary, built with React, TypeScript, and SCSS. It combines a calm, elegant visual design with service information, pricing, frequently asked questions, and an appointment request form with preferred date selection. The project includes form validation, an API integration for sending requests, page prerendering, and SEO metadata. The interface and features are complete, while the project remains in progress pending missing information and materials from the client. The repository is currently private."
+    },
     "WioryLeca": {
       "description": "A responsive business website for a custom furniture brand. The project presents the offer, selected realizations, contact information, and key advantages of the service in a clean, modern landing page format.",
       "descriptionLong": "A responsive website created for a custom furniture business offering made-to-measure solutions such as kitchens, wardrobes, bathroom furniture, and other built-in furniture. The project focuses on presenting the brand in a clear and professional way, guiding users through the offer, realizations, contact section, and information about the company. It demonstrates semantic HTML structure, SCSS-based styling, responsive design, visual layout composition, and attention to user-friendly navigation for a small local business website."
@@ -73,6 +81,32 @@
       "description": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions.",
       "descriptionLong": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions."
     }
+  },
+  "accessibility": {
+    "skipIntro": "Skip intro",
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation",
+    "openPreview": "Enlarge preview of {{title}}",
+    "previewTitle": "Preview: {{title}}",
+    "closePreview": "Close preview",
+    "projectImage": "Preview of {{title}}",
+    "portrait": "Portrait of {{name}}",
+    "liveProject": "Open {{title}} online (new tab)",
+    "projectCode": "View {{title}} code on GitHub (new tab)",
+    "privateCode": "Private GitHub repository for {{title}} (new tab)"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "This address does not match a page in the portfolio. Return to the home page to explore the projects."
+    },
+    "render": {
+      "title": "The page could not be displayed",
+      "description": "Try reloading the page. If the problem persists, please contact me by email."
+    },
+    "backHome": "Back to home",
+    "reload": "Reload page",
+    "contact": "Send an email"
   },
   "contact": {
     "title": "Contact"

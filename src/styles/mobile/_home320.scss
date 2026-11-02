@@ -74,6 +74,7 @@
         width: 100%;
         max-width: 444px;
         height: auto;
+        min-height: 0;
       }
 
       &__image {
@@ -97,9 +98,6 @@
         width: 26px;
         height: 26px;
 
-        &--name {
-          font-size: 0.8rem;
-        }
       }
 
       &__links {

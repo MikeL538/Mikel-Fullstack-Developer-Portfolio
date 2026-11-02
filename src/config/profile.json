@@ -1,0 +1,14 @@
+{
+  "name": "Michał Lipiak",
+  "copyrightName": "Michał \"MikeL\" Lipiak",
+  "github": "https://github.com/MikeL538",
+  "linkedin": "https://www.linkedin.com/in/michal-lipiak/",
+  "email": "mikel538.work@gmail.com",
+  "phone": "+48601598455",
+  "phoneDisplay": "(+48) 601 598 455",
+  "images": {
+    "header": "images/MLHeader.png",
+    "portrait": "images/ML.png",
+    "hero": "images/HomeHeroImage.png"
+  }
+}

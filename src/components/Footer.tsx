@@ -1,17 +1,19 @@
+import { profile } from "../config/profile";
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
         {/* Sekcja informacji o prawach autorskich */}
         <div className="footer__copyright">
-          © {new Date().getFullYear()} Michał "MikeL" Lipiak. All rights
+          © {new Date().getFullYear()} {profile.copyrightName}. All rights
           reserved.
         </div>
 
         {/* Sekcja linków społecznościowych */}
         <div className="footer__socials">
           <a
-            href="https://github.com/MikeL538"
+            href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"
@@ -19,7 +21,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/michal-lipiak/"
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"
@@ -35,7 +37,7 @@ export default function Footer() {
             WhatsApp
           </a> */}
           <a
-            href="mailto:mikel538.work@gmail.com"
+            href={profile.emailHref}
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"

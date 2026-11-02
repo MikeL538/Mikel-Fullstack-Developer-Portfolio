@@ -1,27 +1,17 @@
 import icons from "../assets/icons.svg";
+import catalog from "../assets/technologies.json";
 
-export const techIcons: Record<string, string> = {
-  HTML: `${icons}#html`,
-  CSS: `${icons}#css`,
-  SCSS: `${icons}#sass`,
-  JavaScript: `${icons}#js`,
-  TypeScript: `${icons}#ts`,
-  React: `${icons}#react`,
-  Parcel: `${icons}#parcel`,
-  Supabase: `${icons}#supabase`,
-  Github: `${icons}#github`,
-  PostgreSQL: `${icons}#postgresql`,
-  "Responsive design": `${icons}#responsive-web-design`,
-  "Form validation": `${icons}#validation`,
-  "Data processing": `${icons}#data-processing`,
-  "PDF generation": `${icons}#html2pdf`,
-  "REST API": `${icons}#rest-api`,
-  "Search functionality": `${icons}#loupe`,
-  "Async JavaScript": `${icons}#async-js`,
-  "API integration": `${icons}#api-integration`,
-  Authentication: `${icons}#auth`,
-  CRUD: `${icons}#crud`,
-  Figma: `${icons}#figma`,
-  BEM: `${icons}#bem`,
-  Pagination: `${icons}#pagination`,
-};
+interface Technology {
+  label: string;
+  icon?: string | null;
+}
+
+const technologies: Readonly<Record<string, Technology | undefined>> = catalog;
+
+export function getTechnology(name: string) {
+  const technology = technologies[name];
+  return {
+    label: technology?.label ?? name,
+    icon: technology?.icon ? `${icons}#${technology.icon}` : undefined,
+  };
+}
