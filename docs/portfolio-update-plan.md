@@ -54,21 +54,25 @@ Zachowanie nagłówka jest celowe i ma zostać zachowane: po przewinięciu 80 px
 
 **3. Nowy układ i spójny wygląd — P1, średni/duży zakres**
 
-- [ ] Zachować ciemny motyw i niebieski akcent, uporządkować skalę typografii, odstępy, szerokości treści, obramowania i stany interakcji.
-- [ ] Zmienić kolejność Home: hero → cztery projekty → kompetencje poparte realizacjami → krótko o mnie → kontakt.
-- [ ] Przebudować hero wokół konkretnej specjalizacji i dwóch akcji: „Zobacz projekty” oraz „Porozmawiajmy”. Pokazać imię i nazwisko obok roli.
-- [ ] Przykładowy kierunek tekstu: „Tworzę strony dla firm i aplikacje, które upraszczają codzienną pracę”. Doprecyzować w podtytule React, TypeScript, integracje API i bazy danych.
-- [ ] Przygotować spójną siatkę projektów: 2 × 2 na szerokim ekranie, jedna kolumna na małym; wysokość kart wynika z treści.
-- [ ] Usunąć sztywną wysokość 474 px kart Home. Dłuższe tłumaczenia, statusy i etykiety technologii nie mogą ściskać treści ani wypychać linków.
-- [ ] Ujednolicić proporcje miniatur i sposób kadrowania przez `aspect-ratio` oraz świadomie dobrane `object-fit`.
+- [x] Zachować ciemny motyw i niebieski akcent, uporządkować skalę typografii, odstępy, szerokości treści, obramowania i stany interakcji.
+- [x] Zmienić kolejność Home: hero → cztery projekty → kompetencje poparte realizacjami → krótko o mnie → kontakt.
+- [x] Przebudować hero wokół konkretnej specjalizacji i dwóch akcji: „Zobacz projekty” oraz „Porozmawiajmy”. Pokazać imię i nazwisko obok roli.
+- [x] Przykładowy kierunek tekstu: „Tworzę strony dla firm i aplikacje, które upraszczają codzienną pracę”. Doprecyzować w podtytule React, TypeScript, integracje API i bazy danych.
+- [x] Przygotować spójną siatkę projektów: 2 × 2 na szerokim ekranie, jedna kolumna na małym; wysokość kart wynika z treści.
+- [x] Usunąć sztywną wysokość 474 px kart Home. Dłuższe tłumaczenia, statusy i etykiety technologii nie mogą ściskać treści ani wypychać linków.
+- [x] Ujednolicić proporcje miniatur i sposób kadrowania przez `aspect-ratio` oraz świadomie dobrane `object-fit`.
 - [ ] Zastąpić obecną grafikę społecznościową Moje Atelier rzeczywistym zrzutem interfejsu, kiedy dostępny będzie podgląd przeglądarki. Przygotować osobny duży podgląd.
-- [ ] Zastąpić wyjustowane opisy wyrównaniem do lewej i ograniczyć długość wiersza.
-- [ ] Usunąć efekt niemal całkowitego znikania grafiki hero po hover (`opacity: 0.1`).
+- [x] Zastąpić wyjustowane opisy wyrównaniem do lewej i ograniczyć długość wiersza.
+- [x] Usunąć efekt niemal całkowitego znikania grafiki hero po hover (`opacity: 0.1`).
 - [ ] Ograniczyć dekoracyjne fale, rozmycia i ruch tam, gdzie odciągają uwagę od projektów; ocenić efekt na realnych ekranach.
-- [ ] Logo/nazwisko w nagłówku powinno prowadzić na Home. GitHub pozostaje osobnym, jednoznacznym linkiem.
-- [ ] Pokazać przełącznik języka jako PL/EN z nazwą dostępną dla czytnika ekranu.
+- [x] Logo/nazwisko w nagłówku powinno prowadzić na Home. GitHub pozostaje osobnym, jednoznacznym linkiem.
+- [x] Pokazać przełącznik języka jako PL/EN z nazwą dostępną dla czytnika ekranu.
 
 Odbiór: PL i EN przy szerokościach 320, 375, 768, 1024 i 1440 px, bez obciętego tekstu i poziomego przewijania; czytelne miniatury i spójne odstępy.
+
+Stan wdrożenia (2026-11-03): nowy Home, teksty PL/EN, karty 2 × 2 od 768 px, wspólne tokeny wizualne i nawigacja zostały zaimplementowane. Style Home wraz z breakpointem są w jednym pliku, bez dawnych nakładających się reguł desktop/tablet/mobile. Miniatury Home i Projects mają proporcje 16:9 oraz kadrowanie od góry; pełny obraz pozostaje dostępny w dialogu. Karty Home mają tekstowe akcje, a prywatny kod jest oznaczony jako stan zamiast linku. Kompetencje pokazują trzy zastosowania i prowadzą do istniejących realizacji. Intro GSAP oraz mechanizm chowania nagłówka pozostają zachowane.
+
+Na Home usunięto pływające kolorowe dekoracje, zostawiając delikatne statyczne tło hero. Ocena efektu na realnych ekranach nadal jest otwarta. Build, lint i 34 testy przechodzą; dodatkowe testy obejmują akcje Home, powrót przez logo oraz stan przełącznika języka. Dostęp do hosta przeglądarki nadal jest niedostępny. Nie oznaczono odbioru wizualnego jako zakończonego: do sprawdzenia pozostają wymienione szerokości w PL/EN, zoom 200% i kadrowanie miniatur. Rzeczywisty zrzut Moje Atelier oraz osobny duży podgląd pozostają do przygotowania po uzyskaniu dostępu do przeglądarki.
 
 **4. Treść i prezentacja doświadczenia — P1, duży zakres**
 

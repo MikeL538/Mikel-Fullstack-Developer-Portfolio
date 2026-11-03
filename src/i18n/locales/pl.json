@@ -6,12 +6,36 @@
     "contact": "Kontakt"
   },
   "home": {
-    "heroTitle": "Deweloper Fullstack",
-    "heroP": "Buduję nowoczesne aplikacje webowe w oparciu o technologie frontendowe i backendowe. Skupiam się na czystym kodzie, wydajności i tworzeniu rozwiązań, które realnie działają.",
-    "heroButton": "Główne projekty",
-    "skills": "Technologie",
-    "projectsTitle": "Projekty",
-    "projectsMore": "Inne projekty"
+    "heroTitle": "Tworzę strony dla firm i aplikacje, które upraszczają codzienną pracę.",
+    "heroP": "Łączę React i TypeScript z integracjami API oraz bazami danych. Od prezentacji oferty po formularze i narzędzia do pracy z danymi.",
+    "heroButton": "Zobacz projekty",
+    "contactButton": "Porozmawiajmy",
+    "skillsEyebrow": "Kompetencje w praktyce",
+    "skills": "Od interfejsu do danych",
+    "capabilities": {
+      "interfaces": {
+        "title": "Responsywne interfejsy",
+        "description": "React, TypeScript i SCSS wykorzystuję do budowania stron z czytelną ofertą, formularzami i układem dopasowanym do różnych ekranów."
+      },
+      "data": {
+        "title": "Formularze i bazy danych",
+        "description": "Łączę formularze z Supabase i PostgreSQL. W projekcie zjazdu SLO obsługuję zapisy uczestników oraz widok do zarządzania zgłoszeniami."
+      },
+      "integrations": {
+        "title": "Integracje API",
+        "description": "Pobieram i prezentuję dane z zewnętrznych API. ImageInary łączy wyszukiwanie zdjęć, paginację i podgląd wyników w interfejsie React."
+      }
+    },
+    "projectsEyebrow": "Wybrane realizacje",
+    "projectsTitle": "Projekty, które możesz sprawdzić",
+    "projectsDescription": "Strony dla lokalnych firm, obsługa zapisów i wyszukiwarka obrazów — cztery przykłady mojej pracy.",
+    "projectsMore": "Zobacz wszystkie projekty",
+    "aboutTitle": "Cześć, jestem Michał.",
+    "aboutDescription": "Tworzę strony i aplikacje webowe, a najchętniej pracuję nad rozwiązaniami konkretnych problemów. Dbam o czytelny interfejs i kod, do którego można wrócić. Rozwijam swoje umiejętności, budując nowe realizacje i ulepszając wcześniejsze projekty.",
+    "aboutMore": "Więcej o mnie",
+    "contactTitle": "Porozmawiajmy o Twoim projekcie",
+    "contactDescription": "Potrzebujesz strony dla firmy, aplikacji albo dewelopera do zespołu? Napisz, nad czym pracujesz i w czym mogę pomóc.",
+    "contactMore": "Wszystkie formy kontaktu"
   },
   "about": {
     "title": "O mnie",
@@ -45,6 +69,8 @@
       "inProgress": "W trakcie realizacji"
     },
     "privateRepository": "Repozytorium prywatne",
+    "viewLive": "Zobacz online",
+    "viewCode": "Kod źródłowy",
     "MojeAtelier": {
       "description": "Responsywna strona gabinetu psychologicznego z cennikiem i formularzem zgłoszenia wizyty. Gotowy interfejs i funkcjonalności; finalizacja projektu oczekuje na uzupełnienie treści przez klienta.",
       "descriptionLong": "Strona internetowa gabinetu psychologicznego Moje Atelier w Żarach, stworzona w React i TypeScript z wykorzystaniem SCSS. Łączy spokojną, elegancką oprawę wizualną z prezentacją usług, cennikiem, odpowiedziami na częste pytania i formularzem zgłoszenia wizyty z wyborem preferowanych terminów. Projekt obejmuje walidację formularza, integrację z API do wysyłki zgłoszeń oraz prerenderowanie stron i metadane SEO. Interfejs i funkcjonalności są gotowe, a projekt pozostaje w trakcie realizacji ze względu na oczekiwanie na brakujące dane i materiały od klienta. Repozytorium jest obecnie prywatne."
@@ -91,8 +117,8 @@
     "closePreview": "Zamknij podgląd",
     "projectImage": "Podgląd projektu {{title}}",
     "portrait": "Portret: {{name}}",
-    "liveProject": "Otwórz projekt {{title}} online (nowa karta)",
-    "projectCode": "Kod projektu {{title}} w GitHub (nowa karta)",
+    "liveProject": "Zobacz online: {{title}} (nowa karta)",
+    "projectCode": "Kod źródłowy: {{title}} w GitHub (nowa karta)",
     "privateCode": "Prywatne repozytorium projektu {{title}} w GitHub (nowa karta)"
   },
   "errors": {

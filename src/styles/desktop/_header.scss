@@ -54,7 +54,26 @@
   &__logo {
     align-items: center;
     display: flex;
-    margin: 0 25px;
+    gap: 8px;
+    margin: 0;
+  }
+
+  &__github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    svg { fill: currentColor; }
+  }
+
+  &__languages {
+    display: flex;
+    gap: 2px;
+    button[aria-pressed="true"] {
+      background: vars.$accent-primary;
+      color: vars.$bg-900;
+    }
   }
 
   &__nav {

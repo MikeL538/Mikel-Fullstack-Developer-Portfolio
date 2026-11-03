@@ -71,14 +71,15 @@ export default function Header() {
         <div className="header__container">
           {/* Left side - pic + name */}
           <div className="header__logo">
-            <a
+            <NavLink
               className="header__link"
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/"
             >
               <img className="header__image" src={assetUrl(profile.images.header)} alt="" />
               <span className="header__name">{profile.name}</span>
+            </NavLink>
+            <a className="header__github" href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width={22} height={22} aria-hidden="true"><use href={`${icons}#github`} /></svg>
             </a>
           </div>
           {/* Right side NAV */}
@@ -132,33 +133,27 @@ export default function Header() {
                   {t("header.contact")}
                 </NavLink>
               </li>
-              <li className="header__item">
-                {currentLang !== "pl" && (
+              <li className="header__item header__languages">
                   <button
                     className="header__button"
                     type="button"
                     aria-label="Zmień język na polski"
                     lang="pl"
+                    aria-pressed={currentLang === "pl"}
                     onClick={() => i18n.changeLanguage("pl")}
                   >
-                    <svg width={32} height={32} aria-hidden="true">
-                      <use href={`${icons}#flag-pl`}></use>
-                    </svg>
+                    PL
                   </button>
-                )}
-                {currentLang !== "en" && (
                   <button
                     className="header__button"
                     type="button"
                     aria-label="Switch language to English"
                     lang="en"
+                    aria-pressed={currentLang === "en"}
                     onClick={() => i18n.changeLanguage("en")}
                   >
-                    <svg width={32} height={32} aria-hidden="true">
-                      <use href={`${icons}#flag-uk`}></use>
-                    </svg>
+                    EN
                   </button>
-                )}
               </li>
             </ul>
           </nav>

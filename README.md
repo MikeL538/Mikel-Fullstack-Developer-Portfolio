@@ -128,9 +128,23 @@ automatically skipped for reduced motion. It restores scrolling and focus when
 finished and does not replay on route changes. Technology names remain visible
 on touch screens.
 
+Home presents the hero, four featured projects, capabilities backed by project
+examples, a short introduction, and contact actions. Cards use a two-column grid
+from 768 px and a single column below it, without fixed card heights. Previews use
+a 16:9 crop aligned to the top; the modal still shows the full image. Home styles
+and their breakpoint live in `src/styles/desktop/_home.scss`, with shared visual
+tokens in `src/styles/_variables.scss`. Home capability references are in
+`src/components/HomeSkills.tsx`; update their project slugs when changing the
+featured selection. The name/logo returns Home, GitHub has its own link, and the
+PL/EN buttons expose the selected language. The Moje Atelier social card still
+needs replacement with actual interface screenshots when browser access is available.
+
 Before accepting the visual accessibility review, check a real browser at 200%
 zoom and in mobile landscape: confirm focus visibility, header wrapping, image
 fit, native background inertness, and access to the dialog's close button.
+Check both languages at widths 320, 375, 768, 1024 and 1440 px for text wrapping,
+thumbnail crops and horizontal overflow. These visual checks remain pending;
+the automated suite does not verify responsive rendering.
 
 Unknown hash routes (for example `/#/missing`) show a localized 404 view. This is
 an application-level fallback; HTTP 404 responses and path-based routing belong

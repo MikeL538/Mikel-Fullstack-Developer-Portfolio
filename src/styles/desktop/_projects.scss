@@ -17,14 +17,14 @@
   margin: 0 auto;
   display: flex;
   width: 100%;
-  max-width: calc(1080px + 2rem);
+  max-width: calc(vars.$content-width + 2 * vars.$content-gap);
 
   &__container {
     margin: 0 25px 75px 25px;
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: vars.$title-section;
     margin-bottom: 25px;
     text-align: center;
   }
@@ -37,8 +37,8 @@
 
   &__item {
     background: vars.$card-bg;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: vars.$radius-card;
+    border: 1px solid vars.$border-subtle;
     box-shadow:
       0 10px 30px rgba(0, 0, 0, 0.35),
       inset 0 1px 0 rgba(255, 255, 255, 0.02);
@@ -96,7 +96,9 @@
 
   &__description {
     margin-bottom: 22px;
-    // width: 700px;
+    max-width: 65ch;
+    line-height: 1.7;
+    text-align: start;
   }
 
   &__list-tech {

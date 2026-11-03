@@ -4,23 +4,25 @@ import HomeHero from "../components/HomeHero";
 import HomeSkills from "../components/HomeSkills";
 import HomeProjects from "../components/HomeProjects";
 import ImageModal from "../components/ImageModal";
-import LightBubbles from "../components/LightBubbles";
+import HomeAbout from "../components/HomeAbout";
+import HomeContact from "../components/HomeContact";
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <>
-      <section className="home">
+      <div className="home">
         <HomeHero />
-        <HomeSkills />
         <HomeProjects onImageClick={setActiveProject} />
+        <HomeSkills />
+        <HomeAbout />
+        <HomeContact />
         <ImageModal
           project={activeProject}
           onClose={() => setActiveProject(null)}
         />
-      </section>
-      <LightBubbles />
+      </div>
     </>
   );
 }

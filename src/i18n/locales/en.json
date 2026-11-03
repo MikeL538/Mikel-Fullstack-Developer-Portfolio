@@ -6,12 +6,36 @@
     "contact": "Contact"
   },
   "home": {
-    "heroTitle": "Fullstack Developer",
-    "heroP": "I build modern web applications using both frontend and backend technologies. I focus on clean code, performance and delivering solutions that truly work.",
-    "heroButton": "Featured projects",
-    "skills": "Technologies",
-    "projectsTitle": "Projects",
-    "projectsMore": "More projects"
+    "heroTitle": "I build business websites and apps that make everyday work easier.",
+    "heroP": "I combine React and TypeScript with API integrations and databases. From service websites to forms and tools for working with data.",
+    "heroButton": "Explore projects",
+    "contactButton": "Let's talk",
+    "skillsEyebrow": "Skills in practice",
+    "skills": "From interfaces to data",
+    "capabilities": {
+      "interfaces": {
+        "title": "Responsive interfaces",
+        "description": "I use React, TypeScript and SCSS to build websites with clear service information, forms and layouts that adapt to different screens."
+      },
+      "data": {
+        "title": "Forms and databases",
+        "description": "I connect forms to Supabase and PostgreSQL. The SLO reunion project handles participant registration and includes a view for managing submissions."
+      },
+      "integrations": {
+        "title": "API integrations",
+        "description": "I fetch and present data from external APIs. ImageInary combines image search, pagination and result previews in a React interface."
+      }
+    },
+    "projectsEyebrow": "Selected work",
+    "projectsTitle": "Projects you can explore",
+    "projectsDescription": "Local business websites, event registration and image search — four examples of my work.",
+    "projectsMore": "View all projects",
+    "aboutTitle": "Hi, I'm Michał.",
+    "aboutDescription": "I build websites and web apps, and I enjoy working on solutions to specific problems. I care about clear interfaces and maintainable code. I develop my skills by building new projects and improving earlier ones.",
+    "aboutMore": "More about me",
+    "contactTitle": "Let's talk about your project",
+    "contactDescription": "Need a business website, an app or a developer for your team? Tell me what you're working on and how I can help.",
+    "contactMore": "All contact options"
   },
   "about": {
     "title": "About me",
@@ -45,6 +69,8 @@
       "inProgress": "In progress"
     },
     "privateRepository": "Private repository",
+    "viewLive": "View live",
+    "viewCode": "Source code",
     "MojeAtelier": {
       "description": "A responsive psychology practice website with service pricing and an appointment request form. The interface and features are complete; final delivery is awaiting content from the client.",
       "descriptionLong": "A website for the Moje Atelier psychology practice in Żary, built with React, TypeScript, and SCSS. It combines a calm, elegant visual design with service information, pricing, frequently asked questions, and an appointment request form with preferred date selection. The project includes form validation, an API integration for sending requests, page prerendering, and SEO metadata. The interface and features are complete, while the project remains in progress pending missing information and materials from the client. The repository is currently private."
@@ -91,8 +117,8 @@
     "closePreview": "Close preview",
     "projectImage": "Preview of {{title}}",
     "portrait": "Portrait of {{name}}",
-    "liveProject": "Open {{title}} online (new tab)",
-    "projectCode": "View {{title}} code on GitHub (new tab)",
+    "liveProject": "View live: {{title}} (new tab)",
+    "projectCode": "Source code: {{title}} on GitHub (new tab)",
     "privateCode": "Private GitHub repository for {{title}} (new tab)"
   },
   "errors": {

@@ -1,25 +1,35 @@
 import { useTranslation } from "react-i18next";
-import { getTechnology } from "../constants/techIcons";
-import TechnologyIcon from "./TechnologyIcon";
+import { featuredProjects } from "../data/projects";
 
-const skills = [
-  "HTML", "SCSS", "JavaScript", "TypeScript", "React", "Vite",
-  "SQL", "PostgreSQL", "Supabase", "Node.js", "Git", "Figma",
-];
+// Each capability points to a real featured project; titles stay in project data.
+const capabilities = [
+  { key: "interfaces", slug: "moje-atelier" },
+  { key: "data", slug: "zjazd-slo" },
+  { key: "integrations", slug: "imageinary" },
+] as const;
 
 export default function HomeSkills() {
   const { t } = useTranslation();
 
   return (
-    <section className="home__skills__container">
-      <h2 className="home__skills__title">{t("home.skills")}</h2>
+    <section className="home__skills" aria-labelledby="home-skills-title">
+      <p className="home__eyebrow">{t("home.skillsEyebrow")}</p>
+      <h2 id="home-skills-title" className="home__section-title">{t("home.skills")}</h2>
       <ul className="home__skills__list">
-        {skills.map((name) => (
-          <li key={name}>
-            <TechnologyIcon name={name} className="home__skills-image" />
-            {getTechnology(name).label}
-          </li>
-        ))}
+        {capabilities.map(({ key, slug }, index) => {
+          const project = featuredProjects.find((item) => item.slug === slug);
+          return (
+            <li key={key} className="home__skills__item">
+              <span className="home__skills__number" aria-hidden="true">0{index + 1}</span>
+              <h3>{t(`home.capabilities.${key}.title`)}</h3>
+              <p>{t(`home.capabilities.${key}.description`)}</p>
+              {project && <a className="home__text-link" href={project.live} target="_blank" rel="noopener noreferrer"
+                aria-label={t("accessibility.liveProject", { title: project.title })}>
+                {project.title} <span aria-hidden="true">↗</span>
+              </a>}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

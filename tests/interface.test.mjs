@@ -144,8 +144,14 @@ test("language button has a name and updates the document language", async () =>
     assert.equal(button.getAttribute("aria-label"), "Zmień język na polski");
     await act(async () => button.click());
     assert.equal(document.documentElement.lang, "pl");
-    assert.equal(container.querySelectorAll(".header__button").length, 1);
+    assert.equal(container.querySelectorAll(".header__button").length, 2);
+    assert.equal(button.textContent.trim(), "PL");
+    assert.equal(button.getAttribute("aria-pressed"), "true");
+    assert.equal(container.querySelector('button[lang="en"]').getAttribute("aria-pressed"), "false");
     assert.ok(container.querySelector('button[lang="en"]').getAttribute("aria-label"));
+    await act(async () => container.querySelector('button[lang="en"]').click());
+    assert.equal(document.documentElement.lang, "en");
+    assert.equal(button.getAttribute("aria-pressed"), "false");
   });
 });
 
@@ -287,6 +293,25 @@ for (const finishWith of ["button", "escape", "reduced-motion", "unmount"]) {
 }
 
 for (const language of ["pl", "en"]) {
+  test(`Home actions navigate to contact and the logo returns Home (${language})`, async () => {
+    await i18n.changeLanguage(language);
+    await render(createElement(MemoryRouter, null, createElement(App)), async (container) => {
+      for (const selector of ['.home__hero a[href="/contact"]', '.home__contact a[href="/contact"]', '.home__about a[href="/about"]']) {
+        const link = container.querySelector(selector);
+        const expectedTitle = link.getAttribute("href") === "/about" ? "about.title" : "contact.title";
+        await act(async () => link.click());
+        assert.equal(container.querySelector("h1").textContent, i18n.t(expectedTitle));
+        await act(async () => container.querySelector(".header__link").click());
+        assert.equal(container.querySelector("h1").textContent, i18n.t("home.heroTitle"));
+      }
+      assert.ok(container.querySelector('.home__contact a[href^="mailto:"]'));
+      const atelier = container.querySelector(".home__projects__item");
+      assert.ok(atelier.querySelector(".home__projects__private"));
+      assert.equal(atelier.querySelector('a[href*="github.com"]'), null);
+      assert.ok(container.querySelector('.header__github[href="https://github.com/MikeL538"]'));
+    });
+  });
+
   for (const path of ["/", "/projects", "/about", "/contact", "/missing"]) {
     test(`accessible names and structure pass axe (${language} ${path})`, async () => {
       await i18n.changeLanguage(language);

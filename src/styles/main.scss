@@ -12,13 +12,11 @@
 @use "./desktop/statusPage";
 // TABLET 768
 @use "./tablet/header768";
-@use "./tablet/home768";
 @use "./tablet/projects768";
 @use "./tablet/about768";
 // Mobile 320
 @use "./mobile/header320";
 @use "./mobile/footer320";
-@use "./mobile/home320";
 @use "./mobile/projects320";
 @use "./mobile/about320";
 @use "./mobile/contact320";

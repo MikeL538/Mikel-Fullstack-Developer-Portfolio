@@ -15,27 +15,32 @@ export default function HomeProjects({
   const { t } = useTranslation();
 
   return (
-    <section className="home__projects">
+    <section className="home__projects" aria-labelledby="projects">
       <div className="home__projects__container">
-        <h2 id="projects" tabIndex={-1} className="home__projects__title">
+        <p className="home__eyebrow">{t("home.projectsEyebrow")}</p>
+        <h2 id="projects" tabIndex={-1} className="home__projects__title home__section-title">
           {t("home.projectsTitle")}
         </h2>
+        <p className="home__section-description">{t("home.projectsDescription")}</p>
         <ul className="home__projects__list">
           {featuredProjects.map((project) => (
             <li key={project.id} className="home__projects__item">
-              <button type="button" className="project-preview project-preview--home"
+              <button
+                type="button"
+                className="project-preview project-preview--home"
                 aria-label={t("accessibility.openPreview", { title: project.title })}
-                aria-haspopup="dialog" onClick={(event) => {
+                aria-haspopup="dialog"
+                onClick={(event) => {
                   event.currentTarget.focus();
                   onImageClick(project);
-                }}>
-              <img
-                className="home__projects__image"
-                loading="lazy"
-                src={assetUrl(project.image)}
-                alt=""
-                data-set={project.id}
-              />
+                }}
+              >
+                <img
+                  className="home__projects__image"
+                  loading="lazy"
+                  src={assetUrl(project.image)}
+                  alt=""
+                />
               </button>
               <div className="home__projects__list-container">
                 <h3 className="home__projects__name">{project.title}</h3>
@@ -67,19 +72,24 @@ export default function HomeProjects({
                     <svg className="home__projects__links-svg git-links" aria-hidden="true">
                       <use href={`${icons}#www`} className="git-links" />
                     </svg>
+                    <span>{t("projects.viewLive")}</span>
                   </a>
-                  <a
-                    className="home__projects__links"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={project.github}
-                    title={project.githubPrivate ? t("projects.privateRepository") : undefined}
-                    aria-label={t(project.githubPrivate ? "accessibility.privateCode" : "accessibility.projectCode", { title: project.title })}
-                  >
-                    <svg className="home__projects__links-svg git-links" aria-hidden="true">
-                      <use href={`${icons}#github`} />
-                    </svg>
-                  </a>
+                  {project.githubPrivate ? (
+                    <span className="home__projects__private">{t("projects.privateRepository")}</span>
+                  ) : (
+                    <a
+                      className="home__projects__links"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={project.github}
+                      aria-label={t("accessibility.projectCode", { title: project.title })}
+                    >
+                      <svg className="home__projects__links-svg git-links" aria-hidden="true">
+                        <use href={`${icons}#github`} />
+                      </svg>
+                      <span>{t("projects.viewCode")}</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </li>
@@ -87,7 +97,7 @@ export default function HomeProjects({
         </ul>
         <div className="home__projects__button-wrapper">
           <NavLink
-            className="home__projects__button"
+            className="home__projects__button home__button home__button--secondary"
             to="/projects"
           >
             {t("home.projectsMore")}
