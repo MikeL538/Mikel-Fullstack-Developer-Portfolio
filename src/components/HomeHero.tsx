@@ -1,10 +1,12 @@
+import { useLocalizedPath } from "../routing/useLocalizedPath";
 import { profile } from "../config/profile";
-import { assetUrl } from "../utils/assetUrl";
+import ResponsiveImage from "./ResponsiveImage";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export default function HomeHero() {
   const { t } = useTranslation();
+  const localize = useLocalizedPath();
 
   return (
     <section className="home__hero" aria-labelledby="hero-title">
@@ -27,18 +29,18 @@ export default function HomeHero() {
             >
               {t("home.heroButton")}
             </button>
-            <Link className="home__button home__button--secondary" to="/contact">
+            <Link className="home__button home__button--secondary" to={localize("/contact")}>
               {t("home.contactButton")}
             </Link>
           </div>
         </div>
         <div className="home__hero__image-wrapper">
-          <img
+          <ResponsiveImage
             className="home__hero__image"
-            src={assetUrl(profile.images.hero)}
+            source={profile.images.hero}
             alt=""
-            width={622}
-            height={403}
+            sizes="(max-width: 767px) 340px, (max-width: 1224px) 42vw, 480px"
+            fetchPriority="high"
           />
         </div>
       </div>

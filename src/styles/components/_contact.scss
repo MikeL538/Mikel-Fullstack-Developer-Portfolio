@@ -1,0 +1,51 @@
+@use "../variables" as vars;
+
+.contact {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    margin: 60px 0;
+    border: 1px solid vars.$border-subtle;
+    border-radius: vars.$radius-card;
+  }
+
+  &__title {
+    font-size: vars.$title-section;
+    color: vars.$accent-primary;
+    border-bottom: 1px solid vars.$border-subtle;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+}
+@media screen and (max-width: vars.$mobile-max) {
+  .contact {
+    &__container {
+      margin: 60px 10px;
+      min-width: 0;
+      max-width: calc(100vw - 20px);
+    }
+
+  }
+}
+
+.contact {
+  &__body { padding: clamp(20px, 4vw, 40px); max-width: 720px; }
+  &__body > p { line-height: 1.75; color: vars.$text-muted; max-width: 60ch; }
+  &__email { display: inline-flex; align-items: center; min-height: 44px; margin-block: 24px 12px; font-size: clamp(1rem, 3vw, 1.5rem); overflow-wrap: anywhere; }
+  &__channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 24px;
+    a { display: inline-flex; align-items: center; min-height: 44px; }
+  }
+}
+
+.copy-email {
+  button:disabled { cursor: wait; }
+  [role="status"] { min-height: 1.5em; margin-top: 12px; color: vars.$text-muted; }
+}
+

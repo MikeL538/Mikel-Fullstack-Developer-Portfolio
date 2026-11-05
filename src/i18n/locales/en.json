@@ -13,17 +13,17 @@
     "skillsEyebrow": "Skills in practice",
     "skills": "From interfaces to data",
     "capabilities": {
-      "interfaces": {
-        "title": "Responsive interfaces",
-        "description": "I use React, TypeScript and SCSS to build websites with clear service information, forms and layouts that adapt to different screens."
+      "frontend": {
+        "title": "Frontend",
+        "description": "I build responsive websites and forms with React, TypeScript and SCSS. Moje Atelier combines service information with an interactive appointment request flow."
       },
       "data": {
-        "title": "Forms and databases",
-        "description": "I connect forms to Supabase and PostgreSQL. The SLO reunion project handles participant registration and includes a view for managing submissions."
+        "title": "Backend and data",
+        "description": "I connect forms and interfaces to APIs and databases. SLO registration uses a Supabase function for submissions and a separate view for public reads."
       },
-      "integrations": {
-        "title": "API integrations",
-        "description": "I fetch and present data from external APIs. ImageInary combines image search, pagination and result previews in a React interface."
+      "tools": {
+        "title": "Tools and publishing",
+        "description": "I prepare builds, version code and organize shared templates. In Wióry Lecą!, Vite generates multilingual pages and a gallery from an image catalogue."
       }
     },
     "projectsEyebrow": "Selected work",
@@ -39,26 +39,26 @@
   },
   "about": {
     "title": "About me",
-    "p1": "I am a fullstack developer creating applications that run smoothly and are easy to maintain. I enjoy building new projects and continuously improving my code with each new challenge.",
-    "p2": "I have solid knowledge of JavaScript, TypeScript, SCSS, React, and C++, as well as many other technologies and methodologies. I focus on creating intuitive interfaces and optimizing performance.",
-    "p3": "I care about clean architecture and am not afraid to revisit older projects to refactor and enhance them. This allows me to continuously develop my skills and gain practical experience.",
-    "strengths": "My strengths",
+    "p1": "I'm Michał Lipiak, a fullstack developer. I build business websites and web apps, from service presentations to forms, API integrations and data workflows.",
+    "p2": "I choose tools to fit the task. Moje Atelier uses React and TypeScript, Wióry Lecą! generates pages from HTML and TypeScript, and SLO reunion registration connects a simple form to Supabase.",
+    "p3": "I work on interfaces, application logic and preparation for publishing. Across projects, I develop validation, error handling and tests. I distinguish completed features from deployment dependencies such as client content and service configuration.",
+    "strengths": "How I work",
     "items": {
       "automation": {
-        "title": "Work automation",
-        "description": "I can create tools and scripts that save time and minimize repetitive tasks."
+        "title": "Process and maintenance",
+        "description": "Shared templates and an image catalogue in Wióry Lecą! feed gallery pages and language versions."
       },
       "perseverance": {
-        "title": "Perseverance and patience",
-        "description": "I consistently see projects through to completion, even when facing difficult challenges."
+        "title": "Handling error states",
+        "description": "ImageInary displays loading, empty results and API errors instead of leaving an empty gallery."
       },
       "creativity": {
-        "title": "Creativity and resourcefulness",
-        "description": "I find unconventional solutions to complex problems."
+        "title": "Tools that fit the task",
+        "description": "Moje Atelier shares service data between pricing and the form to keep the two consistent."
       },
       "focus": {
-        "title": "Focus on results",
-        "description": "I turn ideas into working projects, not just concepts on paper."
+        "title": "Complete workflows",
+        "description": "The SLO reunion form, Supabase storage and separate panel work together to handle registrations."
       }
     },
     "occ": "Fullstack Developer"
@@ -66,22 +66,53 @@
   "projects": {
     "title": "Projects",
     "status": {
-      "inProgress": "In progress"
+      "inProgress": "In progress",
+      "completed": "Completed"
     },
     "privateRepository": "Private repository",
     "viewLive": "View live",
     "viewCode": "Source code",
     "MojeAtelier": {
-      "description": "A responsive psychology practice website with service pricing and an appointment request form. The interface and features are complete; final delivery is awaiting content from the client.",
-      "descriptionLong": "A website for the Moje Atelier psychology practice in Żary, built with React, TypeScript, and SCSS. It combines a calm, elegant visual design with service information, pricing, frequently asked questions, and an appointment request form with preferred date selection. The project includes form validation, an API integration for sending requests, page prerendering, and SEO metadata. The interface and features are complete, while the project remains in progress pending missing information and materials from the client. The repository is currently private."
+      "description": "A psychology practice website with services, pricing and appointment requests. The interface and features are ready; the demo awaits the client's final content.",
+      "descriptionLong": "A React and TypeScript website for Moje Atelier in Żary. It presents services, pricing and FAQs, and lets visitors request an appointment with preferred dates. The form connects to an API and pages are prerendered to HTML. The available version is a demo awaiting the client's final information and materials. The repository remains private.",
+      "caseStudy": {
+        "context": "The Moje Atelier psychology practice in Żary needs a place where visitors can explore services, prepare for a first visit and submit preferred consultation dates.",
+        "scope": "Building the responsive React interface, SCSS styles, service and pricing pages, and appointment request form. The scope includes validation, request delivery API integration, HTML prerendering, metadata and configuration of the Vercel demo.",
+        "decisions": "Shared service data feeds the price list and form to keep names, prices and durations consistent. Prerendering provides content in the initial HTML while React handles interactions. Requests are delivered through an API, outside the browser code.",
+        "features": "Visitors select a service, provide contact details and suggest up to three dates with preferred times. The form communicates validation errors, sending progress and the result. Submission requests a visit; the practice confirms the appointment separately.",
+        "challenge": "The form needs to retain input after delivery errors and limit duplicate submissions. A sending state prevents repeated clicks, while a request identifier allows the API to recognize a retry. Validation errors direct users to the relevant fields.",
+        "result": "A functional interface, request handling and pages prepared for publication. The demo presents the layout and available features, with content configuration separated from components.",
+        "limitations": "The project is still in progress pending the client's information, photos and copy. Pricing and practice details require final approval. The demo does not represent the practice's final website launch, and submission does not automatically reserve a time slot.",
+        "imageCaption": "Moje Atelier brand artwork. This is a presentation asset, not an interface screenshot."
+      }
     },
     "WioryLeca": {
-      "description": "A responsive business website for a custom furniture brand. The project presents the offer, selected realizations, contact information, and key advantages of the service in a clean, modern landing page format.",
-      "descriptionLong": "A responsive website created for a custom furniture business offering made-to-measure solutions such as kitchens, wardrobes, bathroom furniture, and other built-in furniture. The project focuses on presenting the brand in a clear and professional way, guiding users through the offer, realizations, contact section, and information about the company. It demonstrates semantic HTML structure, SCSS-based styling, responsive design, visual layout composition, and attention to user-friendly navigation for a small local business website."
+      "description": "A website for a custom furniture business. It presents services and a categorized project gallery, with Polish, German and English versions and quick contact options.",
+      "descriptionLong": "The Wióry Lecą! website combines custom furniture services, cooperation details and contact with a project gallery. HTML, SCSS, TypeScript and Vite provide an interface without a frontend framework. Polish, German and English pages, categories and gallery pagination are generated at build time.",
+      "caseStudy": {
+        "context": "A custom furniture business needs a clear presentation of its services and completed work. Visitors should be able to move from a furniture category to relevant examples and contact options.",
+        "scope": "Implementing a responsive website, modular HTML templates, SCSS styles and TypeScript interactions. Extending the gallery with categories and pagination, supporting three languages and preparing the static page and asset build process.",
+        "decisions": "The site uses HTML and TypeScript without a frontend framework. Vite combines shared partials and translations into complete pages. Gallery content and pagination are present in HTML, so browsing categories does not require JavaScript.",
+        "features": "Services, cooperation information, contact details and project photos grouped into kitchens, wardrobes, bathrooms and built-ins. Visitors can switch between Polish, German and English and open larger image previews.",
+        "challenge": "Expanding the gallery required consistent images, categories, pagination and language versions. A shared image catalogue feeds generated pages and the sitemap, while compatibility handling takes old category links to their new addresses.",
+        "result": "Services and examples of completed work are available in one business website. Generated gallery pages support category browsing, and shared templates simplify maintaining the language versions.",
+        "limitations": "This is a service and contact website, without a furniture configurator or online checkout. Adding photos or changing content requires file updates and a rebuild; the project does not have a CMS.",
+        "imageCaption": "A saved desktop view of the Wióry Lecą! home page presenting custom furniture services."
+      }
     },
     "ImageInary": {
-      "description": "A web application for searching images that allows users to quickly browse photos based on a query. Users can view results, open selected images in a modal, and load more pages.",
-      "descriptionLong": "A web project that enables image searching using an external API. Users can enter search queries, browse results in a gallery, and preview selected images in a modal view. The application supports pagination and dynamic data loading, providing a smooth user experience. The project demonstrates asynchronous JavaScript, API integration, React state management, and the creation of an interactive and responsive user interface."
+      "description": "A learning project for searching Pixabay images. The React gallery loads more results on scroll, shows loading and error states, and opens image previews.",
+      "descriptionLong": "A React app for image search through the Pixabay REST API. It includes a gallery, pagination with infinite scroll, a fallback load-more button and a preview modal. Loading, empty results, end-of-list and API errors have dedicated states. The learning project develops asynchronous data handling and component testing skills.",
+      "caseStudy": {
+        "context": "A learning project focused on React, asynchronous requests and UI states. Users can search for images and browse results without navigating between separate pages.",
+        "scope": "Building the search form, gallery, Pixabay integration through Axios, pagination and image modal. Implementing loading, empty-result and error states, plus basic component and fetching behavior tests.",
+        "decisions": "React manages results, page and loading state. Pixabay requests live in an API module, and the gallery passes data to a component responsible for displaying the current state.",
+        "features": "Keyword search, infinite scroll, image previews and messages for empty results or the end of the list. When all images fit on screen and the page cannot scroll, a button lets users fetch more results.",
+        "challenge": "Infinite scroll alone cannot load another page on a large viewport if the initial results do not create scrolling. Measuring document height makes it possible to show a Load more button, while merging results by ID removes duplicate images.",
+        "result": "A working search interface connects an external API to an interactive gallery and previews. Basic tests for the form, modal and result states also document component behavior.",
+        "limitations": "Search results and availability depend on Pixabay and its API limits. This is a learning project without user accounts or its own image database; component tests do not replace full browser checks.",
+        "imageCaption": "A saved view of the ImageInary gallery displaying image search results."
+      }
     },
     "raportGeneratorV2": {
       "description": "A web application designed for quickly generating clear and structured reports from mock high school graduation exams. The project focuses on simplifying the report creation process, improving data readability, and delivering a modern user interface.",
@@ -92,8 +123,18 @@
       "descriptionLong": "A web project with a movie search engine and popularity rankings. Users can browse trending films and search for specific titles. Each movie includes details such as description, ratings, genre, and other data. The project demonstrates external API integration, interactive UI development, and responsive design. Filmovie combines aesthetics with effective search and filtering features."
     },
     "formularzZjazdSLO": {
-      "description": "A web-based registration form enabling alumni to sign up for a reunion of the Social High School in Żary. The public section allows submissions, and data is stored in Supabase for easy management and verification.",
-      "descriptionLong": "A web project streamlining registration for the Social High School reunion in Żary. It includes a public form for participants and an administrative view for managing data. Information is securely stored in Supabase, ensuring accessibility and processing. The project demonstrates responsive form development, cloud database integration, and structuring solutions for both users and administrators."
+      "description": "Registration for a real SLO alumni reunion in Żary. The form sends submissions to Supabase, while organizers use a separate admin application.",
+      "descriptionLong": "A public event website and registration form built with HTML, SCSS and JavaScript. Validated data is sent to a Supabase function, while the attendee list reads from a separate public view. Full submissions are reviewed in a separate admin application. The project serves a real alumni reunion.",
+      "caseStudy": {
+        "context": "Organizers of the Social High School alumni reunion in Żary needed a public event website and a shared place to collect attendee registrations.",
+        "scope": "Building the event page, responsive form and JavaScript integration with Supabase. The public app covers validation, consent handling, submission, result messages and a public attendee list. The organizer panel is a separate application.",
+        "decisions": "The public site remains a straightforward HTML, SCSS and JavaScript application. The form sends data to the Supabase submit-guest function. The attendee list reads graduation years and display names from people_public rather than retrieving full contact details.",
+        "features": "Attendees provide contact information and a graduation year, with optional notes, education and work fields. The form checks required values, consent and a CAPTCHA token. Successful registration refreshes the attendee list.",
+        "challenge": "Registration collection, public attendee display and organizer workflows needed distinct responsibilities. The interface uses separate endpoints for submission and public reads, while full registrations are handled in a separate panel.",
+        "result": "A workflow from event information through a validated form to registration storage in Supabase. Organizers can work with submissions without placing administrative functions on the public website.",
+        "limitations": "The public URL serves real event registrations. Submission depends on the Supabase function and CAPTCHA; access to full records requires the separate panel and appropriate database permissions.",
+        "imageCaption": "An archived preview of the form and separate admin panel with sample entries; the current interface may differ."
+      }
     },
     "anemone": {
       "description": "Anemone is a website created for a flower shop, showcasing plants and floral arrangements while allowing users to browse available products in a visually appealing way.",
@@ -106,6 +147,23 @@
     "flippingCard": {
       "description": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions.",
       "descriptionLong": "Flipping Card is an interactive UI component that presents a 3D card flip effect used to display additional information in a visually engaging way. The project focuses on CSS animations, responsiveness, and smooth user interactions."
+    },
+    "categories": {
+      "business": "Business website",
+      "utility": "Practical tool",
+      "learning": "Learning project"
+    },
+    "viewDetails": "Case study",
+    "backToProjects": "All projects",
+    "technologies": "Technologies",
+    "caseStudyLabels": {
+      "context": "Context and goal",
+      "scope": "My scope of work",
+      "decisions": "Technical decisions",
+      "features": "What the app does",
+      "challenge": "Technical challenge",
+      "result": "Result",
+      "limitations": "Limitations and next steps"
     }
   },
   "accessibility": {
@@ -119,7 +177,8 @@
     "portrait": "Portrait of {{name}}",
     "liveProject": "View live: {{title}} (new tab)",
     "projectCode": "Source code: {{title}} on GitHub (new tab)",
-    "privateCode": "Private GitHub repository for {{title}} (new tab)"
+    "privateCode": "Private GitHub repository for {{title}} (new tab)",
+    "projectDetails": "Case study: {{title}}"
   },
   "errors": {
     "notFound": {
@@ -135,6 +194,32 @@
     "contact": "Send an email"
   },
   "contact": {
-    "title": "Contact"
+    "title": "Contact",
+    "copyEmail": "Copy email",
+    "copying": "Copying…",
+    "copied": "Email address copied.",
+    "copyFailed": "Could not copy. Select the visible address and copy it manually."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "Fullstack Developer — websites and apps",
+      "description": "Michał Lipiak — business websites and apps built with React, TypeScript and JavaScript. Explore project work, API integrations and Supabase."
+    },
+    "projects": {
+      "title": "Projects and case studies",
+      "description": "Business websites, forms and apps by Michał Lipiak. Explore Moje Atelier, Wióry Lecą!, SLO registration and ImageInary with detailed case studies."
+    },
+    "about": {
+      "title": "About me — Fullstack Developer",
+      "description": "Meet Michał Lipiak: frontend development, API integrations and data workflows. Learn how I work through examples from websites and applications."
+    },
+    "contact": {
+      "title": "Contact — let's discuss your project",
+      "description": "Contact Michał Lipiak about a business website, web app or joining your team. Get in touch by email, LinkedIn or GitHub."
+    },
+    "imageAlt": "Michał Lipiak — Fullstack Developer. React, TypeScript, APIs and databases."
   }
 }

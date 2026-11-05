@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  // base: "/Mikel-Fullstack-Developer-Portfolio/",
+  define: { "import.meta.env.VITE_BUILD_YEAR": JSON.stringify(String(new Date().getFullYear())) },
   base: "/",
 });

@@ -1,0 +1,5 @@
+[
+  { "key": "frontend", "projectSlug": "moje-atelier", "tech": ["React", "TypeScript", "SCSS"] },
+  { "key": "data", "projectSlug": "zjazd-slo", "tech": ["JavaScript", "Supabase", "PostgreSQL"] },
+  { "key": "tools", "projectSlug": "wiory-leca", "tech": ["Vite", "Git"] }
+]

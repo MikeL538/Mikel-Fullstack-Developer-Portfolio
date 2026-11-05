@@ -76,53 +76,69 @@ Na Home usunięto pływające kolorowe dekoracje, zostawiając delikatne statycz
 
 **4. Treść i prezentacja doświadczenia — P1, duży zakres**
 
-- [ ] Każda karta Home: odbiorca/problemy, główna funkcja, 3–5 najważniejszych technologii, stan projektu i czytelne akcje.
-- [ ] Przygotować osobne opisy realizacji dla czterech wyróżnionych projektów: kontekst → zakres mojej pracy → kluczowe decyzje → funkcje → rezultat → ograniczenia.
-- [ ] Dla Moje Atelier jasno rozdzielić ukończone funkcjonalności od oczekiwania na materiały klienta i statusu wersji demonstracyjnej.
-- [ ] Dla Wióry Lecą! pokazać pracę dla firmy i sposób przedstawienia oferty; dla Zjazdu SLO przepływ zgłoszeń i danych; dla ImageInary wyszukiwanie, API i obsługę stanów interfejsu.
-- [ ] Udokumentować udział autora i technologie na podstawie kodu, repozytoriów i informacji użytkownika. Nie dopisywać metryk biznesowych, opinii ani wyników bez potwierdzenia.
+- [x] Każda karta Home: odbiorca/problemy, główna funkcja, 3–5 najważniejszych technologii, stan projektu i czytelne akcje.
+- [x] Przygotować osobne opisy realizacji dla czterech wyróżnionych projektów: kontekst → zakres mojej pracy → kluczowe decyzje → funkcje → rezultat → ograniczenia.
+- [x] Dla Moje Atelier jasno rozdzielić ukończone funkcjonalności od oczekiwania na materiały klienta i statusu wersji demonstracyjnej.
+- [x] Dla Wióry Lecą! pokazać pracę dla firmy i sposób przedstawienia oferty; dla Zjazdu SLO przepływ zgłoszeń i danych; dla ImageInary wyszukiwanie, API i obsługę stanów interfejsu.
+- [x] Udokumentować udział autora i technologie na podstawie kodu, repozytoriów i informacji użytkownika. Nie dopisywać metryk biznesowych, opinii ani wyników bez potwierdzenia.
 - [ ] W opisie projektu dołączyć faktyczne widoki desktop/mobile i wyjaśnić wybraną trudność techniczną.
-- [ ] Rozróżnić realizacje komercyjne, narzędzia użytkowe i projekty edukacyjne; przy tej liczbie pozycji wystarczą etykiety lub sekcje.
-- [ ] Prywatne repozytorium pokazać jako czytelny stan. Publiczny odwiedzający powinien otrzymać opis realizacji zamiast przycisku obiecującego dostęp do kodu.
-- [ ] Przepisać About: specjalizacja, sposób pracy, odpowiedzialność za wdrożenie i konkretne przykłady z projektów.
-- [ ] Kompetencje pogrupować na frontend, backend/dane i narzędzia; powiązać je z projektami, bez procentowych pasków umiejętności.
-- [ ] Uprościć kontakt: widoczny email, kopiowanie z potwierdzeniem dostępnym dla czytnika, LinkedIn i GitHub; CV dopiero po wskazaniu aktualnego pliku.
-- [ ] Dodać końcową sekcję zachęcającą do kontaktu na Home i stronach realizacji.
+- [x] Rozróżnić realizacje komercyjne, narzędzia użytkowe i projekty edukacyjne; przy tej liczbie pozycji wystarczą etykiety lub sekcje.
+- [x] Prywatne repozytorium pokazać jako czytelny stan. Publiczny odwiedzający powinien otrzymać opis realizacji zamiast przycisku obiecującego dostęp do kodu.
+- [x] Przepisać About: specjalizacja, sposób pracy, odpowiedzialność za wdrożenie i konkretne przykłady z projektów.
+- [x] Kompetencje pogrupować na frontend, backend/dane i narzędzia; powiązać je z projektami, bez procentowych pasków umiejętności.
+- [x] Uprościć kontakt: widoczny email, kopiowanie z potwierdzeniem dostępnym dla czytnika, LinkedIn i GitHub; CV dopiero po wskazaniu aktualnego pliku.
+- [x] Dodać końcową sekcję zachęcającą do kontaktu na Home i stronach realizacji.
 
 Odbiór: odwiedzający widzi, co autor wykonał i dla kogo; każda istotna deklaracja ma pokrycie w projekcie; pełna spójność treści PL/EN.
 
+Stan wdrożenia (2026-11-04): cztery opisy realizacji PL/EN pod adresami `/#/projects/<slug>`, karty z 3–5 technologiami, kategorią i statusem, wspólne linki i oznaczenie prywatnego kodu, nowe treści About, trzy grupy kompetencji oraz kontakt z kopiowaniem emaila. Źródła i granice opisów zapisano w `docs/project-content-sources.md`. Dla stron firmowych zastosowano etykietę opisują przeznaczenie, bez domyślania się formy rozliczenia.
+
+Build, lint i 50 testów przechodzą. Testy obejmują kompletność opisów, referencje kompetencji, nawigację Home → opis → Projects, modal na stronach realizacji, nieznane slugi, prywatne repozytoria oraz powodzenie, odmowę i brak obsługi schowka. Axe sprawdza także cztery nowe podstrony w obu językach.
+
+Otwarta część: aktualne widoki desktop/mobile i wizualna kontrola nowych stron. Host przeglądarki nadal jest niedostępny. Użyto istniejących obrazów z uczciwymi podpisami; Moje Atelier ma grafikę prezentacyjną, a SLO archiwalny podgląd. Wyzwania techniczne zostały opisane, lecz punkt obejmujący nowe zrzuty pozostaje nieukończony.
+
 **5. SEO, adresy i języki — P1, średni/duży zakres**
 
-- [ ] Dodać unikalne tytuły i opisy, canonical, Open Graph, metadane kart społecznościowych oraz grafikę udostępniania.
-- [ ] Poprawić typ MIME favicon: obecnie plik PNG jest oznaczony jako SVG.
-- [ ] Synchronizować `html.lang` z aktywnym językiem; obecnie dokument pozostaje `en` również dla polskich treści.
-- [ ] Używać rozpoznanego języka PL/EN przy sterowaniu przełącznikiem, sprawdzić zachowanie dla `pl-PL` i `en-US`; przetłumaczyć stopkę, teksty pomocnicze, komunikaty oraz nazwy dostępnościowe.
-- [ ] Zaplanować stabilne adresy wersji językowych, np. `/pl/` i `/en/`, oraz odnośniki `hreflang` dla odpowiadających sobie stron.
-- [ ] Zastąpić adresy `#/projects` adresami ścieżkowymi razem z generowaniem HTML dla tras. Zachować React/TypeScript; dobrać sposób prerenderowania do hostingu.
-- [ ] Na GitHub Pages wygenerować pliki HTML dla tras i stronę 404. Samo przełączenie na BrowserRouter nie wystarczy do poprawnego odświeżania podstron.
-- [ ] Przygotować obsługę dotychczasowych linków hash, aby zapisane linki do portfolio nadal prowadziły do właściwej treści.
-- [ ] Generować sitemap i robots.txt z konfiguracji publicznej domeny; oznaczyć środowiska podglądu tak, aby nie konkurowały z wersją główną.
-- [ ] Dodać zgodne z treścią dane strukturalne osoby, strony i projektów; nie obiecywać rozszerzonych wyników wyszukiwania.
-- [ ] Sprawdzić wygenerowany HTML i odpowiedzi HTTP, nie tylko stan DOM po uruchomieniu Reacta.
+- [x] Dodać unikalne tytuły i opisy, canonical, Open Graph, metadane kart społecznościowych oraz grafikę udostępniania.
+- [x] Poprawić typ MIME favicon: obecnie plik PNG jest oznaczony jako SVG.
+- [x] Synchronizować `html.lang` z aktywnym językiem; obecnie dokument pozostaje `en` również dla polskich treści.
+- [x] Używać rozpoznanego języka PL/EN przy sterowaniu przełącznikiem, sprawdzić zachowanie dla `pl-PL` i `en-US`; przetłumaczyć stopkę, teksty pomocnicze, komunikaty oraz nazwy dostępnościowe.
+- [x] Zaplanować stabilne adresy wersji językowych, np. `/pl/` i `/en/`, oraz odnośniki `hreflang` dla odpowiadających sobie stron.
+- [x] Zastąpić adresy `#/projects` adresami ścieżkowymi razem z generowaniem HTML dla tras. Zachować React/TypeScript; dobrać sposób prerenderowania do hostingu.
+- [x] Na GitHub Pages wygenerować pliki HTML dla tras i stronę 404. Samo przełączenie na BrowserRouter nie wystarczy do poprawnego odświeżania podstron.
+- [x] Przygotować obsługę dotychczasowych linków hash, aby zapisane linki do portfolio nadal prowadziły do właściwej treści.
+- [x] Generować sitemap i robots.txt z konfiguracji publicznej domeny; oznaczyć środowiska podglądu tak, aby nie konkurowały z wersją główną.
+- [x] Dodać zgodne z treścią dane strukturalne osoby, strony i projektów; nie obiecywać rozszerzonych wyników wyszukiwania.
+- [x] Sprawdzić wygenerowany HTML i odpowiedzi HTTP, nie tylko stan DOM po uruchomieniu Reacta.
 
 Google zaleca adresy obsługiwane przez History API zamiast fragmentów do reprezentowania odrębnej treści oraz opisuje korzyści prerenderowania: [JavaScript SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics).
 
 Odbiór: bezpośrednie wejścia i odświeżenia działają, treść oraz metadane są obecne w HTML, link udostępniony poza przeglądarką ma właściwy podgląd, nieistniejący adres daje poprawny status 404.
 
+Stan wdrożenia (2026-11-04): BrowserRouter, 16 prerenderowanych stron PL/EN, pliki index.html dla podstron i globalny 404.html, migracja linków hash, canonical/hreflang, Open Graph/Twitter, JSON-LD, grafika 1200 × 630, poprawiony favicon i tłumaczona stopka. Język adresu ma pierwszeństwo przed preferencją, a przełącznik zachowuje podstronę, query i fragment. Intro GSAP pozostaje po hydratacji; HTML bez JS jest czytelny i nie ma blokady inert.
+
+Walidacja lokalna: 54 testy danych/interfejsu i 4 testy SEO/HTTP. Testy obejmują wszystkie 16 dokumentów, ich zasoby i metadane, rzeczywiste lokalne odpowiedzi 200/404, ukośniki, migrację starych URL-i, historię zmian języka oraz hydratację bez błędów. Osobno sprawdzono build produkcyjny i preview (noindex, brak sitemap/CNAME). Build i lint przechodzą. Instrukcje publikacji oraz wycofania są w `docs/seo-deployment.md`.
+
+GitHub Pages ma jeden globalny dokument 404: początkowa treść jest polska, a klient dopasowuje język do nieznanego adresu /en/. Nie wykonano publikacji ani nie potwierdzono odpowiedzi nowej wersji na publicznej domenie. Odbiór po wdrożeniu oraz kontrola wizualna nadal pozostają otwarte. W ramach zgodności publikacji wdrożono część punktu 7: Node 24, npm ci, kontrole przed publikacją, uprawnienia i kolejkowanie workflow. Pełna obsługa PR i przegląd zależności pozostają na etap 7.
+
 **6. Wydajność i porządek w kodzie — P1/P2, średni zakres**
 
 - [ ] Zmierzyć punkt wyjściowy na buildzie produkcyjnym: Home, Projects i About, desktop oraz mobile. Oddzielać wyniki laboratoryjne od danych rzeczywistych użytkowników.
-- [ ] Zoptymalizować używane tło About oraz obrazy hero/profilu; przygotować właściwe rozmiary WebP/AVIF i porównać jakość.
-- [ ] Dodać wymiary obrazów, `srcset`/`sizes` tam, gdzie potrzebne, oraz lazy loading dla grafik poza pierwszym ekranem.
+- [x] Zoptymalizować używane tło About oraz obrazy hero/profilu; przygotować właściwe rozmiary WebP/AVIF i porównać jakość.
+- [x] Dodać wymiary obrazów, `srcset`/`sizes` tam, gdzie potrzebne, oraz lazy loading dla grafik poza pierwszym ekranem.
 - [ ] Zmierzyć koszt animacji intro; zachować GSAP i samo intro zgodnie z decyzją użytkownika.
 - [ ] Ograniczyć aktualizacje położenia światła kursora do klatek animacji; uruchamiać efekt tylko dla właściwego wskaźnika i preferencji ruchu. Zmierzyć wpływ przed dalszymi optymalizacjami.
 - [ ] Przejrzeć koszt filtrów blur, animowanych teł i stałego `will-change` na urządzeniach mobilnych.
-- [ ] Wydzielić wspólne elementy ProjectCard, ProjectLinks, TechList i ProjectStatus, zachowując różne układy Home i pełnej listy.
-- [ ] Uporządkować SCSS według komponentów, ze wspólnymi tokenami i breakpointami; usunąć martwe komentarze i nieprawidłowe reguły, np. `background-color: none`.
-- [ ] Unikać globalnych reguł odstępów sekcji powodujących kumulowanie paddingów w zagnieżdżonych sekcjach.
+- [x] Wydzielić wspólne elementy ProjectCard, ProjectLinks, TechList i ProjectStatus, zachowując różne układy Home i pełnej listy.
+- [x] Uporządkować SCSS według komponentów, ze wspólnymi tokenami i breakpointami; usunąć martwe komentarze i nieprawidłowe reguły, np. `background-color: none`.
+- [x] Unikać globalnych reguł odstępów sekcji powodujących kumulowanie paddingów w zagnieżdżonych sekcjach.
 - [ ] Podział JS na części wprowadzić tylko tam, gdzie pomiary pokażą korzyść; przy tej skali nie dodawać globalnego managera stanu bez potrzeby.
 
 Odbiór: udokumentowane porównanie rozmiarów i pomiarów przed/po, brak pogorszenia jakości grafik i stabilności układu.
+
+Stan lokalny (2026-11-05): zoptymalizowane obrazy WebP, warianty rozmiarów i jawne wymiary, wspólne ProjectCard/TechList, style komponentów i breakpointy. Intro GSAP, animowane tło Projects i zachowanie headera zachowane. Walidacja obrazów wykrywa brak plików, nieaktualne źródła i błędne wymiary. 55 testów danych/interfejsu oraz 4 SEO/HTTP przechodzą. Szczegóły i porównanie rozmiarów: [performance.md](performance.md).
+
+Otwarty odbiór: pomiary LCP/CLS/TBT i klatek desktop/mobile, koszt efektów oraz kontrola układu. Host przeglądarki jest niedostępny; próba przez Firefox została zablokowana przez narzędzie z powodu braku obsługi kontroli adresów w przeglądarce Windows. Ograniczenie zdarzeń kursora do jednej klatki jest już wdrożone i przetestowane, lecz nie zmierzono kosztu renderowania. Nie wprowadzono podziału JS bez pomiarów.
 
 **7. Kontrola jakości i publikacja — P0/P1, średni zakres**
 

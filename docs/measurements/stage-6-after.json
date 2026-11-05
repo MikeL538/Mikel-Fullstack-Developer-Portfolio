@@ -1,0 +1,213 @@
+{
+  "kind": "static asset inventory",
+  "assets": [
+    {
+      "name": "index-CB4M2qX7.js",
+      "bytes": 427752,
+      "gzipBytes": 141473
+    },
+    {
+      "name": "index-DdxelVBD.css",
+      "bytes": 23383,
+      "gzipBytes": 5645
+    }
+  ],
+  "cssImages": [
+    {
+      "src": "/images/optimized/Background-768.webp",
+      "bytes": 32284
+    },
+    {
+      "src": "/images/optimized/Background-1536.webp",
+      "bytes": 146528
+    }
+  ],
+  "routes": {
+    "/pl/": {
+      "htmlBytes": 22752,
+      "images": [
+        {
+          "src": "/images/optimized/MLHeader-107.webp",
+          "bytes": 4000,
+          "loading": "eager",
+          "width": "107",
+          "height": "107",
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/optimized/HomeHeroImage-626.webp",
+          "bytes": 44872,
+          "loading": "eager",
+          "width": "626",
+          "height": "407",
+          "srcset": "/images/optimized/HomeHeroImage-320.webp 320w, /images/optimized/HomeHeroImage-626.webp 626w",
+          "sizes": "(max-width: 767px) 340px, (max-width: 1224px) 42vw, 480px"
+        },
+        {
+          "src": "/images/optimized/projects-MojeAtelier-960.webp",
+          "bytes": 17534,
+          "loading": "lazy",
+          "width": "1200",
+          "height": "630",
+          "srcset": "/images/optimized/projects-MojeAtelier-480.webp 480w, /images/optimized/projects-MojeAtelier-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 32px), (max-width: 1224px) calc((100vw - 72px) / 2), 564px"
+        },
+        {
+          "src": "/images/optimized/projects-WioryLeca-960.webp",
+          "bytes": 44350,
+          "loading": "lazy",
+          "width": "2558",
+          "height": "1440",
+          "srcset": "/images/optimized/projects-WioryLeca-480.webp 480w, /images/optimized/projects-WioryLeca-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 32px), (max-width: 1224px) calc((100vw - 72px) / 2), 564px"
+        },
+        {
+          "src": "/images/projects/ZjazdSlo.webp",
+          "bytes": 38756,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1200",
+          "srcset": "/images/optimized/projects-ZjazdSlo-480.webp 480w, /images/projects/ZjazdSlo.webp 1920w",
+          "sizes": "(max-width: 767px) calc(100vw - 32px), (max-width: 1224px) calc((100vw - 72px) / 2), 564px"
+        },
+        {
+          "src": "/images/optimized/projects-ImageInary-819.webp",
+          "bytes": 76524,
+          "loading": "lazy",
+          "width": "819",
+          "height": "512",
+          "srcset": "/images/optimized/projects-ImageInary-480.webp 480w, /images/optimized/projects-ImageInary-819.webp 819w",
+          "sizes": "(max-width: 767px) calc(100vw - 32px), (max-width: 1224px) calc((100vw - 72px) / 2), 564px"
+        },
+        {
+          "src": "/images/optimized/ML-512.webp",
+          "bytes": 34676,
+          "loading": "lazy",
+          "width": "512",
+          "height": "512",
+          "srcset": "/images/optimized/ML-256.webp 256w, /images/optimized/ML-512.webp 512w",
+          "sizes": "(max-width: 767px) 200px, 300px"
+        }
+      ]
+    },
+    "/pl/projects/": {
+      "htmlBytes": 24246,
+      "images": [
+        {
+          "src": "/images/optimized/MLHeader-107.webp",
+          "bytes": 4000,
+          "loading": "eager",
+          "width": "107",
+          "height": "107",
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/optimized/projects-MojeAtelier-960.webp",
+          "bytes": 17534,
+          "loading": "eager",
+          "width": "1200",
+          "height": "630",
+          "srcset": "/images/optimized/projects-MojeAtelier-480.webp 480w, /images/optimized/projects-MojeAtelier-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/optimized/projects-WioryLeca-960.webp",
+          "bytes": 44350,
+          "loading": "lazy",
+          "width": "2558",
+          "height": "1440",
+          "srcset": "/images/optimized/projects-WioryLeca-480.webp 480w, /images/optimized/projects-WioryLeca-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/optimized/projects-ImageInary-819.webp",
+          "bytes": 76524,
+          "loading": "lazy",
+          "width": "819",
+          "height": "512",
+          "srcset": "/images/optimized/projects-ImageInary-480.webp 480w, /images/optimized/projects-ImageInary-819.webp 819w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/projects/RaportGeneratorV2.webp",
+          "bytes": 62492,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1080",
+          "srcset": "/images/optimized/projects-RaportGeneratorV2-480.webp 480w, /images/projects/RaportGeneratorV2.webp 1920w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/projects/Filmovie.webp",
+          "bytes": 57492,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1080",
+          "srcset": "/images/optimized/projects-Filmovie-480.webp 480w, /images/projects/Filmovie.webp 1920w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/projects/ZjazdSlo.webp",
+          "bytes": 38756,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1200",
+          "srcset": "/images/optimized/projects-ZjazdSlo-480.webp 480w, /images/projects/ZjazdSlo.webp 1920w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/projects/GOITWebstudio.webp",
+          "bytes": 38798,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1080",
+          "srcset": "/images/optimized/projects-GOITWebstudio-480.webp 480w, /images/projects/GOITWebstudio.webp 1920w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/optimized/projects-Anemone-960.webp",
+          "bytes": 21186,
+          "loading": "lazy",
+          "width": "1920",
+          "height": "1080",
+          "srcset": "/images/optimized/projects-Anemone-480.webp 480w, /images/optimized/projects-Anemone-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        },
+        {
+          "src": "/images/optimized/projects-FlippingCard-960.webp",
+          "bytes": 12942,
+          "loading": "lazy",
+          "width": "1706",
+          "height": "1066",
+          "srcset": "/images/optimized/projects-FlippingCard-480.webp 480w, /images/optimized/projects-FlippingCard-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 16px), (max-width: 1079px) 644px, 450px"
+        }
+      ]
+    },
+    "/pl/about/": {
+      "htmlBytes": 9853,
+      "images": [
+        {
+          "src": "/images/optimized/MLHeader-107.webp",
+          "bytes": 4000,
+          "loading": "eager",
+          "width": "107",
+          "height": "107",
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/optimized/ML-512.webp",
+          "bytes": 34676,
+          "loading": "eager",
+          "width": "512",
+          "height": "512",
+          "srcset": "/images/optimized/ML-256.webp 256w, /images/optimized/ML-512.webp 512w",
+          "sizes": "(max-width: 520px) calc(100vw - 12px), 500px"
+        }
+      ]
+    }
+  }
+}

@@ -49,20 +49,8 @@ button.project-preview {
   }
 }
 
-.home__projects__links,
-.projects__links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.projects__links { justify-content: flex-end; }
-
 .header__nav a,
-.footer__link,
-.contact__link {
+.footer__link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -74,14 +62,13 @@ button.project-preview {
 .header__nav a { padding: 4px; }
 .header__button { display: inline-flex; align-items: center; justify-content: center; }
 
-.home__projects__links-container { flex-wrap: wrap; }
 .home__projects__icon-wrapper { max-width: 100%; }
 
-@media (max-width: 1079px) {
+@media (max-width: vars.$tablet-max) {
   button.project-preview--list { width: 100%; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: vars.$mobile-max) {
   .header__logo { margin: 0 8px; }
   .header__nav { margin: 0 4px; }
   .header__list { gap: 2px 8px; }

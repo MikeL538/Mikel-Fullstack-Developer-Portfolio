@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { profile } from "../config/profile";
-import { assetUrl } from "../utils/assetUrl";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function AboutHero() {
   const { t } = useTranslation();
@@ -8,7 +8,9 @@ export default function AboutHero() {
   return (
     <>
       <div className="about__img--container">
-        <img className="about__img" src={assetUrl(profile.images.portrait)} alt={t("accessibility.portrait", { name: profile.name })} />
+        <ResponsiveImage className="about__img" source={profile.images.portrait}
+          alt={t("accessibility.portrait", { name: profile.name })}
+          sizes="(max-width: 520px) calc(100vw - 12px), 500px" fetchPriority="high" />
         <div className="about__img--text">
           <p className="about__img--name">{profile.name}</p>
           <p className="about__img--occ">{t("about.occ")}</p>

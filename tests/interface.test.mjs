@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { createServer } from "vite";
 import { JSDOM } from "jsdom";
 import { createElement, act, StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { MemoryRouter } from "react-router-dom";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { MemoryRouter, useNavigate } from "react-router-dom";
 
 let server;
 let dom;
@@ -15,6 +15,8 @@ let i18n;
 let App;
 let axe;
 let gsap;
+let renderPage;
+let paths;
 const mediaQueries = new Map();
 
 before(async () => {
@@ -51,6 +53,8 @@ before(async () => {
   ({ default: ErrorBoundary } = await server.ssrLoadModule("/src/components/ErrorBoundary.tsx"));
   ({ default: TechnologyIcon } = await server.ssrLoadModule("/src/components/TechnologyIcon.tsx"));
   ({ default: App } = await server.ssrLoadModule("/src/App.tsx"));
+  ({ render: renderPage } = await server.ssrLoadModule("/src/entry-server.tsx"));
+  paths = await server.ssrLoadModule("/src/routing/paths.ts");
   ({ gsap } = await import("gsap"));
   ({ default: axe } = await import("axe-core"));
 });
@@ -114,7 +118,7 @@ test("reduced motion skips the intro and navigation moves focus to main content"
     assert.ok(skip.textContent.trim());
     await act(async () => skip.click());
     assert.equal(document.activeElement, container.querySelector("main"));
-    const link = container.querySelector('nav a[href="/about"]');
+    const link = container.querySelector('nav a[href$="/about/"]');
     await act(async () => link.focus());
     await act(async () => link.click());
     assert.equal(document.activeElement, container.querySelector("main"));
@@ -140,18 +144,18 @@ test("unmounting an open preview restores the previous overflow values", async (
 test("language button has a name and updates the document language", async () => {
   await i18n.changeLanguage("en");
   await render(createElement(MemoryRouter, null, createElement(App)), async (container) => {
-    const button = container.querySelector('button[lang="pl"]');
+    const button = container.querySelector('a[lang="pl"]');
     assert.equal(button.getAttribute("aria-label"), "Zmień język na polski");
     await act(async () => button.click());
     assert.equal(document.documentElement.lang, "pl");
     assert.equal(container.querySelectorAll(".header__button").length, 2);
     assert.equal(button.textContent.trim(), "PL");
-    assert.equal(button.getAttribute("aria-pressed"), "true");
-    assert.equal(container.querySelector('button[lang="en"]').getAttribute("aria-pressed"), "false");
-    assert.ok(container.querySelector('button[lang="en"]').getAttribute("aria-label"));
-    await act(async () => container.querySelector('button[lang="en"]').click());
+    assert.equal(button.getAttribute("aria-current"), "true");
+    assert.equal(container.querySelector('a[lang="en"]').getAttribute("aria-current"), null);
+    assert.ok(container.querySelector('a[lang="en"]').getAttribute("aria-label"));
+    await act(async () => container.querySelector('a[lang="en"]').click());
     assert.equal(document.documentElement.lang, "en");
-    assert.equal(button.getAttribute("aria-pressed"), "false");
+    assert.equal(button.getAttribute("aria-current"), null);
   });
 });
 
@@ -218,7 +222,11 @@ test("cursor effect stops and clears coordinates when motion preference changes"
   context.mock.method(globalThis, "requestAnimationFrame", (callback) => { frames.push(callback); return frames.length; });
   context.mock.method(globalThis, "cancelAnimationFrame", () => {});
   await render(createElement(MemoryRouter, null, createElement(App)), async () => {
-    window.dispatchEvent(new window.MouseEvent("mousemove", { clientX: 50, clientY: 70 }));
+    const beforeMoves = frames.length;
+    for (let index = 0; index < 50; index++) {
+      window.dispatchEvent(new window.MouseEvent("mousemove", { clientX: index + 1, clientY: index + 21 }));
+    }
+    assert.equal(frames.length - beforeMoves, 1, "a burst of mouse events schedules only one animation frame");
     // Header also schedules one frame to measure initial scroll state.
     const countBeforePreferenceChange = frames.length;
     await act(async () => frames.forEach((callback) => callback()));
@@ -253,7 +261,7 @@ test("GSAP intro runs once, blocks the page, then restores scrolling and focus",
       assert.equal(document.body.style.overflow, "auto");
       assert.equal(document.documentElement.style.overflow, "scroll");
       assert.equal(document.activeElement, container.querySelector("main"));
-      await act(async () => container.querySelector('nav a[href="/about"]').click());
+      await act(async () => container.querySelector('nav a[href$="/about/"]').click());
       assert.equal(container.querySelector(".intro"), null, "route changes must not replay the intro");
     });
   } finally {
@@ -296,9 +304,9 @@ for (const language of ["pl", "en"]) {
   test(`Home actions navigate to contact and the logo returns Home (${language})`, async () => {
     await i18n.changeLanguage(language);
     await render(createElement(MemoryRouter, null, createElement(App)), async (container) => {
-      for (const selector of ['.home__hero a[href="/contact"]', '.home__contact a[href="/contact"]', '.home__about a[href="/about"]']) {
+      for (const selector of ['.home__hero a[href$="/contact/"]', '.home__contact a[href$="/contact/"]', '.home__about a[href$="/about/"]']) {
         const link = container.querySelector(selector);
-        const expectedTitle = link.getAttribute("href") === "/about" ? "about.title" : "contact.title";
+        const expectedTitle = link.getAttribute("href").endsWith("/about/") ? "about.title" : "contact.title";
         await act(async () => link.click());
         assert.equal(container.querySelector("h1").textContent, i18n.t(expectedTitle));
         await act(async () => container.querySelector(".header__link").click());
@@ -306,13 +314,13 @@ for (const language of ["pl", "en"]) {
       }
       assert.ok(container.querySelector('.home__contact a[href^="mailto:"]'));
       const atelier = container.querySelector(".home__projects__item");
-      assert.ok(atelier.querySelector(".home__projects__private"));
+      assert.ok(atelier.querySelector(".project-links__private"));
       assert.equal(atelier.querySelector('a[href*="github.com"]'), null);
       assert.ok(container.querySelector('.header__github[href="https://github.com/MikeL538"]'));
     });
   });
 
-  for (const path of ["/", "/projects", "/about", "/contact", "/missing"]) {
+  for (const path of ["/", "/projects", "/about", "/contact", "/missing", "/projects/moje-atelier", "/projects/wiory-leca", "/projects/zjazd-slo", "/projects/imageinary"]) {
     test(`accessible names and structure pass axe (${language} ${path})`, async () => {
       await i18n.changeLanguage(language);
       await render(createElement(MemoryRouter, { initialEntries: [path] }, createElement(App)), async (container) => {
@@ -322,6 +330,76 @@ for (const language of ["pl", "en"]) {
       });
     });
   }
+}
+
+for (const language of ["pl", "en"]) {
+  test(`featured case studies open from Home, show complete content and return to Projects (${language})`, async () => {
+    await i18n.changeLanguage(language);
+    for (const slug of ["moje-atelier", "wiory-leca", "zjazd-slo", "imageinary"]) {
+      await render(createElement(MemoryRouter, null, createElement(App)), async (container) => {
+        const card = container.querySelector(`.home__projects__item:has(a[href$="/projects/${slug}/"])`);
+        const title = card.querySelector("h3").textContent;
+        const techCount = card.querySelectorAll(".home__projects__list-tech > li").length;
+        assert.ok(techCount >= 3 && techCount <= 5);
+        await act(async () => card.querySelector(".project-links__details").click());
+        assert.equal(container.querySelector("h1").textContent, title);
+        assert.equal(document.activeElement, container.querySelector("main"));
+        assert.equal(container.querySelectorAll(".case-study__sections section").length, 7);
+        for (const paragraph of container.querySelectorAll(".case-study__sections p")) {
+          assert.ok(paragraph.textContent.length > 40);
+          assert.ok(!paragraph.textContent.startsWith("projects."));
+        }
+        assert.ok(container.querySelector("figcaption").textContent.length > 20);
+        if (slug === "moje-atelier") {
+          assert.equal(container.querySelector('article a[href="https://github.com/MikeL538/Psycho"]'), null);
+          assert.ok(container.querySelector(".project-links__private"));
+        }
+        const opener = container.querySelector("article button[aria-haspopup]");
+        await act(async () => opener.click());
+        assert.ok(document.querySelector("dialog[open]"));
+        await act(async () => document.querySelector("dialog button").click());
+        assert.equal(document.activeElement, opener);
+        await act(async () => container.querySelector('article a[href$="/projects/"]').click());
+        assert.equal(container.querySelector("h1").textContent, i18n.t("projects.title"));
+        assert.equal(container.querySelector('main a[href="https://github.com/MikeL538/Psycho"]'), null);
+        assert.equal(container.querySelectorAll(".project-links__details").length, 4);
+      });
+    }
+  });
+
+  test(`unknown and undocumented project routes show 404 (${language})`, async () => {
+    await i18n.changeLanguage(language);
+    for (const slug of ["missing", "filmovie"]) {
+      await render(createElement(MemoryRouter, { initialEntries: [`/projects/${slug}`] }, createElement(App)), async (container) => {
+        assert.equal(container.querySelector("h1").textContent, i18n.t("errors.notFound.title"));
+        assert.equal(container.querySelector(".case-study"), null);
+      });
+    }
+  });
+}
+
+for (const mode of ["success", "rejected", "unavailable"]) {
+  test(`copy email handles ${mode} without hiding the contact address`, async () => {
+    const descriptor = Object.getOwnPropertyDescriptor(globalThis.navigator, "clipboard");
+    let copied;
+    Object.defineProperty(globalThis.navigator, "clipboard", { configurable: true, value: mode === "unavailable" ? undefined : {
+      writeText: async (value) => { if (mode === "rejected") throw new Error("Clipboard denied"); copied = value; },
+    } });
+    try {
+      await render(createElement(MemoryRouter, { initialEntries: ["/contact"] }, createElement(App)), async (container) => {
+        const address = container.querySelector(".contact__email");
+        await act(async () => container.querySelector(".copy-email button").click());
+        assert.equal(container.querySelector('.copy-email [role="status"]').textContent,
+          i18n.t(mode === "success" ? "contact.copied" : "contact.copyFailed"));
+        assert.equal(address.getAttribute("href"), `mailto:${address.textContent}`);
+        assert.equal(container.querySelector(".copy-email button").disabled, false);
+        if (mode === "success") assert.equal(copied, address.textContent);
+      });
+    } finally {
+      if (descriptor) Object.defineProperty(globalThis.navigator, "clipboard", descriptor);
+      else delete globalThis.navigator.clipboard;
+    }
+  });
 }
 
 async function render(element, inspect) {
@@ -342,7 +420,7 @@ for (const language of ["pl", "en"]) {
     await i18n.changeLanguage(language);
     await render(createElement(MemoryRouter, { initialEntries: ["/missing-page"] }, createElement(AppRoutes)), async (container) => {
       assert.equal(container.querySelector("h1").textContent, i18n.t("errors.notFound.title"));
-      const link = container.querySelector('a[href="/"]');
+      const link = container.querySelector(`a[href="/${i18n.resolvedLanguage}/"]`);
       assert.ok(link);
       await act(async () => link.dispatchEvent(new window.MouseEvent("click", { bubbles: true, cancelable: true, button: 0 })));
       assert.equal(container.querySelector("h1").textContent, i18n.t("home.heroTitle"));
@@ -375,3 +453,92 @@ test("unknown technology renders readable text instead of an empty SVG", async (
     assert.equal(container.querySelector("svg"), null);
   });
 });
+
+test("legacy hash URLs and regional language preferences resolve to local canonical paths", () => {
+  const { initialTarget, normalizeLanguage } = paths;
+  assert.equal(normalizeLanguage("pl-PL"), "pl");
+  assert.equal(normalizeLanguage("en-US"), "en");
+  assert.equal(normalizeLanguage("de-DE"), undefined);
+  for (const [url, language, expected] of [
+    ["https://example.com/", "en", "/en/"],
+    ["https://example.com/pl/about/", "en", null],
+    ["https://example.com/#/projects", "en", "/en/projects/"],
+    ["https://example.com/?from=old#/about", "pl", "/pl/about/?from=old"],
+    ["https://example.com/#/projects/moje-atelier?ref=old#case-scope", "en", "/en/projects/moje-atelier/?ref=old#case-scope"],
+    ["https://example.com/#/en/contact", "pl", "/en/contact/"],
+    ["https://example.com/#/missing", "pl", "/pl/missing/"],
+    ["https://example.com/en/projects", "pl", "/en/projects/"],
+    ["https://example.com/en/about/index.html", "pl", "/en/about/"],
+    ["https://example.com/en/missing/", "pl", null],
+    ["https://example.com/#//evil.example/", "en", null],
+  ]) assert.equal(initialTarget(new URL(url), language), expected, url);
+});
+
+test("URL language wins over stored preference; language links preserve the page and browser history", async () => {
+  await i18n.changeLanguage("pl");
+  window.localStorage.setItem("i18nextLng", "pl-PL");
+  function Back() {
+    const navigate = useNavigate();
+    return createElement("button", { id: "history-back", onClick: () => navigate(-1) }, "Back");
+  }
+  await render(createElement(MemoryRouter, { initialEntries: ["/en/projects/moje-atelier/?ref=language#case-scope"] },
+    createElement(App), createElement(Back)), async (container) => {
+    assert.equal(document.documentElement.lang, "en");
+    assert.equal(container.querySelector("h1").textContent, "Moje Atelier");
+    const polish = container.querySelector('a[lang="pl"]');
+    assert.equal(polish.getAttribute("href"), "/pl/projects/moje-atelier/?ref=language#case-scope");
+    assert.equal(container.querySelector('nav a[href="/en/"]').getAttribute("aria-current"), null);
+    assert.equal(container.querySelector('nav a[href="/en/projects/"]').getAttribute("aria-current"), "page");
+    const englishTitle = document.title;
+    await act(async () => polish.click());
+    assert.equal(document.documentElement.lang, "pl");
+    assert.equal(window.localStorage.getItem("i18nextLng"), "pl");
+    assert.notEqual(document.title, englishTitle);
+    assert.equal(document.head.querySelectorAll('meta[name="description"]').length, 1);
+    assert.equal(document.head.querySelectorAll("title").length, 1);
+    await act(async () => container.querySelector("#history-back").click());
+    assert.equal(document.documentElement.lang, "en");
+    assert.equal(document.title, englishTitle);
+    assert.equal(window.localStorage.getItem("i18nextLng"), "en");
+  });
+});
+
+for (const reduced of [true, false]) {
+  test(`prerendered content hydrates without mismatches and preserves intro (reduced motion: ${reduced})`, async (context) => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    preference.matches = reduced;
+    const warnings = [];
+    context.mock.method(console, "error", (...args) => warnings.push(args.join(" ")));
+    try {
+      const routes = reduced ? paths.languages.flatMap((lang) => paths.contentPaths.map((path) => paths.localizedPath(lang, path))) : ["/pl/", "/en/"];
+      for (const route of routes) {
+        const html = renderPage(route).html;
+        const container = document.createElement("div");
+        container.innerHTML = html;
+        document.body.append(container);
+        assert.equal(container.querySelector("[inert], .intro"), null);
+        const heading = container.querySelector("h1");
+        const errors = [];
+        let root;
+        try {
+          await act(async () => {
+            root = hydrateRoot(container, createElement(MemoryRouter, { initialEntries: [route] }, createElement(App)), { onRecoverableError: (error) => errors.push(error.message) });
+          });
+          assert.deepEqual(errors, [], route);
+          assert.equal(container.querySelector("h1"), heading, "hydration must preserve the server-rendered DOM");
+          assert.equal(Boolean(container.querySelector(".intro")), !reduced);
+          if (!reduced) {
+            assert.ok(container.querySelector("[inert]"));
+            await act(async () => container.querySelector(".intro__skip").click());
+            assert.equal(container.querySelector("[inert]"), null);
+            assert.equal(document.activeElement, container.querySelector("main"));
+          }
+        } finally {
+          if (root) await act(async () => root.unmount());
+          container.remove();
+        }
+      }
+      assert.deepEqual(warnings, []);
+    } finally { preference.matches = true; }
+  });
+}

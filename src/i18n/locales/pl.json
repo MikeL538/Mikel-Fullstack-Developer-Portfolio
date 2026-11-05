@@ -13,17 +13,17 @@
     "skillsEyebrow": "Kompetencje w praktyce",
     "skills": "Od interfejsu do danych",
     "capabilities": {
-      "interfaces": {
-        "title": "Responsywne interfejsy",
-        "description": "React, TypeScript i SCSS wykorzystuję do budowania stron z czytelną ofertą, formularzami i układem dopasowanym do różnych ekranów."
+      "frontend": {
+        "title": "Frontend",
+        "description": "Buduję responsywne strony i formularze w React, TypeScript oraz SCSS. Moje Atelier łączy prezentację usług z interaktywnym zgłoszeniem wizyty."
       },
       "data": {
-        "title": "Formularze i bazy danych",
-        "description": "Łączę formularze z Supabase i PostgreSQL. W projekcie zjazdu SLO obsługuję zapisy uczestników oraz widok do zarządzania zgłoszeniami."
+        "title": "Backend i dane",
+        "description": "Łączę formularze i interfejsy z API oraz bazami danych. Zjazd SLO wykorzystuje funkcję Supabase do przyjmowania zgłoszeń i osobny widok do publicznego odczytu."
       },
-      "integrations": {
-        "title": "Integracje API",
-        "description": "Pobieram i prezentuję dane z zewnętrznych API. ImageInary łączy wyszukiwanie zdjęć, paginację i podgląd wyników w interfejsie React."
+      "tools": {
+        "title": "Narzędzia i publikacja",
+        "description": "Przygotowuję proces budowania, wersjonuję kod i organizuję wspólne szablony. W Wióry Lecą! Vite generuje wielojęzyczne strony oraz galerię z katalogu zdjęć."
       }
     },
     "projectsEyebrow": "Wybrane realizacje",
@@ -39,26 +39,26 @@
   },
   "about": {
     "title": "O mnie",
-    "p1": "Jestem fullstack developerem, tworzącym aplikacje, które działają sprawnie i są łatwe w utrzymaniu. Lubię budować nowe projekty i z każdą kolejną próbą udoskonalać swój kod.",
-    "p2": "Posiadam ugruntowaną wiedzę w JavaScript, TypeScript, SCSS, React i C++, a także w wielu innych technologiach i metodach. Skupiam się na tworzeniu intuicyjnych interfejsów i optymalizacji wydajności.",
-    "p3": "Dbam o czystą architekturę i nie boję się wracać do starszych projektów, aby je refaktoryzować i udoskonalać. Dzięki temu stale rozwijam swoje umiejętności i zdobywam doświadczenie w praktyce.",
-    "strengths": "Moje silne strony",
+    "p1": "Jestem Michał Lipiak, fullstack developer. Tworzę strony firmowe i aplikacje webowe: od prezentacji oferty po formularze, integracje API i pracę z danymi.",
+    "p2": "Dobieram rozwiązania do zadania. Moje Atelier wykorzystuje React i TypeScript, Wióry Lecą! generuje strony z HTML i TypeScript, a zapisy na zjazd SLO łączą prosty formularz z Supabase.",
+    "p3": "Pracuję nad interfejsem, logiką i przygotowaniem aplikacji do publikacji. W projektach rozwijam walidację, obsługę błędów i testy. Oddzielam gotowe funkcje od zależności wdrożenia — takich jak materiały klienta czy konfiguracja usług.",
+    "strengths": "Jak pracuję",
     "items": {
       "automation": {
-        "title": "Automatyzacja pracy",
-        "description": "Potrafię tworzyć narzędzia i skrypty, które oszczędzają czas i minimalizują powtarzalne zadania."
+        "title": "Proces i utrzymanie",
+        "description": "W Wióry Lecą! wspólne szablony i katalog zdjęć zasilają strony galerii oraz wersje językowe."
       },
       "perseverance": {
-        "title": "Wytrwałość i cierpliwość",
-        "description": "Konsekwentnie doprowadzam projekty do końca, nawet przy trudnych wyzwaniach."
+        "title": "Praca ze stanami błędów",
+        "description": "ImageInary pokazuje ładowanie, brak wyników i błędy API, zamiast zostawiać pustą galerię."
       },
       "creativity": {
-        "title": "Kreatywność i pomysłowość",
-        "description": "Znajduję nietypowe rozwiązania dla złożonych problemów."
+        "title": "Rozwiązanie do zadania",
+        "description": "W Moje Atelier dane usług są wspólne dla cennika i formularza, co ułatwia zachowanie spójności."
       },
       "focus": {
-        "title": "Skupienie na efektach",
-        "description": "Realizuję pomysły w działających projektach, nie tylko na papierze."
+        "title": "Pełny przepływ",
+        "description": "W Zjeździe SLO formularz, zapis w Supabase i osobny panel składają się na obsługę zgłoszeń."
       }
     },
     "occ": "Deweloper Fullstack"
@@ -66,22 +66,53 @@
   "projects": {
     "title": "Projekty",
     "status": {
-      "inProgress": "W trakcie realizacji"
+      "inProgress": "W trakcie realizacji",
+      "completed": "Zrealizowany"
     },
     "privateRepository": "Repozytorium prywatne",
     "viewLive": "Zobacz online",
     "viewCode": "Kod źródłowy",
     "MojeAtelier": {
-      "description": "Responsywna strona gabinetu psychologicznego z cennikiem i formularzem zgłoszenia wizyty. Gotowy interfejs i funkcjonalności; finalizacja projektu oczekuje na uzupełnienie treści przez klienta.",
-      "descriptionLong": "Strona internetowa gabinetu psychologicznego Moje Atelier w Żarach, stworzona w React i TypeScript z wykorzystaniem SCSS. Łączy spokojną, elegancką oprawę wizualną z prezentacją usług, cennikiem, odpowiedziami na częste pytania i formularzem zgłoszenia wizyty z wyborem preferowanych terminów. Projekt obejmuje walidację formularza, integrację z API do wysyłki zgłoszeń oraz prerenderowanie stron i metadane SEO. Interfejs i funkcjonalności są gotowe, a projekt pozostaje w trakcie realizacji ze względu na oczekiwanie na brakujące dane i materiały od klienta. Repozytorium jest obecnie prywatne."
+      "description": "Strona gabinetu psychologicznego: oferta, cennik i zgłoszenie wizyty. Interfejs oraz funkcje są gotowe; wersja demonstracyjna oczekuje na końcowe materiały klienta.",
+      "descriptionLong": "Strona gabinetu Moje Atelier w Żarach zbudowana w React i TypeScript. Prezentuje ofertę, cennik i odpowiedzi na pytania oraz pozwala zgłosić chęć wizyty z preferowanymi terminami. Formularz współpracuje z API, a strony są prerenderowane do HTML. Dostępna wersja jest demonstracyjna: finalizacja oczekuje na dane i materiały klienta. Repozytorium pozostaje prywatne.",
+      "caseStudy": {
+        "context": "Gabinet psychologiczny Moje Atelier w Żarach potrzebuje miejsca, w którym odwiedzający pozna ofertę, przygotuje się do pierwszej wizyty i prześle preferowane terminy konsultacji.",
+        "scope": "Przygotowanie responsywnego interfejsu w React, stylów SCSS, stron oferty i cennika oraz formularza zgłoszenia wizyty. Zakres obejmuje walidację, integrację z API wysyłki zgłoszeń, prerenderowanie HTML, metadane i konfigurację wersji demonstracyjnej na Vercel.",
+        "decisions": "Wspólne dane usług zasilają cennik i formularz, aby nazwy, ceny oraz czas konsultacji pozostały spójne. Prerenderowanie udostępnia treść w początkowym HTML, a React obsługuje interakcje. Wysyłka zgłoszeń odbywa się przez API, poza kodem przeglądarki.",
+        "features": "Odwiedzający może wybrać usługę, podać dane kontaktowe oraz zaproponować do trzech dat z preferowanymi godzinami. Formularz sygnalizuje błędy, wysyłanie i wynik zgłoszenia. Zgłoszenie jest prośbą o wizytę — termin potwierdza gabinet.",
+        "challenge": "Formularz musi zachować dane po błędzie wysyłki i ograniczać powtórne zgłoszenia. Stan wysyłania blokuje kolejne kliknięcia, a identyfikator żądania pozwala API rozpoznać ponowienie tej samej próby. Błędy walidacji kierują użytkownika do odpowiednich pól.",
+        "result": "Powstał funkcjonalny interfejs wraz z obsługą zgłoszeń i przygotowaniem stron do publikacji. Wersja demonstracyjna pozwala obejrzeć układ i dostępne funkcje, a konfiguracja treści jest oddzielona od komponentów.",
+        "limitations": "Projekt pozostaje w trakcie realizacji ze względu na brakujące dane, zdjęcia i treści od klienta. Cennik oraz informacje gabinetu wymagają końcowego zatwierdzenia. Wersja demonstracyjna nie oznacza uruchomienia docelowej strony gabinetu; zgłoszenie nie rezerwuje automatycznie terminu.",
+        "imageCaption": "Grafika identyfikacyjna Moje Atelier. To materiał prezentacyjny, nie zrzut interfejsu."
+      }
     },
     "WioryLeca": {
-      "description": "Responsywna strona wizytówka dla firmy zajmującej się meblami na wymiar. Projekt prezentuje ofertę, realizacje oraz dane kontaktowe w nowoczesnej i przejrzystej formie.",
-      "descriptionLong": "Responsywna strona internetowa stworzona dla firmy wykonującej meble na wymiar, takie jak kuchnie, szafy, zabudowy oraz meble łazienkowe. Projekt skupia się na czytelnym przedstawieniu oferty, realizacji oraz informacji kontaktowych, prowadząc użytkownika przez stronę w intuicyjny sposób. Zastosowano semantyczny HTML, SCSS do organizacji stylów, podejście responsive design oraz przejrzysty układ sekcji dopasowany do potrzeb małej lokalnej firmy. Projekt pokazuje umiejętność tworzenia estetycznych i funkcjonalnych stron wizytówek."
+      "description": "Strona firmy wykonującej meble na wymiar. Prezentuje ofertę i realizacje w galerii kategorii, z wersjami PL/DE/EN oraz szybkim kontaktem.",
+      "descriptionLong": "Witryna firmy Wióry Lecą! łączy ofertę mebli na wymiar, zasady współpracy i kontakt z galerią realizacji. HTML, SCSS, TypeScript i Vite tworzą lekki interfejs bez frameworka frontendowego. Wersje PL/DE/EN, strony kategorii i paginacja galerii są generowane podczas budowania strony.",
+      "caseStudy": {
+        "context": "Firma wykonująca meble na wymiar potrzebuje czytelnej prezentacji oferty i zdjęć realizacji. Odwiedzający powinien łatwo przejść od wybranego typu mebli do przykładów prac i kontaktu.",
+        "scope": "Implementacja responsywnej strony, modułowych szablonów HTML, stylów SCSS i interakcji w TypeScript. Rozbudowa galerii o kategorie i paginację, obsługa trzech języków oraz przygotowanie procesu budowania statycznych stron i zasobów.",
+        "decisions": "Witryna korzysta z HTML i TypeScript bez frameworka frontendowego. Vite składa wspólne fragmenty oraz tłumaczenia w kompletne strony. Galeria i jej paginacja są obecne w HTML, dzięki czemu przeglądanie kategorii nie wymaga uruchomienia JavaScript.",
+        "features": "Strona pokazuje ofertę, zasady współpracy, dane kontaktowe i realizacje w kategoriach: kuchnie, szafy, łazienki oraz zabudowy. Użytkownik może zmienić język między polskim, niemieckim i angielskim oraz otworzyć podgląd zdjęcia.",
+        "challenge": "Rozwój galerii wymagał spójności zdjęć, kategorii, paginacji i wersji językowych. Wspólny katalog obrazów zasila generowane strony oraz mapę witryny, a obsługa starych linków kategorii prowadzi do nowych adresów.",
+        "result": "Oferta i przykłady prac są dostępne w jednej witrynie firmowej. Generowane strony galerii pozwalają przeglądać konkretne kategorie, a wspólne szablony upraszczają utrzymanie wersji językowych.",
+        "limitations": "To witryna z ofertą i kontaktem, bez konfiguratora mebli ani zakupów online. Dodanie zdjęć lub zmiana treści wymaga aktualizacji plików i ponownego zbudowania strony; projekt nie ma panelu CMS.",
+        "imageCaption": "Zapisany widok strony głównej Wióry Lecą! z prezentacją oferty mebli na wymiar."
+      }
     },
     "ImageInary": {
-      "description": "Aplikacja webowa do wyszukiwania obrazów, która umożliwia szybkie przeglądanie zdjęć na podstawie wpisanego zapytania. Użytkownik może wyświetlać wyniki, powiększać wybrane obrazy oraz ładować kolejne strony.",
-      "descriptionLong": "Projekt webowy umożliwiający wyszukiwanie obrazów z wykorzystaniem zewnętrznego API. Użytkownik może wpisywać zapytania, przeglądać wyniki w formie galerii oraz wyświetlać wybrane zdjęcia w trybie podglądu. Aplikacja obsługuje paginację i dynamiczne ładowanie danych, zapewniając płynne doświadczenie użytkownika. Projekt prezentuje pracę z asynchronicznym JavaScript, integrację z API, zarządzanie stanem w React oraz tworzenie interaktywnego i responsywnego interfejsu."
+      "description": "Edukacyjna wyszukiwarka zdjęć z API Pixabay. Galeria React automatycznie doładowuje wyniki, pokazuje stany ładowania i błędów oraz podgląd zdjęć.",
+      "descriptionLong": "Aplikacja React do wyszukiwania zdjęć przez REST API Pixabay. Obejmuje galerię, paginację z automatycznym doładowywaniem, przycisk awaryjnego pobrania kolejnych wyników oraz modal. Pokazuje ładowanie, puste wyniki, koniec listy i błędy API. Projekt edukacyjny rozwijający pracę z asynchronicznymi danymi i testami komponentów.",
+      "caseStudy": {
+        "context": "Projekt edukacyjny do ćwiczenia Reacta, asynchronicznych zapytań i obsługi stanów interfejsu. Użytkownik ma wyszukać zdjęcia i przeglądać wyniki bez przechodzenia między osobnymi stronami.",
+        "scope": "Budowa formularza wyszukiwania, galerii, integracji z Pixabay przez Axios, paginacji i modala zdjęć. Implementacja stanów ładowania, pustych wyników i błędów oraz podstawowych testów komponentów i zachowania pobierania danych.",
+        "decisions": "Stan wyników, strony i ładowania jest zarządzany w React. Żądania do Pixabay są wydzielone do modułu API, a galeria przekazuje dane do komponentu odpowiedzialnego za wyświetlanie aktualnego stanu.",
+        "features": "Wyszukiwanie po frazie, automatyczne doładowywanie podczas przewijania, powiększanie zdjęć i komunikaty o braku wyników lub końcu listy. Gdy ekran mieści całą galerię i nie da się przewijać, dostępny jest przycisk pobrania kolejnych zdjęć.",
+        "challenge": "Automatyczne doładowywanie nie wystarcza na dużym ekranie, gdy pierwsze wyniki nie tworzą przewijanej strony. Pomiar wysokości dokumentu pozwala pokazać przycisk „Load more”, a scalanie wyników według identyfikatorów usuwa powtórzone zdjęcia.",
+        "result": "Działająca wyszukiwarka łączy zewnętrzne API z interaktywną galerią i podglądem. Projekt obejmuje również podstawowe testy formularza, modala i stanów wyników, które dokumentują zachowanie komponentów.",
+        "limitations": "Wyniki i dostępność wyszukiwania zależą od Pixabay oraz limitów API. To projekt edukacyjny, bez kont użytkowników i własnej bazy zdjęć; testy komponentów nie zastępują pełnej kontroli całej aplikacji w przeglądarce.",
+        "imageCaption": "Zapisany widok galerii ImageInary z wynikami wyszukiwania zdjęć."
+      }
     },
     "raportGeneratorV2": {
       "description": "Jest to aplikacja webowa służąca do szybkiego tworzenia czytelnych raportów z próbnych egzaminów maturalnych. Projekt skupia się na uproszczeniu procesu generowania zestawień, poprawie czytelności danych oraz nowoczesnym interfejsie użytkownika.",
@@ -92,8 +123,18 @@
       "descriptionLong": "Projekt webowy z wyszukiwarką filmów i rankingiem popularności oraz ocen. Użytkownik może przeglądać najnowsze i popularne produkcje oraz wyszukiwać konkretne tytuły. Każdy film zawiera szczegółowe informacje, takie jak opis, oceny, gatunek i inne dane. Projekt pokazuje integrację z zewnętrznym API, tworzenie interaktywnego UI oraz responsywnych widoków. Filmovie łączy estetykę z funkcjonalnym wyszukiwaniem i filtrowaniem."
     },
     "formularzZjazdSLO": {
-      "description": "Strona-formularz umożliwiająca zapis na zjazd absolwentów Społecznego Liceum w Żarach. Publiczna część pozwala dokonywać zapisów, a dane są przechowywane w Supabase, co umożliwia ich łatwe zarządzanie i weryfikację.",
-      "descriptionLong": "Projekt webowy usprawniający rejestrację uczestników zjazdu absolwentów Społecznego Liceum w Żarach. Aplikacja zawiera publiczny formularz zapisów oraz panel do przeglądania danych. Informacje przechowywane są w Supabase, co zapewnia łatwy dostęp i dalsze przetwarzanie. Projekt pokazuje tworzenie responsywnych formularzy, integrację z bazą w chmurze oraz dopasowanie struktury do potrzeb użytkowników i administratorów."
+      "description": "Zapisy na rzeczywisty zjazd absolwentów SLO w Żarach. Formularz przekazuje zgłoszenia do Supabase, a organizatorzy korzystają z osobnego panelu.",
+      "descriptionLong": "Publiczna strona wydarzenia i formularz zapisów w HTML, SCSS oraz JavaScript. Dane po walidacji są wysyłane do funkcji Supabase, a lista uczestników korzysta z osobnego widoku publicznego. Przeglądanie pełnych zgłoszeń odbywa się w oddzielnej aplikacji administracyjnej. Projekt służy rzeczywistemu zjazdowi absolwentów.",
+      "caseStudy": {
+        "context": "Organizatorzy zjazdu absolwentów Społecznego Liceum w Żarach potrzebowali publicznej strony wydarzenia oraz wspólnego miejsca na zgłoszenia uczestników.",
+        "scope": "Przygotowanie strony wydarzenia, responsywnego formularza i integracji JavaScript z Supabase. Zakres publicznej aplikacji obejmuje walidację, obsługę zgód, wysyłkę danych, komunikaty wyniku i wyświetlanie publicznej listy uczestników. Panel organizatorów jest oddzielną aplikacją.",
+        "decisions": "Publiczna strona pozostaje prostą aplikacją HTML, SCSS i JavaScript. Formularz przesyła dane do funkcji Supabase submit-guest. Publiczna lista korzysta z widoku people_public z rokiem ukończenia i nazwą do wyświetlenia, zamiast pobierać pełne dane kontaktowe.",
+        "features": "Uczestnik podaje dane kontaktowe i rok ukończenia szkoły, może uzupełnić informacje dodatkowe oraz pola dotyczące edukacji i pracy. Formularz sprawdza wymagane wartości, zgodę i token CAPTCHA. Po udanym zapisie odświeża listę uczestników.",
+        "challenge": "Trzeba było rozdzielić zbieranie zgłoszeń, publiczną prezentację uczestników i pracę organizatorów. Interfejs korzysta z osobnych punktów dostępu do zapisu i publicznego odczytu, a pełne zgłoszenia są obsługiwane w oddzielnym panelu.",
+        "result": "Powstał przepływ od informacji o wydarzeniu, przez walidowany formularz, do przechowywania zgłoszeń w Supabase. Organizatorzy mogą pracować z danymi bez umieszczania funkcji administracyjnych na publicznej stronie.",
+        "limitations": "Publiczny adres służy rzeczywistym zapisom na wydarzenie. Działanie formularza zależy od funkcji Supabase i CAPTCHA, a dostęp do pełnych danych wymaga osobnego panelu i właściwej konfiguracji uprawnień bazy.",
+        "imageCaption": "Archiwalny podgląd formularza i oddzielnego panelu z przykładowymi wpisami; obecny interfejs może się różnić."
+      }
     },
     "anemone": {
       "description": "Anemone to strona internetowa dla kwiaciarni prezentująca ofertę roślin i kompozycji kwiatowych oraz umożliwiająca przeglądanie dostępnych produktów w atrakcyjny wizualnie sposób.",
@@ -106,6 +147,23 @@
     "flippingCard": {
       "description": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika.",
       "descriptionLong": "Flipping Card to interaktywny komponent UI prezentujący efekt odwracania karty w 3D, wykorzystywany do wyświetlania dodatkowych informacji w atrakcyjny wizualnie sposób. Projekt skupia się na animacjach CSS, responsywności oraz płynnych interakcjach użytkownika."
+    },
+    "categories": {
+      "business": "Strona firmowa",
+      "utility": "Narzędzie użytkowe",
+      "learning": "Projekt edukacyjny"
+    },
+    "viewDetails": "Opis realizacji",
+    "backToProjects": "Wszystkie projekty",
+    "technologies": "Technologie",
+    "caseStudyLabels": {
+      "context": "Kontekst i cel",
+      "scope": "Zakres mojej pracy",
+      "decisions": "Decyzje techniczne",
+      "features": "Co robi aplikacja",
+      "challenge": "Wyzwanie techniczne",
+      "result": "Rezultat",
+      "limitations": "Ograniczenia i dalszy rozwój"
     }
   },
   "accessibility": {
@@ -119,7 +177,8 @@
     "portrait": "Portret: {{name}}",
     "liveProject": "Zobacz online: {{title}} (nowa karta)",
     "projectCode": "Kod źródłowy: {{title}} w GitHub (nowa karta)",
-    "privateCode": "Prywatne repozytorium projektu {{title}} w GitHub (nowa karta)"
+    "privateCode": "Prywatne repozytorium projektu {{title}} w GitHub (nowa karta)",
+    "projectDetails": "Opis realizacji: {{title}}"
   },
   "errors": {
     "notFound": {
@@ -135,6 +194,32 @@
     "contact": "Napisz email"
   },
   "contact": {
-    "title": "Kontakt"
+    "title": "Kontakt",
+    "copyEmail": "Kopiuj email",
+    "copying": "Kopiowanie…",
+    "copied": "Adres email skopiowany.",
+    "copyFailed": "Nie udało się skopiować. Zaznacz widoczny adres i skopiuj go ręcznie."
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "seo": {
+    "home": {
+      "title": "Fullstack Developer — strony i aplikacje",
+      "description": "Michał Lipiak — strony firmowe i aplikacje w React, TypeScript i JavaScript. Poznaj realizacje, integracje API i projekty z Supabase."
+    },
+    "projects": {
+      "title": "Projekty i realizacje",
+      "description": "Strony firmowe, formularze i aplikacje Michała Lipiaka. Zobacz Moje Atelier, Wióry Lecą!, Zjazd SLO i ImageInary oraz opisy ich realizacji."
+    },
+    "about": {
+      "title": "O mnie — Fullstack Developer",
+      "description": "Poznaj Michała Lipiaka: frontend, integracje API i praca z danymi. Sposób pracy oraz konkretne przykłady z realizacji stron i aplikacji."
+    },
+    "contact": {
+      "title": "Kontakt — porozmawiajmy o projekcie",
+      "description": "Skontaktuj się z Michałem Lipiakiem w sprawie strony firmowej, aplikacji lub współpracy w zespole. Email, LinkedIn i GitHub."
+    },
+    "imageAlt": "Michał Lipiak — Fullstack Developer. React, TypeScript, API i bazy danych."
   }
 }

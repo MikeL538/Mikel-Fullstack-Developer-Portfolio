@@ -1,15 +1,18 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocalizedPath } from "../routing/useLocalizedPath";
+import { localizedPath } from "../routing/paths";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import icons from "../assets/icons.svg";
 import { profile } from "../config/profile";
-import { assetUrl } from "../utils/assetUrl";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
+  const localize = useLocalizedPath();
   const currentLang = i18n.resolvedLanguage;
   const headerRef = useRef<HTMLElement>(null);
-  const { pathname } = useLocation();
+  const { pathname, search, hash } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasFocus, setHasFocus] = useState(false);
   const shouldCollapse = isScrolled && !hasFocus;
@@ -73,9 +76,10 @@ export default function Header() {
           <div className="header__logo">
             <NavLink
               className="header__link"
-              to="/"
+              to={localize("/")}
+              end
             >
-              <img className="header__image" src={assetUrl(profile.images.header)} alt="" />
+              <ResponsiveImage className="header__image" source={profile.images.header} alt="" />
               <span className="header__name">{profile.name}</span>
             </NavLink>
             <a className="header__github" href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -87,7 +91,8 @@ export default function Header() {
             <ul className="header__list">
               <li className="header__item">
                 <NavLink
-                  to="/"
+                  to={localize("/")}
+                  end
                   className={({ isActive }) =>
                     isActive
                       ? "header__item header__item--active"
@@ -99,7 +104,7 @@ export default function Header() {
               </li>
               <li className="header__item">
                 <NavLink
-                  to="/projects"
+                  to={localize("/projects")}
                   className={({ isActive }) =>
                     isActive
                       ? "header__item header__item--active"
@@ -111,7 +116,7 @@ export default function Header() {
               </li>
               <li className="header__item">
                 <NavLink
-                  to="/about"
+                  to={localize("/about")}
                   className={({ isActive }) =>
                     isActive
                       ? "header__item header__item--active"
@@ -123,7 +128,7 @@ export default function Header() {
               </li>
               <li className="header__item">
                 <NavLink
-                  to="/contact"
+                  to={localize("/contact")}
                   className={({ isActive }) =>
                     isActive
                       ? "header__item header__item--active"
@@ -134,26 +139,26 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="header__item header__languages">
-                  <button
+                  <Link
                     className="header__button"
-                    type="button"
                     aria-label="Zmień język na polski"
                     lang="pl"
-                    aria-pressed={currentLang === "pl"}
-                    onClick={() => i18n.changeLanguage("pl")}
+                    hrefLang="pl"
+                    aria-current={currentLang === "pl" ? "true" : undefined}
+                    to={localizedPath("pl", pathname) + search + hash}
                   >
                     PL
-                  </button>
-                  <button
+                  </Link>
+                  <Link
                     className="header__button"
-                    type="button"
                     aria-label="Switch language to English"
                     lang="en"
-                    aria-pressed={currentLang === "en"}
-                    onClick={() => i18n.changeLanguage("en")}
+                    hrefLang="en"
+                    aria-current={currentLang === "en" ? "true" : undefined}
+                    to={localizedPath("en", pathname) + search + hash}
                   >
                     EN
-                  </button>
+                  </Link>
               </li>
             </ul>
           </nav>

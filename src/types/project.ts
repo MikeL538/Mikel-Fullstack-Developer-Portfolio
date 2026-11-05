@@ -1,4 +1,5 @@
 export type ProjectStatus = "completed" | "inProgress";
+export type ProjectCategory = "business" | "utility" | "learning";
 
 export interface Project {
   readonly id: number;
@@ -7,6 +8,9 @@ export interface Project {
   readonly descriptionKey: string;
   readonly descriptionLongKey: string;
   readonly status: ProjectStatus;
+  readonly category: ProjectCategory;
+  readonly featuredTech?: readonly string[];
+  readonly caseStudyKey?: string;
   readonly tech: readonly string[];
   readonly image: string;
   readonly imageLarge: string;

@@ -13,7 +13,7 @@ function translationKeys(value, prefix = "") {
   });
 }
 
-export function validateContent({ projects, locales, technologies, profile, assetExists, spriteIds }) {
+export function validateContent({ projects, locales, technologies, profile, skills, assetExists, spriteIds }) {
   const errors = [];
   const check = (condition, message) => { if (!condition) errors.push(message); };
   const translation = (key) => {
@@ -58,7 +58,21 @@ export function validateContent({ projects, locales, technologies, profile, asse
       else errors.push(`${label}: missing ${field}`);
     }
     check(["completed", "inProgress"].includes(project.status), `${label}: invalid status`);
-    if (project.status === "inProgress") translation("projects.status.inProgress");
+    translation(`projects.status.${project.status}`);
+    check(["business", "utility", "learning"].includes(project.category), `${label}: invalid category`);
+    translation(`projects.categories.${project.category}`);
+    if (project.featured || project.featuredTech !== undefined) {
+      const tech = project.featuredTech;
+      check(Array.isArray(tech) && tech.length >= 3 && tech.length <= 5 &&
+        new Set(tech).size === tech.length && tech.every((name) => project.tech?.includes(name)),
+      `${label}: featuredTech must contain 3–5 unique project technologies`);
+    }
+    if (project.featured || project.caseStudyKey !== undefined) {
+      if (!nonempty(project.caseStudyKey)) errors.push(`${label}: missing caseStudyKey`);
+      else for (const field of ["context", "scope", "decisions", "features", "challenge", "result", "limitations", "imageCaption"]) {
+        translation(`${project.caseStudyKey}.${field}`);
+      }
+    }
     check(typeof project.githubPrivate === "boolean", `${label}: githubPrivate must be boolean`);
     if (project.githubPrivate) translation("projects.privateRepository");
     link(project.github, `${label} GitHub`);
@@ -78,6 +92,13 @@ export function validateContent({ projects, locales, technologies, profile, asse
   }
 
   check(orders.length === 4 && [1, 2, 3, 4].every((order) => orders.includes(order)), "Home: exactly four featured projects must have unique orders 1–4");
+  check(Array.isArray(skills) && skills.length === 3, "Skills: expected three capability groups");
+  for (const skill of skills ?? []) {
+    check(projects.some((project) => project.featured && project.caseStudyKey && project.slug === skill.projectSlug), `Skills: missing featured case study ${skill.projectSlug}`);
+    translation(`home.capabilities.${skill.key}.title`);
+    translation(`home.capabilities.${skill.key}.description`);
+    check(Array.isArray(skill.tech) && skill.tech.length > 0 && skill.tech.every((name) => Object.hasOwn(technologies, name)), `Skills: invalid technologies for ${skill.key}`);
+  }
   for (const [name, technology] of Object.entries(technologies)) {
     check(nonempty(technology.label), `Technology ${name}: missing label`);
     if (technology.icon != null) check(spriteIds.has(technology.icon), `Technology ${name}: missing SVG symbol ${technology.icon}`);
@@ -98,6 +119,7 @@ export function loadContent() {
   const sprite = readFileSync(resolve(root, "src/assets/icons.svg"), "utf8");
   return {
     projects: json("src/assets/projects.json"),
+    skills: json("src/assets/skills.json"),
     technologies: json("src/assets/technologies.json"),
     locales: { pl: json("src/i18n/locales/pl.json"), en: json("src/i18n/locales/en.json") },
     profile: json("src/config/profile.json"),

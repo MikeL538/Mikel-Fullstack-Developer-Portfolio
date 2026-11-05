@@ -2,7 +2,7 @@ import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import type { Project } from "../types/project";
-import { assetUrl } from "../utils/assetUrl";
+import ResponsiveImage from "./ResponsiveImage";
 
 export default function ImageModal({ project, onClose }: {
   project: Project | null;
@@ -63,8 +63,8 @@ export default function ImageModal({ project, onClose }: {
             {t("accessibility.closePreview")}
           </button>
         </div>
-        <img className="imageModal__image" src={assetUrl(project.imageLarge)}
-          alt={t("accessibility.projectImage", { title: project.title })} />
+        <ResponsiveImage className="imageModal__image" source={project.imageLarge} original
+          decoding="async" alt={t("accessibility.projectImage", { title: project.title })} />
       </div>
     </dialog>,
     document.body,

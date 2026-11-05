@@ -1,0 +1,266 @@
+{
+  "images/HomeHeroImage.png": {
+    "width": 626,
+    "height": 407,
+    "sha256": "68da0026ff7bedeac1b942c62e5d943b207ae953336853d7e055f13f89bbc25e",
+    "variants": [
+      {
+        "src": "images/optimized/HomeHeroImage-320.webp",
+        "width": 320,
+        "height": 208
+      },
+      {
+        "src": "images/optimized/HomeHeroImage-626.webp",
+        "width": 626,
+        "height": 407
+      }
+    ]
+  },
+  "images/ML.png": {
+    "width": 512,
+    "height": 512,
+    "sha256": "0daa2a554d38a62d37db757e9011e986ed104f5d9d46c192c330c92a6a188751",
+    "variants": [
+      {
+        "src": "images/optimized/ML-256.webp",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "src": "images/optimized/ML-512.webp",
+        "width": 512,
+        "height": 512
+      }
+    ]
+  },
+  "images/MLHeader.png": {
+    "width": 107,
+    "height": 107,
+    "sha256": "ba035f50f4d31950d4f737b186cbeffa9e68aff1bc0e8e2b790327b523df92d4",
+    "variants": [
+      {
+        "src": "images/optimized/MLHeader-107.webp",
+        "width": 107,
+        "height": 107
+      }
+    ]
+  },
+  "images/Background.png": {
+    "width": 1536,
+    "height": 1024,
+    "sha256": "a208480b93cb1a9312843fffa60f48c870fd2a76f12f2a1c07e3d8e130b31767",
+    "variants": [
+      {
+        "src": "images/optimized/Background-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "images/optimized/Background-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "images/projects/MojeAtelier.png": {
+    "width": 1200,
+    "height": 630,
+    "sha256": "b3567a4e61a2eba6b3c2c7e6b7e4ae1d7e0be1f5f427ee1f1cc83e027147b38b",
+    "variants": [
+      {
+        "src": "images/optimized/projects-MojeAtelier-480.webp",
+        "width": 480,
+        "height": 252
+      },
+      {
+        "src": "images/optimized/projects-MojeAtelier-960.webp",
+        "width": 960,
+        "height": 504
+      }
+    ]
+  },
+  "images/projects/WioryLeca.webp": {
+    "width": 2558,
+    "height": 1440,
+    "sha256": "4b96473fd693af8c806936dabab76a8c99fe3f72f7cf0aac45f8d3cd6571ca31",
+    "variants": [
+      {
+        "src": "images/optimized/projects-WioryLeca-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "images/optimized/projects-WioryLeca-960.webp",
+        "width": 960,
+        "height": 540
+      }
+    ]
+  },
+  "images/projects/WioryLecaLarge.webp": {
+    "width": 2558,
+    "height": 1440,
+    "sha256": "91e92540787c7d862c887c54dd06187098c6f2c0564f78296c400bcaaa489520",
+    "variants": []
+  },
+  "images/projects/ImageInary.webp": {
+    "width": 819,
+    "height": 512,
+    "sha256": "ade38d1450ff93db2307a10dcf5c5eaaa9c0d87ff6a1ccdfc43742eb7c570203",
+    "variants": [
+      {
+        "src": "images/optimized/projects-ImageInary-480.webp",
+        "width": 480,
+        "height": 300
+      },
+      {
+        "src": "images/optimized/projects-ImageInary-819.webp",
+        "width": 819,
+        "height": 512
+      }
+    ]
+  },
+  "images/projects/ImageInaryLarge.webp": {
+    "width": 2047,
+    "height": 1280,
+    "sha256": "8d8ca65de12e9ebcd626efcc7c6a2ec89cf03f9eb68e8645b0e42c88678df583",
+    "variants": []
+  },
+  "images/projects/RaportGeneratorV2.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "4f540af895b1fa4312481f49f3996c4fb98553b08426aae0b18237a472bf7565",
+    "variants": [
+      {
+        "src": "images/optimized/projects-RaportGeneratorV2-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "images/projects/RaportGeneratorV2.webp",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "images/projects/RaportGeneratorV2Large.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "b125b3a36efac49abfefa991a0542f26e4e71a7dba7b906f5e5ca84379943f9b",
+    "variants": []
+  },
+  "images/projects/Filmovie.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "8451f8d12ca1b5b61af666341ad325a6a0170f1c015849adeb47b3503cdb1fdc",
+    "variants": [
+      {
+        "src": "images/optimized/projects-Filmovie-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "images/projects/Filmovie.webp",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "images/projects/FilmovieLarge.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "c0c7057915aafb3588909d325be43b901c77e6ede1776bf4025ffd21e5c96ce6",
+    "variants": []
+  },
+  "images/projects/ZjazdSlo.webp": {
+    "width": 1920,
+    "height": 1200,
+    "sha256": "5b29699be8653919aa2b9a15a50046a0d48791735a5b0aed5b12efed974cb618",
+    "variants": [
+      {
+        "src": "images/optimized/projects-ZjazdSlo-480.webp",
+        "width": 480,
+        "height": 300
+      },
+      {
+        "src": "images/projects/ZjazdSlo.webp",
+        "width": 1920,
+        "height": 1200
+      }
+    ]
+  },
+  "images/projects/ZjazdSloLarge.webp": {
+    "width": 1920,
+    "height": 1200,
+    "sha256": "b48c2518f4f73ab2e8a4c96cea69bdaf5400a9285473d194ed7b326b1cc80c53",
+    "variants": []
+  },
+  "images/projects/GOITWebstudio.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "c194bfee0ea0cd38fb0579f174747059db9a4c7b097987dc1653a0d58be04d97",
+    "variants": [
+      {
+        "src": "images/optimized/projects-GOITWebstudio-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "images/projects/GOITWebstudio.webp",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "images/projects/GOITWebstudioLarge.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "8c56f2b32a5e657f66534bf5ad55f79f9aa3e11e4026c0e92a772c59e90e37e4",
+    "variants": []
+  },
+  "images/projects/Anemone.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "d034b7c429f21fa12c906bb0115217e7ae1a6077b292ead070752d384925331f",
+    "variants": [
+      {
+        "src": "images/optimized/projects-Anemone-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "images/optimized/projects-Anemone-960.webp",
+        "width": 960,
+        "height": 540
+      }
+    ]
+  },
+  "images/projects/AnemoneLarge.webp": {
+    "width": 1920,
+    "height": 1080,
+    "sha256": "8c3497405c9f440fb3152c800ad418e6d090bc1fd0333c129be1cebf319c089a",
+    "variants": []
+  },
+  "images/projects/FlippingCard.webp": {
+    "width": 1706,
+    "height": 1066,
+    "sha256": "bfb3f9584c1977d68c24a90a49ff92b3547d77bcc956e05ee562a48e61043503",
+    "variants": [
+      {
+        "src": "images/optimized/projects-FlippingCard-480.webp",
+        "width": 480,
+        "height": 300
+      },
+      {
+        "src": "images/optimized/projects-FlippingCard-960.webp",
+        "width": 960,
+        "height": 600
+      }
+    ]
+  },
+  "images/projects/FlippingCardLarge.webp": {
+    "width": 1706,
+    "height": 1066,
+    "sha256": "ad5d864b6b99655721b5d11a29b96d744c57ead900fd51a3f8690a9b6dac7e1a",
+    "variants": []
+  }
+}

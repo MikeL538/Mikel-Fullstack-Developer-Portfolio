@@ -1,13 +1,15 @@
 import { profile } from "../config/profile";
+import { useTranslation } from "react-i18next";
+import { site } from "../config/site";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="footer__container">
         {/* Sekcja informacji o prawach autorskich */}
         <div className="footer__copyright">
-          © {new Date().getFullYear()} {profile.copyrightName}. All rights
-          reserved.
+          © {site.year} {profile.copyrightName}. {t("footer.rights")}
         </div>
 
         {/* Sekcja linków społecznościowych */}

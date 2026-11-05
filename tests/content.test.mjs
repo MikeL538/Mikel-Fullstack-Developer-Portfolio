@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { loadContent, validateContent } from "../scripts/validate-content.mjs";
+import { validateImages } from "../scripts/validate-images.mjs";
+
+test("all image variants exist and dimensions match the current source files", () => {
+  assert.deepEqual(validateImages(), []);
+});
 
 test("portfolio content is complete and featured projects keep the agreed order", () => {
   const content = loadContent();
@@ -50,4 +55,17 @@ test("technology without an icon is allowed; broken icon and image paths are rej
   const errors = validateContent(content);
   assert.ok(errors.some((message) => message.includes("missing SVG symbol")));
   assert.ok(errors.some((message) => message.includes("invalid image")));
+});
+
+test("case studies, selected technologies and capability references stay complete", () => {
+  const content = loadContent();
+  delete content.locales.en.projects.MojeAtelier.caseStudy.limitations;
+  content.projects[0].featuredTech = ["React", "React", "Unknown"];
+  content.projects[1].category = "unknown";
+  delete content.projects[1].caseStudyKey;
+  content.skills[0].projectSlug = "missing";
+  const errors = validateContent(content);
+  for (const text of ["caseStudy.limitations", "featuredTech", "invalid category", "missing caseStudyKey", "missing featured case study"]) {
+    assert.ok(errors.some((message) => message.includes(text)), text);
+  }
 });

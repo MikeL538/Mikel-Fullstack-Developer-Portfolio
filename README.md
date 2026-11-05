@@ -18,8 +18,10 @@ A modern, responsive portfolio built with React and TypeScript, showcasing selec
 
 ## About the Project
 
-This application is a personal portfolio built as an SPA (Single Page Application) with client-side routing and internationalization.
-The project is prepared for GitHub Pages deployment, which is why it uses `HashRouter` and a configured `base` path in Vite.
+This React/TypeScript portfolio prerenders complete HTML for Polish and English
+pages at build time, then hydrates it for client-side navigation and interactions.
+It uses `BrowserRouter` and directory index files compatible with GitHub Pages
+on the custom domain `mikeldev.online`.
 
 ### What It Includes
 
@@ -36,9 +38,9 @@ The project is prepared for GitHub Pages deployment, which is why it uses `HashR
 - React 19
 - TypeScript
 - Vite
-- React Router DOM (`HashRouter`)
-- i18next + `react-i18next` + `i18next-browser-languagedetector`
-- SCSS (compiled styles + breakpoint-based files)
+- React Router DOM (`BrowserRouter` and `StaticRouter` for prerendering)
+- i18next + `react-i18next`, with URL-based language selection
+- SCSS (component styles with shared tokens and breakpoints)
 - ESLint
 - GitHub Actions + GitHub Pages
 
@@ -53,7 +55,9 @@ src/
   i18n/             # i18n config and translations (pl/en)
   layouts/          # main app layout
   pages/            # routed views (Home, Projects, About, Contact)
-  styles/           # SCSS + built CSS
+  routing/          # locale paths and legacy bookmark migration
+  seo/              # shared static/client metadata
+  styles/           # shared tokens + components/ with each component's responsive rules
 public/images/      # images and project screenshots
 ```
 
@@ -62,17 +66,23 @@ public/images/      # images and project screenshots
 ```bash
 git clone https://github.com/MikeL538/Mikel-Fullstack-Developer-Portfolio.git
 cd Mikel-Fullstack-Developer-Portfolio
-npm install
+npm ci
 npm run dev
 ```
+
+Use Node 24 (`.nvmrc`). In PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
 
 ## Available Scripts
 
 - `npm run dev` - starts the Vite development server
-- `npm run build` - validates content, checks TypeScript, and builds for production
+- `npm run build` - validates content, checks TypeScript, and prerenders production HTML
+- `npm run build:preview` - builds a noindex preview without sitemap or CNAME
 - `npm run validate:content` - checks projects, PL/EN translations, images, technology icons, and profile data
+- `npm run images:generate` - regenerates committed WebP variants and dimensions (Python + Pillow required only for this command)
+- `npm run measure:assets` - inventories the current production build's file sizes (not browser performance metrics)
 - `npm test` - runs content validation and React interface regression tests (Node test runner + jsdom)
-- `npm run preview` - previews the production build locally
+- `npm run test:seo` - verifies the current build's static HTML, metadata, assets and HTTP responses
+- `npm run preview` - serves `dist/` locally with real 404 responses (port 4173)
 - `npm run lint` - runs ESLint
 - `npm run deploy` - publishes `dist/` via `gh-pages` (manual deploy)
 
@@ -81,19 +91,27 @@ npm run dev
 The project includes automatic deployment in `.github/workflows/deploy.yml`:
 
 - Trigger: `push` to the `main` branch
-- Build step (`npm run build`)
-- Artifact publishing to GitHub Pages
+- Node 24, `npm ci`, lint and interface tests
+- Production build and generated HTML / HTTP tests
+- Publishing `dist/` to the `gh-pages` branch only after those checks pass
 
 GitHub Pages-specific configuration is also present in:
 
 - `vite.config.ts` (`base: "/"`)
-- `src/main.tsx` (`HashRouter`)
+- `src/main.tsx` (`BrowserRouter` and hydration)
+- `scripts/build.mjs` (localized directory indexes, root `404.html`, `.nojekyll` and CNAME)
+
+Read [the routing and deployment guide](docs/seo-deployment.md) before publishing
+or changing the domain. `npm run dev` is for authoring; use the production build
+and `npm run preview` to check server-level 404 behavior. No public deployment
+was performed as part of the local SEO implementation.
 
 ## Content Editing
 
 Main places to update content:
 
 - `src/assets/projects.json` - projects list (titles, links, stack, images)
+- `src/assets/skills.json` - frontend, data and tooling groups with project references
 - `src/types/project.ts` - shared project contract
 - `src/data/projects.ts` - typed projects and the ordered Home selection
 - `src/assets/technologies.json` - technology labels and SVG symbol IDs; set `icon` to `null` for a text-only entry
@@ -105,8 +123,21 @@ Each project needs a unique integer `id`, a unique kebab-case `slug`, a `status`
 (`completed` or `inProgress`), and an explicit `githubPrivate` boolean. Preserve
 existing IDs and slugs when editing a project. Keep exactly four projects featured,
 with unique `featuredOrder` values from 1 to 4; omit the order for other projects.
+Each project also has a `category` (`business`, `utility`, or `learning`). Featured
+projects need 3–5 `featuredTech` entries selected from their full `tech` list and
+a `caseStudyKey` pointing to the complete PL/EN case study. Detail pages are
+available at `/pl/projects/<slug>/` and `/en/projects/<slug>/` for projects with
+case studies. Old `/#/projects/<slug>` bookmarks migrate on startup. Unknown or
+undocumented slugs show the 404 view and return HTTP 404 on static hosting.
 Image paths are relative to `public/`, for example `images/projects/Filmovie.webp`.
 Components resolve them through `assetUrl()` using Vite's configured base.
+
+After adding or replacing an image, run `npm run images:generate` and commit both
+`public/images/optimized/` and `src/assets/image-manifest.json`. Keep original
+screenshots: the modal uses the full-size source. The generator requires Python
+and Pillow with WebP support (verified with Pillow 11.3.0); normal builds and CI
+only validate and consume the committed output. Source hashes catch stale variants.
+See [performance measurements and image workflow](docs/performance.md).
 
 Run `npm run validate:content` after content edits. The same check runs before every
 production build, including the existing deployment workflow. `npm test` also
@@ -132,11 +163,11 @@ Home presents the hero, four featured projects, capabilities backed by project
 examples, a short introduction, and contact actions. Cards use a two-column grid
 from 768 px and a single column below it, without fixed card heights. Previews use
 a 16:9 crop aligned to the top; the modal still shows the full image. Home styles
-and their breakpoint live in `src/styles/desktop/_home.scss`, with shared visual
+and their breakpoint live in `src/styles/components/_home.scss`, with shared visual
 tokens in `src/styles/_variables.scss`. Home capability references are in
-`src/components/HomeSkills.tsx`; update their project slugs when changing the
+`src/assets/skills.json`; update their project slugs when changing the
 featured selection. The name/logo returns Home, GitHub has its own link, and the
-PL/EN buttons expose the selected language. The Moje Atelier social card still
+PL/EN links expose the selected language and retain the current page. The Moje Atelier social card still
 needs replacement with actual interface screenshots when browser access is available.
 
 Before accepting the visual accessibility review, check a real browser at 200%
@@ -146,9 +177,18 @@ Check both languages at widths 320, 375, 768, 1024 and 1440 px for text wrapping
 thumbnail crops and horizontal overflow. These visual checks remain pending;
 the automated suite does not verify responsive rendering.
 
-Unknown hash routes (for example `/#/missing`) show a localized 404 view. This is
-an application-level fallback; HTTP 404 responses and path-based routing belong
-to the later hosting/SEO migration. A root error boundary handles React rendering
+Case studies explain context, scope, decisions, features, a technical challenge,
+results and limitations. Their source notes are in `docs/project-content-sources.md`.
+Existing screenshots are labeled as saved views; current desktop/mobile captures
+remain pending. Private repositories are shown as text on Home, Projects and detail
+pages, with public case studies providing context instead of inaccessible code links.
+Contact prioritizes the email address, with a copy button and a polite live status.
+When clipboard access is unavailable or denied, the address stays visible for manual
+copying. Tests cover both outcomes, case-study navigation, unknown slugs and previews.
+
+Unknown hash routes (for example `/#/missing`) migrate to a localized missing path.
+GitHub Pages uses the root `404.html`; it initially contains Polish content and
+switches to English on the client for an `/en/` URL. A root error boundary handles React rendering
 failures with reload and email actions; it does not catch event-handler errors,
 asynchronous errors, or failures that happen before React mounts.
 

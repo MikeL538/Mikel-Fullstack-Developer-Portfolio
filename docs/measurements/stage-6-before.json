@@ -1,0 +1,203 @@
+{
+  "kind": "static asset inventory",
+  "assets": [
+    {
+      "name": "index-aug2QSiY.css",
+      "bytes": 23251,
+      "gzipBytes": 5607
+    },
+    {
+      "name": "index-CwcrU6DF.js",
+      "bytes": 422471,
+      "gzipBytes": 139342
+    }
+  ],
+  "routes": {
+    "/pl/": {
+      "htmlBytes": 21099,
+      "images": [
+        {
+          "src": "/images/MLHeader.png",
+          "bytes": 14920,
+          "loading": "eager",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/HomeHeroImage.png",
+          "bytes": 281556,
+          "loading": "eager",
+          "width": "622",
+          "height": "403",
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/MojeAtelier.png",
+          "bytes": 45058,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/WioryLeca.webp",
+          "bytes": 47552,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/ZjazdSlo.webp",
+          "bytes": 38756,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/ImageInary.webp",
+          "bytes": 87778,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/ML.png",
+          "bytes": 291771,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        }
+      ]
+    },
+    "/pl/projects/": {
+      "htmlBytes": 21784,
+      "images": [
+        {
+          "src": "/images/MLHeader.png",
+          "bytes": 14920,
+          "loading": "eager",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/MojeAtelier.png",
+          "bytes": 45058,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/WioryLeca.webp",
+          "bytes": 47552,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/ImageInary.webp",
+          "bytes": 87778,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/RaportGeneratorV2.webp",
+          "bytes": 62492,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/Filmovie.webp",
+          "bytes": 57492,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/ZjazdSlo.webp",
+          "bytes": 38756,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/GOITWebstudio.webp",
+          "bytes": 38798,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/Anemone.webp",
+          "bytes": 23120,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/projects/FlippingCard.webp",
+          "bytes": 15204,
+          "loading": "lazy",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        }
+      ]
+    },
+    "/pl/about/": {
+      "htmlBytes": 9462,
+      "images": [
+        {
+          "src": "/images/MLHeader.png",
+          "bytes": 14920,
+          "loading": "eager",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        },
+        {
+          "src": "/images/ML.png",
+          "bytes": 291771,
+          "loading": "eager",
+          "width": null,
+          "height": null,
+          "srcset": null,
+          "sizes": null
+        }
+      ]
+    }
+  }
+}

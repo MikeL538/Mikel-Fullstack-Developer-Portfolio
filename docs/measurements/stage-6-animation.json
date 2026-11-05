@@ -1,0 +1,6 @@
+{
+  "gsapRenderedBytesBeforeMinification": 235704,
+  "introCharacterCount": 18,
+  "declaredIntroDurationSeconds": 2.25,
+  "note": "Static bundle analysis and timeline arithmetic; not measured CPU, FPS or real elapsed time."
+}

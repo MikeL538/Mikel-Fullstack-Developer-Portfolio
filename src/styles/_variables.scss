@@ -10,6 +10,10 @@ $bg-750: #1e222c;
 $text-primary: #dff1ff;
 $text-muted: #acbbcf;
 $content-width: 1160px;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1079px;
+$desktop-min: 1080px;
 $section-space: clamp(3.5rem, 7vw, 6rem);
 $content-gap: clamp(1rem, 2.5vw, 2rem);
 $border-subtle: #334155;
@@ -20,9 +24,6 @@ $title-section: clamp(1.8rem, 3.2vw, 2.75rem);
    ACCENT / INTERACTIONS
    ========================================================= */
 
-// $accent-primary: #4f8cff;
-// $accent-hover: #78aaff;
-// $accent-soft: #a0c8ff;
 
 $accent-primary: #78aaff;
 $accent-hover: #4f8cff;
@@ -32,7 +33,6 @@ $accent-soft: #a0c8ff;
 $button: $accent-primary;
 $buttonHover: $accent-hover;
 
-// WEB LINK GITHUB AND LIVE
 $color-git: rgb(240, 246, 252);
 
 /* =========================================================

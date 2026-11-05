@@ -1,26 +1,16 @@
 @use "./variables" as vars;
-// DESKTOP 1080
-@use "./desktop/intro";
-@use "./desktop/header";
-@use "./desktop/footer";
-@use "./desktop/home";
-@use "./desktop/projects";
-@use "./desktop/about";
-@use "./desktop/imageModal";
-@use "./desktop/contact";
-@use "./desktop/bubble";
-@use "./desktop/statusPage";
-// TABLET 768
-@use "./tablet/header768";
-@use "./tablet/projects768";
-@use "./tablet/about768";
-// Mobile 320
-@use "./mobile/header320";
-@use "./mobile/footer320";
-@use "./mobile/projects320";
-@use "./mobile/about320";
-@use "./mobile/contact320";
+@use "./components/intro";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/home";
+@use "./components/projects";
+@use "./components/about";
+@use "./components/imageModal";
+@use "./components/contact";
+@use "./components/bubble";
+@use "./components/statusPage";
 @use "./accessibility";
+@use "./components/caseStudy";
 
 * {
   box-sizing: border-box;
@@ -49,6 +39,7 @@
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -86,11 +77,11 @@ body {
   overflow-x: clip;
 }
 
-section {
+:where(.layout__main) > section {
   padding: 120px 0 60px 0;
   position: relative;
   z-index: 1;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: vars.$mobile-max) {
     padding: 90px 0 45px 0;
   }
 }

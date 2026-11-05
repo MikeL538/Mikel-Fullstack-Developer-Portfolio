@@ -2,6 +2,14 @@
   {
     "id": 8,
     "title": "Moje Atelier",
+    "category": "business",
+    "featuredTech": [
+      "React",
+      "TypeScript",
+      "SCSS",
+      "REST API"
+    ],
+    "caseStudyKey": "projects.MojeAtelier.caseStudy",
     "descriptionKey": "projects.MojeAtelier.description",
     "descriptionLongKey": "projects.MojeAtelier.descriptionLong",
     "tech": [
@@ -12,7 +20,8 @@
       "Responsive design",
       "Form validation",
       "REST API",
-      "API integration"
+      "API integration",
+      "Node.js"
     ],
     "image": "images/projects/MojeAtelier.png",
     "imageLarge": "images/projects/MojeAtelier.png",
@@ -27,12 +36,21 @@
   {
     "id": 7,
     "title": "Wióry Lecą!",
+    "category": "business",
+    "featuredTech": [
+      "HTML",
+      "SCSS",
+      "TypeScript",
+      "Vite"
+    ],
+    "caseStudyKey": "projects.WioryLeca.caseStudy",
     "descriptionKey": "projects.WioryLeca.description",
     "descriptionLongKey": "projects.WioryLeca.descriptionLong",
     "tech": [
       "TypeScript",
       "HTML",
       "SCSS",
+      "Vite",
       "Github",
       "Responsive design",
       "BEM"
@@ -50,6 +68,14 @@
   {
     "id": 6,
     "title": "ImageInary",
+    "category": "learning",
+    "featuredTech": [
+      "React",
+      "JavaScript",
+      "SCSS",
+      "REST API"
+    ],
+    "caseStudyKey": "projects.ImageInary.caseStudy",
     "descriptionKey": "projects.ImageInary.description",
     "descriptionLongKey": "projects.ImageInary.descriptionLong",
     "tech": [
@@ -75,6 +101,7 @@
   {
     "id": 5,
     "title": "Raport Generator V2",
+    "category": "utility",
     "descriptionKey": "projects.raportGeneratorV2.description",
     "descriptionLongKey": "projects.raportGeneratorV2.descriptionLong",
     "tech": [
@@ -100,6 +127,7 @@
   {
     "id": 4,
     "title": "Filmovie",
+    "category": "learning",
     "descriptionKey": "projects.Filmovie.description",
     "descriptionLongKey": "projects.Filmovie.descriptionLong",
     "tech": [
@@ -125,6 +153,14 @@
   {
     "id": 3,
     "title": "Formularz Zjazd SLO",
+    "category": "utility",
+    "featuredTech": [
+      "JavaScript",
+      "SCSS",
+      "Supabase",
+      "PostgreSQL"
+    ],
+    "caseStudyKey": "projects.formularzZjazdSLO.caseStudy",
     "descriptionKey": "projects.formularzZjazdSLO.description",
     "descriptionLongKey": "projects.formularzZjazdSLO.descriptionLong",
     "tech": [
@@ -134,8 +170,6 @@
       "Responsive design",
       "Supabase",
       "PostgreSQL",
-      "Authentication",
-      "CRUD",
       "Form validation"
     ],
     "image": "images/projects/ZjazdSlo.webp",
@@ -151,6 +185,7 @@
   {
     "id": 2,
     "title": "GOIT Webstudio",
+    "category": "learning",
     "descriptionKey": "projects.goit.description",
     "descriptionLongKey": "projects.goit.descriptionLong",
     "tech": [
@@ -174,6 +209,7 @@
   {
     "id": 1,
     "title": "Anemone",
+    "category": "learning",
     "descriptionKey": "projects.anemone.description",
     "descriptionLongKey": "projects.anemone.descriptionLong",
     "tech": [
@@ -197,6 +233,7 @@
   {
     "id": 0,
     "title": "Flipping Card",
+    "category": "learning",
     "descriptionKey": "projects.flippingCard.description",
     "descriptionLongKey": "projects.flippingCard.descriptionLong",
     "tech": [
