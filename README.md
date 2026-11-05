@@ -8,11 +8,11 @@ A modern, responsive portfolio built with React and TypeScript, showcasing selec
 
 ## Preview
 
-### Desktop
+### Desktop (archived preview)
 
 ![Portfolio Desktop Preview](./public/images/ReadmeHome.webp)
 
-### Mobile
+### Mobile (archived preview)
 
 ![Portfolio Mobile Preview](./public/images/ReadmeHomeMobile.webp)
 
@@ -70,7 +70,8 @@ npm ci
 npm run dev
 ```
 
-Use Node 24 (`.nvmrc`). In PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
+Use Node 24 (`.nvmrc` and `package.json#engines`); `.npmrc` rejects unsupported Node
+versions during installation. In PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
 
 ## Available Scripts
 
@@ -84,16 +85,28 @@ Use Node 24 (`.nvmrc`). In PowerShell, use `npm.cmd` if execution policy blocks 
 - `npm run test:seo` - verifies the current build's static HTML, metadata, assets and HTTP responses
 - `npm run preview` - serves `dist/` locally with real 404 responses (port 4173)
 - `npm run lint` - runs ESLint
-- `npm run deploy` - publishes `dist/` via `gh-pages` (manual deploy)
+- `npm run check` - runs lint, interface tests, production build and SEO/HTTP checks
+- `npm run check:preview` - builds and checks the noindex preview
+- `npm run audit:prod` / `npm run audit:all` - audits runtime / all dependencies; high and critical findings fail
+- `npm run check:links` - checks public demo, code and profile URLs; private repositories are skipped
 
 ## Deployment (GitHub Pages)
 
 The project includes automatic deployment in `.github/workflows/deploy.yml`:
 
-- Trigger: `push` to the `main` branch
-- Node 24, `npm ci`, lint and interface tests
-- Production build and generated HTML / HTTP tests
-- Publishing `dist/` to the `gh-pages` branch only after those checks pass
+- Pull requests to `main`, pushes to `main`, and manual workflow runs receive validation
+- Node from `.nvmrc`, `npm ci`, separate production/development audits, lint and interface tests
+- Both preview and production builds receive generated HTML / HTTP checks
+- A separate job publishes the verified artifact to `gh-pages` only for a push or manual run on `main`
+- Validation has read-only repository access; only the publication job can write
+- Actions are pinned to commit SHAs; weekly Dependabot updates cover npm and GitHub Actions
+
+There is one publication path: **Actions → Portfolio CI → Run workflow → main**
+for a manual redeploy, or the existing automatic push-to-main flow. The former
+`npm run deploy` command and `gh-pages` CLI dependency were removed. Local
+`npm run check` never publishes. Main runs are serialized; superseded PR runs
+are cancelled. Consider requiring the `Validate portfolio` check in the repository's
+branch rules; local workflow files cannot enforce those settings on their own.
 
 GitHub Pages-specific configuration is also present in:
 
@@ -105,6 +118,12 @@ Read [the routing and deployment guide](docs/seo-deployment.md) before publishin
 or changing the domain. `npm run dev` is for authoring; use the production build
 and `npm run preview` to check server-level 404 behavior. No public deployment
 was performed as part of the local SEO implementation.
+
+The [stage 7 quality report](docs/quality-report.md) records dependency findings,
+public-link checks, validation evidence and the remaining manual review.
+External link availability is checked separately from CI to avoid making a third-party
+outage block a valid portfolio build. A successful HTTP response does not prove that
+an external demo's forms or APIs work. LinkedIn may block automated requests.
 
 ## Content Editing
 

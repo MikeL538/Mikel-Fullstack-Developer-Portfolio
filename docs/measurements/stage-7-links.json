@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "label": "Moje Atelier: demo",
+      "url": "https://psychoweb-pink.vercel.app/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://psychoweb-pink.vercel.app/"
+    },
+    {
+      "label": "Moje Atelier: code",
+      "url": "https://github.com/MikeL538/Psycho",
+      "private": true,
+      "result": "private-skip"
+    },
+    {
+      "label": "Wióry Lecą!: demo",
+      "url": "https://wioryleca-meblenawymiar.pl/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://wioryleca-meblenawymiar.pl/"
+    },
+    {
+      "label": "Wióry Lecą!: code",
+      "url": "https://github.com/MikeL538/wioryleca-meblenawymiar",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/wioryleca-meblenawymiar"
+    },
+    {
+      "label": "ImageInary: demo",
+      "url": "https://mikel538.github.io/ImageInary/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://imageinary.mikeldev.online/"
+    },
+    {
+      "label": "ImageInary: code",
+      "url": "https://github.com/MikeL538/ImageInary",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/ImageInary"
+    },
+    {
+      "label": "Raport Generator V2: demo",
+      "url": "https://rapgen2.mikeldev.online/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://rapgen2.mikeldev.online/"
+    },
+    {
+      "label": "Raport Generator V2: code",
+      "url": "https://github.com/MikeL538/raportGeneratorV2",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/raportGeneratorV2"
+    },
+    {
+      "label": "Filmovie: demo",
+      "url": "https://mikel538.github.io/Filmovie/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://filmovie.mikeldev.online/"
+    },
+    {
+      "label": "Filmovie: code",
+      "url": "https://github.com/MikeL538/Filmovie",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/Filmovie"
+    },
+    {
+      "label": "Formularz Zjazd SLO: demo",
+      "url": "https://zjazd-slo.mikeldev.online/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://zjazd-slo.mikeldev.online/"
+    },
+    {
+      "label": "Formularz Zjazd SLO: code",
+      "url": "https://github.com/MikeL538/Zaproszenie-Zjazd-SLO",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/Zaproszenie-Zjazd-SLO"
+    },
+    {
+      "label": "GOIT Webstudio: demo",
+      "url": "https://mikel538.github.io/GOIT-WebStudio/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://mikel538.github.io/GOIT-WebStudio/"
+    },
+    {
+      "label": "GOIT Webstudio: code",
+      "url": "https://github.com/MikeL538/GOIT-WebStudio",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/GOIT-WebStudio"
+    },
+    {
+      "label": "Anemone: demo",
+      "url": "https://mikel538.github.io/Anemone-Florist/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://mikel538.github.io/Anemone-Florist/"
+    },
+    {
+      "label": "Anemone: code",
+      "url": "https://github.com/MikeL538/Anemone-Florist",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/Anemone-Florist"
+    },
+    {
+      "label": "Flipping Card: demo",
+      "url": "https://mikel538.github.io/Flipping-card/",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://mikel538.github.io/Flipping-card/"
+    },
+    {
+      "label": "Flipping Card: code",
+      "url": "https://github.com/MikeL538/Flipping-card?tab=readme-ov-file",
+      "private": false,
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538/Flipping-card?tab=readme-ov-file"
+    },
+    {
+      "label": "GitHub profile",
+      "url": "https://github.com/MikeL538",
+      "result": "ok",
+      "status": 200,
+      "finalUrl": "https://github.com/MikeL538"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/michal-lipiak/",
+      "result": "needs-review",
+      "status": 999,
+      "finalUrl": "https://www.linkedin.com/in/michal-lipiak"
+    }
+  ]
+}

@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run validate:content && tsc -b && node scripts/build.mjs",
@@ -11,36 +14,38 @@
     "images:generate": "python scripts/optimize-images.py",
     "measure:assets": "node scripts/measure-assets.mjs",
     "test": "node --test tests/content.test.mjs tests/interface.test.mjs",
-    "predeploy": "npm run lint && npm test && npm run build && npm run test:seo",
-    "deploy": "gh-pages -d dist --nojekyll",
+    "check": "npm run lint && npm test && npm run build && npm run test:seo",
+    "check:preview": "npm run build:preview && npm run test:seo",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
+    "audit:all": "npm audit --audit-level=high",
+    "check:links": "node scripts/check-links.mjs",
     "preview": "node scripts/preview.mjs",
     "test:seo": "node --test tests/seo.test.mjs",
-    "lint": "eslint ."
+    "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
-    "gsap": "^3.14.2",
-    "i18next": "^25.8.7",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-i18next": "^16.5.4",
-    "react-router-dom": "^7.12.0"
+    "gsap": "^3.15.1",
+    "i18next": "^25.10.10",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-i18next": "^16.6.6",
+    "react-router-dom": "^7.18.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
     "axe-core": "^4.14.0",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "gh-pages": "^6.3.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
     "globals": "^16.5.0",
     "jsdom": "^29.1.1",
-    "sass": "^1.99.0",
+    "sass": "^1.107.1",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "typescript-eslint": "^8.72.1",
+    "vite": "^7.3.7"
   }
 }

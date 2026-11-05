@@ -26,6 +26,10 @@ npm run test:seo
 npm run preview
 ```
 
+Pełny zestaw lokalnych kontroli uruchamia `npm run check`. Przed nim można wykonać
+`npm run check:preview`, aby sprawdzić również tryb noindex. Ostatni `check` pozostawia
+w `dist/` build produkcyjny. Audyty sieciowe: `npm run audit:prod` i `npm run audit:all`.
+
 `scripts/build.mjs` buduje aplikację przeglądarkową, następnie osobny moduł SSR w ignorowanym `dist-ssr/`. React generuje HTML tych samych komponentów, które są hydratowane w przeglądarce. Do publikacji służy wyłącznie `dist/`.
 
 Domyślna domena w `src/config/site.ts` to `https://mikeldev.online`. Zmienna `VITE_SITE_URL` może wskazać inny origin HTTPS, bez ścieżki, query i fragmentu. Ta sama wartość zasila canonical, hreflang, JSON-LD, obraz społecznościowy, sitemapę i generowany CNAME. Konfiguracja zakłada własną domenę z `base: "/"`; hosting w podkatalogu repozytorium wymaga osobnego dostosowania.
@@ -50,9 +54,26 @@ W HTML wygenerowanym na serwerze nie ma blokującego intro ani `inert`. Po hydra
 
 ## GitHub Pages i HTTP
 
-Workflow zachowuje publikację na gałąź `gh-pages`. Ustawienie Pages w GitHub powinno nadal wskazywać tę gałąź i jej katalog główny. CNAME pochodzi z buildu; nie trzeba nadpisywać go parametrem akcji. `dist/.nojekyll` wyłącza przetwarzanie Jekyll. Workflow używa Node 24, instaluje przez `npm ci` i publikuje dopiero po lint, testach interfejsu, buildzie i testach SEO/HTTP.
+Workflow `Portfolio CI` zachowuje publikację na gałąź `gh-pages`. Ustawienie Pages w GitHub powinno nadal wskazywać tę gałąź i jej katalog główny. CNAME pochodzi z buildu; nie trzeba nadpisywać go parametrem akcji. `dist/.nojekyll` wyłącza przetwarzanie Jekyll. Node 24 pochodzi z `.nvmrc`; `engines` i `.npmrc` sprawdzają zgodność lokalnej instalacji.
 
-Ręczne `npm run deploy` uruchamia te same kontrole przez `predeploy`, a następnie publikuje z opcją `--nojekyll`. Samo `npm run build` ani `npm run preview` niczego nie publikuje.
+PR do `main`, push do `main` i ręczne uruchomienie workflow wykonują instalację
+`npm ci`, osobne audyty zależności produkcyjnych i wszystkich zależności, kontrole
+preview oraz `npm run check`. Znalezienie podatności high/critical lub błąd rejestru
+npm zatrzymuje walidację. Raport bieżących umiarkowanych zgłoszeń developerskich
+jest w [quality-report.md](quality-report.md).
+
+Walidacja ma `contents: read` i nie zapisuje poświadczeń Git. Dopiero osobny job
+publikacji otrzymuje `contents: write`; pobiera sprawdzony artefakt z tego samego
+przebiegu, razem z `.nojekyll`, bez ponownego budowania aplikacji. Akcje są przypięte
+do SHA, artefakt zachowywany przez 7 dni, a jego niezgodny digest blokuje pobieranie.
+Przebiegi `main` są serializowane; nowszy PR anuluje starszy przebieg tego PR-a.
+
+Jedyna ścieżka publikacji to workflow. Ręcznie: **Actions → Portfolio CI → Run
+workflow → main**. Usunięto `npm run deploy`, `predeploy` i zależność CLI `gh-pages`.
+Push na `main` nadal publikuje automatycznie po powodzeniu kontroli. PR oraz ręczny
+przebieg na innej gałęzi nie publikują. Samo `npm run check`, `build` lub `preview`
+niczego nie publikuje. Konfiguracja nie zastępuje reguł ochrony gałęzi — wymaganie
+checku `Validate portfolio` przed merge trzeba ustawić w GitHub osobno.
 
 Nie dodawaj reguły przekierowującej wszystkie żądania do `/index.html`: zmieniłaby brakujące adresy w odpowiedzi 200. Znane ścieżki mają własne pliki. GitHub Pages używa jednego głównego `404.html`, z polską treścią początkową; React dopasowuje język do brakującego adresu `/en/...`. Dodatkowe lokalne pliki `pl/404.html` i `en/404.html` są nieindeksowane, ale nie zastępują globalnego mechanizmu hostingu.
 

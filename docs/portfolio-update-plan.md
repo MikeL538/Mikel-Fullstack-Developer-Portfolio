@@ -142,16 +142,20 @@ Otwarty odbiór: pomiary LCP/CLS/TBT i klatek desktop/mobile, koszt efektów ora
 
 **7. Kontrola jakości i publikacja — P0/P1, średni zakres**
 
-- [ ] Ujednolicić wspieraną wersję Node lokalnie i w CI; rekomendowany punkt startowy to Node 24 LTS. Workflow używa obecnie Node 20, który jest EOL według [harmonogramu Node.js](https://nodejs.org/en/about/previous-releases).
-- [ ] Instalować zależności z lockfile przez `npm ci`; sprawdzić aktualizacje i podatności, oceniając oddzielnie kod produkcyjny i narzędzia deweloperskie.
-- [ ] Uruchamiać walidację PR: lint, kontrola danych, build i istotne testy zachowania. Publikować dopiero po powodzeniu kontroli.
-- [ ] Doprecyzować uprawnienia workflow i obsługę równoległych wdrożeń; ujednolicić sposób publikacji zamiast utrzymywać rozbieżne ścieżki.
-- [ ] Testować kluczowe scenariusze: zmiana języka i jej zapamiętanie, cztery projekty w kolejności, modal i fokus, nawigacja/404, dostępność kontaktu, ograniczony ruch.
+- [x] Ujednolicić wspieraną wersję Node lokalnie i w CI: Node 24 w `.nvmrc`, `engines` i workflow; instalacja egzekwuje zakres wersji.
+- [x] Instalować zależności z lockfile przez `npm ci`; sprawdzić aktualizacje i podatności, oceniając oddzielnie kod produkcyjny i narzędzia deweloperskie.
+- [x] Dodać walidację PR: lint, kontrola danych, build i istotne testy zachowania. Publikacja w konfiguracji zależy od powodzenia kontroli; rzeczywisty przebieg GitHub pozostaje do odbioru.
+- [x] Doprecyzować uprawnienia workflow i obsługę równoległych wdrożeń; ujednolicić sposób publikacji zamiast utrzymywać rozbieżne ścieżki.
+- [x] Testować kluczowe scenariusze: zmiana języka i jej zapamiętanie, cztery projekty w kolejności, modal i fokus, nawigacja/404, dostępność kontaktu, ograniczony ruch.
 - [ ] Uruchomić automatyczną kontrolę dostępności i uzupełnić ją ręcznym przejściem klawiaturą oraz kontrolą mobilną.
 - [ ] Sprawdzić publiczne linki demo i kontaktowe; prywatnego GitHuba nie traktować jako zepsutego publicznego repozytorium.
 - [ ] Zaktualizować README, zrzuty, opis dodawania projektów, konfigurację środowiska i procedurę wycofania wdrożenia.
 
 Wzorzec zachowania modala: [WAI-ARIA Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+
+Stan lokalny (2026-11-05): nowy workflow PR/main/manual z osobną walidacją i publikacją sprawdzonego artefaktu, akcje przypięte do SHA, tygodniowy Dependabot, ESLint 10 obejmujący również skrypty/testy, polecenia `check`, `check:preview` i `check:links`. Zależności zaktualizowane; audyt produkcyjny: 0 zgłoszeń, całe drzewo: 10 moderate związanych z jednym problemem minimatch w narzędziach developerskich, 0 high/critical. Czyste `npm ci`, lint, 55 testów interfejsu/danych i 4 testy SEO/HTTP przechodzą; sprawdzono oba tryby buildu.
+
+Wszystkie 9 demo i 8 publicznych repozytoriów zwróciło HTTP 200. Prywatne repo pominięto; LinkedIn zwraca blokadę HTTP 999, więc punkt linków nie jest jeszcze w pełni odebrany. Dokumentacja dodawania projektów, środowiska i rollbacku jest aktualna; zrzuty oznaczono jako archiwalne. Otwarta pozostaje ręczna dostępność, kontrola mobile, nowe zrzuty, pomiary wydajności oraz odbiór rzeczywistego workflow i domeny po publikacji. Nie wykonano pushu ani wdrożenia. Szczegóły: [quality-report.md](quality-report.md).
 
 **Kolejność realizacji**
 
