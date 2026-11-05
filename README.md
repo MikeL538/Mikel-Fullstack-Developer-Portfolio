@@ -1,6 +1,6 @@
 ﻿# Mikel Portfolio - Fullstack Developer Portfolio
 
-A modern, responsive portfolio built with React and TypeScript, showcasing selected frontend/fullstack projects and core information about the author.
+A modern, responsive portfolio built with React and TypeScript, showcasing selected projects and core information about the author.
 
 ## Live
 
